@@ -1,9 +1,11 @@
 # Capstone paper and reproduction guide
 
-The paper is [`trajectory_audit_capstone.tex`](trajectory_audit_capstone.tex). It
-follows the two-column structure of the supplied sample capstone: problem and
-motivation, related work, replication protocol, proposed audit, evaluation,
-threats to validity, conclusion, and references.
+The paper is available as a compiled
+[`trajectory_audit_capstone.pdf`](trajectory_audit_capstone.pdf) and as editable
+[`trajectory_audit_capstone.tex`](trajectory_audit_capstone.tex) source. It follows
+the two-column structure of the supplied sample capstone: problem and motivation,
+related work, replication protocol, proposed audit, evaluation, threats to
+validity, conclusion, and references.
 
 ## Reproduce the experiments
 

@@ -1,0 +1,50 @@
+name: Build capstone PDF
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - capstone/trajectory_audit_capstone.tex
+      - .github/workflows/build-capstone-pdf.yml
+
+permissions:
+  contents: write
+
+jobs:
+  build-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes latexmk texlive-latex-extra texlive-fonts-recommended
+
+      - name: Compile capstone
+        run: |
+          mkdir -p /tmp/trajectory-audit-build
+          latexmk \
+            -pdf \
+            -interaction=nonstopmode \
+            -halt-on-error \
+            -outdir=/tmp/trajectory-audit-build \
+            capstone/trajectory_audit_capstone.tex
+          cp \
+            /tmp/trajectory-audit-build/trajectory_audit_capstone.pdf \
+            capstone/trajectory_audit_capstone.pdf
+
+      - name: Commit refreshed PDF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add capstone/trajectory_audit_capstone.pdf
+          if git diff --cached --quiet; then
+            echo "PDF is already up to date."
+          else
+            git commit -m "Build capstone PDF"
+            git push
+          fi
