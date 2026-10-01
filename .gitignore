@@ -1,0 +1,10 @@
+.DS_Store
+.venv/
+.uv-cache/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+outputs/
+data/raw/
+tmp/
+sample-capstone/
