@@ -96,6 +96,14 @@ an LLM judge behaves the same way.
 See [the concise result note](reports/atbench_mvp_results.md) and the generated
 local reports in `outputs/atbench-mvp/`.
 
+## Jev Guard public API evaluation
+
+A separate evaluation sent all 1,000 ATBench test trajectories to the public
+Jev Guard v3.2 2B inference API. It achieved 56.60% accuracy and 50.00% unsafe
+F1 under the fixed safety-only prompt. This is a custom evaluation, not an
+official leaderboard entry. See the [protocol and results](reports/jev_guard_v3_2_atbench_2026-10-09.md)
+and [API evaluation script](scripts/eval_jev_atbench.py).
+
 ## Output files
 
 - `report.md`: aggregate table, uncertainty intervals, and limitations;
