@@ -104,6 +104,13 @@ F1 under the fixed safety-only prompt. This is a custom evaluation, not an
 official leaderboard entry. See the [protocol and results](reports/jev_guard_v3_2_atbench_2026-10-09.md)
 and [API evaluation script](scripts/eval_jev_atbench.py).
 
+A [stepwise API follow-up](reports/jev_guard_v3_2_stepwise_atbench_2026-10-09.md)
+replays each trajectory as cumulative prefixes after agent actions. It records
+the first unsafe judgment and every safe/unsafe prediction change across 4,517
+checkpoints, with [reproduction code](scripts/eval_jev_stepwise.py). ATBench
+provides only whole-trajectory labels, so these are model-prediction timelines
+rather than step-level accuracy measurements.
+
 ## Output files
 
 - `report.md`: aggregate table, uncertainty intervals, and limitations;
