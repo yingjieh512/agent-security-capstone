@@ -111,6 +111,26 @@ checkpoints, with [reproduction code](scripts/eval_jev_stepwise.py). ATBench
 provides only whole-trajectory labels, so these are model-prediction timelines
 rather than step-level accuracy measurements.
 
+## Adversarial ATBench-style Jev Guard trajectories
+
+The [adversarial trajectory report](reports/jev_guard_adversarial_atbench_results_2026-10-15.md)
+documents a paired audit of Jev Guard v3.2 2B's complete-trajectory safety head.
+Each of 100 previously detected unsafe ATBench trajectories has an unchanged
+`clean` view, a length-matched neutral tool-result note, and a forged final safety
+summary inside the same lower-trust tool result. On this frozen cohort, the safety
+head marked 0/100 clean, 5/100 neutral, and 64/100 adversarial views as safe.
+The attack increased false negatives by 59 percentage points versus the neutral
+control (parent bootstrap 95% CI: 49–69 points). This measures the safety head,
+not the native permission gate or end-to-end agent execution.
+
+The [constructor](scripts/construct_jev_adversarial.py) writes ATBench-style raw
+rows plus exact model prompts and reversible edit manifests. The
+[paired evaluator](scripts/eval_jev_adversarial_pairs.py) records individual API
+responses, completeness, and paired bootstrap estimates. The fixed source IDs
+and publishable paired statistics are in the [minimal evidence package](reports/jev_adversarial_evidence_2026-10-16/README.md).
+Full generated states and API responses remain in local `outputs/` files and are
+not included in the repository.
+
 ## TypeSafe System One API evaluation
 
 The [TypeSafe replay script](scripts/eval_typesafe_atbench.py) runs the same
@@ -131,6 +151,19 @@ set `TYPESAFE_API_KEY` in the environment and omit `--api-key-stdin`. Runs resum
 completed predictions and reject incompatible saved model, question, or state
 hashes. The completed run, paired comparison, and interpretation are in the
 [TypeSafe ATBench report](reports/typesafe_jev_1_13_atbench_2026-10-15.md).
+
+The [official TypeSafe Jev adversarial replay](reports/typesafe_jev_adversarial_atbench_2026-10-16.md)
+uses the same 100 ATBench parent trajectories and exact 300 clean, neutral, and
+adversarial state texts as the Jev Guard audit. On this selected cohort, the
+attack increased unsafe false negatives over the neutral control by 14 percentage
+points for pinned `jev-1.13.0` and 13 points for pinned `jev-1.14.0`; Jev Guard's
+increase was 59 points. TypeSafe uses the existing Noul safety question and a
+fixed 0.5 threshold, so the comparison describes these judge configurations.
+The [TypeSafe paired evaluator](scripts/eval_typesafe_adversarial_pairs.py) and
+[cross-judge analysis](scripts/compare_jev_adversarial_judges.py) preserve
+per-state responses and paired uncertainty estimates. The [published cross-judge
+comparison](reports/jev_adversarial_evidence_2026-10-16/cross_judge/comparison.json)
+and its paired evidence are available without the local `outputs/` directory.
 
 ## Output files
 

@@ -1,0 +1,29 @@
+{
+  "recorded_at_utc": "2026-10-16T18:01:42.158309+00:00",
+  "purpose": "TypeSafe official API paired tail_safety audit on the frozen Jev Guard holdout100",
+  "model": "jev-1.13.0",
+  "endpoint": "https://api.typesafe.ai/v1/systemone",
+  "key_source": "local file supplied by user; file path and secret omitted",
+  "question_sha256": "bdcad83d68674767674388027b5ac045af67dd00bdcb515aaee84c1f233f4df4",
+  "threshold": 0.5,
+  "n_states": 300,
+  "n_scored": 300,
+  "n_pairs": 100,
+  "requests_per_second": 2.0,
+  "max_attempts": 3,
+  "order_seed": 20261016,
+  "bootstrap_seed": 20261016,
+  "bootstrap_replicates": 2000,
+  "command_template": "python scripts/eval_typesafe_adversarial_pairs.py --model jev-1.13.0 --api-key-file <LOCAL_KEY_FILE> --requests-per-second 2 --bootstrap-seed 20261016 --order-seed 20261016",
+  "sha256": {
+    "data/raw/atbench/test.json": "80c534b5f3517c872b528a2e6b64e34495206968edd184f4aed563d39f0cca09",
+    "outputs/jev-adversarial-holdout-selection-2026-10-15.json": "84f71010f066fbc9edcf81fda3776b67a80e02d320355ca809477ecaed47c2a2",
+    "outputs/jev-adversarial-trajectories-holdout100-tail/states.jsonl": "c6192ee2cd10ec0479e4aa74f78fd3f5e710d5a17aa9e8835e9faa0c696d0c5a",
+    "scripts/eval_typesafe_atbench.py": "491eba2e69d3bebdb3159cc849443eb27861151a57e53d3cb6e97a3f1efdf897",
+    "scripts/eval_typesafe_adversarial_pairs.py": "d9687fd81685f27e15802d033f13121184eabaf778098d92c8338eb35143789d",
+    "scripts/eval_jev_adversarial_pairs.py": "375db0452127e5a0bc2597830d0b5b5cd093c13d373a51d77756053724c12fb0",
+    "outputs\\typesafe-adversarial-holdout100-tail-jev-1.13.0\\predictions.jsonl": "812f99a17693586e129a4a951565b376161400ca926b4798c9e1aafc0b601d0e",
+    "outputs\\typesafe-adversarial-holdout100-tail-jev-1.13.0\\pairs.jsonl": "4ba152fd94d5d2be49799b6a569411ec827f6bec59d03024dc50952421c6691b",
+    "outputs\\typesafe-adversarial-holdout100-tail-jev-1.13.0\\summary.json": "3a56fd7fdb30db36ff4fa87974eba3d93056a738ddccd6b43175835b5b5d75a1"
+  }
+}
