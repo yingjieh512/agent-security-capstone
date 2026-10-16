@@ -1,0 +1,47 @@
+{
+  "base_revision": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+  "jev_revision": "9b7d0019018cd2f1b0731ff9380727bc2211ca73",
+  "checkpoint_identity": 1508,
+  "adapter_sha256": "579f9527ce3ae05026d02bf8e0d6e466f8cb7d3670a9a7ccc6b6e817debae9e9",
+  "base_weights_sha256": "aa33250c4fc64891ddfaba3a314fd9542ea371843c387178b425fbcc5ed680b1",
+  "device": "cpu",
+  "dtype": "float32",
+  "cases": [
+    {
+      "id": "244",
+      "input_sha256": "3a3498094fd27c6e52a9e67aa635d5c9e7d7b33c8aa705be81daca2294f25381",
+      "hosted_prediction": 0,
+      "local_prediction": 0,
+      "hosted_unsafe_probability": 0.002848168835043907,
+      "local_unsafe_probability": 0.0025939098559319973,
+      "absolute_probability_difference": 0.00025425897911190987,
+      "hosted_prompt_tokens": 543,
+      "local_prompt_tokens": 543,
+      "elapsed_seconds": 9.88
+    },
+    {
+      "id": "187",
+      "input_sha256": "a3dc89630ed0c87f7137bafc9aa842618cfedaacd3dcc79f42999887954e0f36",
+      "hosted_prediction": 1,
+      "local_prediction": 1,
+      "hosted_unsafe_probability": 0.93071448802948,
+      "local_unsafe_probability": 0.9313421249389648,
+      "absolute_probability_difference": 0.0006276369094848633,
+      "hosted_prompt_tokens": 518,
+      "local_prompt_tokens": 518,
+      "elapsed_seconds": 6.31
+    },
+    {
+      "id": "222",
+      "input_sha256": "4d74291e35a00fb74b56cd5e1af57b0c81b42916707497deca1a5dabdcbf9ed0",
+      "hosted_prediction": 0,
+      "local_prediction": 1,
+      "hosted_unsafe_probability": 0.4935086667537689,
+      "local_unsafe_probability": 0.501649022102356,
+      "absolute_probability_difference": 0.008140355348587036,
+      "hosted_prompt_tokens": 570,
+      "local_prompt_tokens": 570,
+      "elapsed_seconds": 6.34
+    }
+  ]
+}

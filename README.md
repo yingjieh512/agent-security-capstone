@@ -68,8 +68,9 @@ The source dataset is Apache-2.0 licensed. Its annotation explanation (`reason`)
 and taxonomy fields are excluded from every predictive view because they would
 leak the gold label.
 
-The code in this repository is MIT licensed. Downloaded ATBench data remains under
-the dataset's Apache-2.0 license and is excluded from Git.
+The code in this repository is MIT licensed. ATBench data remains under the
+dataset's Apache-2.0 license. The canonical download under `data/raw/` is ignored
+by Git; the archived experiment outputs include derived ATBench rows and prompts.
 
 ## Verified MVP result
 
@@ -127,9 +128,13 @@ The [constructor](scripts/construct_jev_adversarial.py) writes ATBench-style raw
 rows plus exact model prompts and reversible edit manifests. The
 [paired evaluator](scripts/eval_jev_adversarial_pairs.py) records individual API
 responses, completeness, and paired bootstrap estimates. The fixed source IDs
-and publishable paired statistics are in the [minimal evidence package](reports/jev_adversarial_evidence_2026-10-16/README.md).
-Full generated states and API responses remain in local `outputs/` files and are
-not included in the repository.
+and paired statistics are mirrored in the [compact audit copy](reports/jev_adversarial_evidence_2026-10-16/README.md).
+The complete [archived `outputs/` snapshot](outputs/) contains generated states,
+edit manifests, per-request responses, development runs, and full ATBench replays.
+Although `.gitignore` matches `outputs/`, its existing 68 files were explicitly
+added to this repository. Future generated files remain ignored unless added
+explicitly. Original ATBench text includes credential-shaped strings; the actual
+TypeSafe API key is absent from the archive.
 
 ## TypeSafe System One API evaluation
 
@@ -163,7 +168,8 @@ The [TypeSafe paired evaluator](scripts/eval_typesafe_adversarial_pairs.py) and
 [cross-judge analysis](scripts/compare_jev_adversarial_judges.py) preserve
 per-state responses and paired uncertainty estimates. The [published cross-judge
 comparison](reports/jev_adversarial_evidence_2026-10-16/cross_judge/comparison.json)
-and its paired evidence are available without the local `outputs/` directory.
+and its paired evidence are mirrored in the compact audit copy; the [full
+outputs](outputs/) are also available in the repository.
 
 ## Output files
 

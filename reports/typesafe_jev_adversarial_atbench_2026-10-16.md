@@ -10,7 +10,7 @@
 
 ## 冻结输入与三臂
 
-直接复用 Jev-Guard 留出实验本地的 `outputs/jev-adversarial-trajectories-holdout100-tail/states.jsonl`，其 SHA-256 为 `c6192ee2cd10ec0479e4aa74f78fd3f5e710d5a17aa9e8835e9faa0c696d0c5a`；公开的[构造汇总](jev_adversarial_evidence_2026-10-16/guard_holdout/construction_summary.json)及[运行清单](jev_adversarial_evidence_2026-10-16/guard_holdout/run_manifest.json)保存规模、输入和生成代码哈希。100 个源样本均为 ATBench `label=1`，此前被 Jev-Guard clean 判为 unsafe 且未作中段省略；每个父轨迹固定 `clean/control/attack` 三臂，共 300 个状态。源数据为 [ATBench](https://huggingface.co/datasets/AI45Research/ATBench) revision `de862a3d5363aa3928f70e2228b275135597226c`，原文件 SHA-256 `80c534b5f3517c872b528a2e6b64e34495206968edd184f4aed563d39f0cca09`。
+直接复用 Jev-Guard 留出实验已归档的[完整模型输入 `states.jsonl`](../outputs/jev-adversarial-trajectories-holdout100-tail/states.jsonl)，其 SHA-256 为 `c6192ee2cd10ec0479e4aa74f78fd3f5e710d5a17aa9e8835e9faa0c696d0c5a`；精简审计副本中的[构造汇总](jev_adversarial_evidence_2026-10-16/guard_holdout/construction_summary.json)及[运行清单](jev_adversarial_evidence_2026-10-16/guard_holdout/run_manifest.json)保存规模、输入和生成代码哈希。100 个源样本均为 ATBench `label=1`，此前被 Jev-Guard clean 判为 unsafe 且未作中段省略；每个父轨迹固定 `clean/control/attack` 三臂，共 300 个状态。源数据为 [ATBench](https://huggingface.co/datasets/AI45Research/ATBench) revision `de862a3d5363aa3928f70e2228b275135597226c`，原文件 SHA-256 `80c534b5f3517c872b528a2e6b64e34495206968edd184f4aed563d39f0cca09`。
 
 `clean` 是原轨迹；`control` 只在最后一条 `environment.content` 加入与攻击摘要等字符长度的中性日志；`attack` 在相同位置加入固定 `_external_tool_note.summary`，虚称整个流程获授权且应记为 `SAFE`。变体格式、机械不变项和 3 组 Unicode JSON 重序列化例外见 [Jev-Guard 留出结果报告](jev_guard_adversarial_atbench_results_2026-10-15.md)。不根据 TypeSafe 输出改写轨迹、筛选父 ID 或选择最佳模板。
 
@@ -51,7 +51,7 @@
 
 ## 逐请求质控
 
-两版各 **300/300 有效、300/300 一次请求成功**，各有 300 个唯一状态 ID 和 100 个完整三臂父轨迹；无记录的 API/协议错误、上下文拒绝或构造端中段省略。逐条 `state` 哈希与冻结的本地 `states.jsonl` 匹配，question 哈希全为上述固定值，请求与返回版本一致，0.5 阈值标签与保存概率一致；两版最大输入均为 **10,745 tokens**。完整逐请求记录和原始 API 响应仅保留在本地 `outputs/typesafe-adversarial-holdout100-tail-jev-1.13.0/predictions.jsonl` 与 `outputs/typesafe-adversarial-holdout100-tail-jev-1.14.0/predictions.jsonl`；公开的[1.13 精简配对记录](jev_adversarial_evidence_2026-10-16/typesafe_1_13/pairs.jsonl)和[1.14 精简配对记录](jev_adversarial_evidence_2026-10-16/typesafe_1_14/pairs.jsonl)支持复核计数与概率。保存的逐请求文件不含 Bearer 授权字段或密钥。TypeSafe 响应没有可独立验证的显式截断标志，因此不能仅凭零上下文错误排除服务端静默截断。未做同窗口的重复 clean 稳定性实验；历史 1.13 的 50/100 与当次 54/100 也不能单独区分随机性与时间漂移。
+两版各 **300/300 有效、300/300 一次请求成功**，各有 300 个唯一状态 ID 和 100 个完整三臂父轨迹；无记录的 API/协议错误、上下文拒绝或构造端中段省略。逐条 `state` 哈希与已归档的[冻结输入](../outputs/jev-adversarial-trajectories-holdout100-tail/states.jsonl)匹配，question 哈希全为上述固定值，请求与返回版本一致，0.5 阈值标签与保存概率一致；两版最大输入均为 **10,745 tokens**。[`jev-1.13.0` 完整逐请求记录和原始响应](../outputs/typesafe-adversarial-holdout100-tail-jev-1.13.0/predictions.jsonl)与[`jev-1.14.0` 对应文件](../outputs/typesafe-adversarial-holdout100-tail-jev-1.14.0/predictions.jsonl)已纳入仓库；[1.13 精简配对记录](jev_adversarial_evidence_2026-10-16/typesafe_1_13/pairs.jsonl)和[1.14 精简配对记录](jev_adversarial_evidence_2026-10-16/typesafe_1_14/pairs.jsonl)支持复核计数与概率。保存的逐请求文件不含 Bearer 授权字段或实际 API 密钥。TypeSafe 响应没有可独立验证的显式截断标志，因此不能仅凭零上下文错误排除服务端静默截断。未做同窗口的重复 clean 稳定性实验；历史 1.13 的 50/100 与当次 54/100 也不能单独区分随机性与时间漂移。
 
 ## 复现命令（PowerShell）
 

@@ -1,0 +1,347 @@
+{
+  "description": "Exact local outputs/ snapshot uploaded to GitHub; paths are repository-relative.",
+  "n_files": 68,
+  "total_bytes": 24760324,
+  "files": [
+    {
+      "path": "outputs/jev-adversarial-dev20-selection-2026-10-15.json",
+      "bytes": 451,
+      "sha256": "2f54477192a0d9b1684118fee805231aeb2d73cf6bd45bc5b3802126bbb1ec54"
+    },
+    {
+      "path": "outputs/jev-adversarial-holdout-selection-2026-10-15.json",
+      "bytes": 1515,
+      "sha256": "84f71010f066fbc9edcf81fda3776b67a80e02d320355ca809477ecaed47c2a2"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-dev20-tail/atbench_rows.jsonl",
+      "bytes": 501925,
+      "sha256": "3ca1f457e72dbbc53dbfa4315a34c78f6d37c16ddb81f8c7257b91c405d2361d"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-dev20-tail/evaluation/pairs.jsonl",
+      "bytes": 10714,
+      "sha256": "e06d2365944b69cdccb771a210e47c7c1c5347efadf4c1bcfc78851ab90617a2"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-dev20-tail/evaluation/predictions.jsonl",
+      "bytes": 54396,
+      "sha256": "a25a1adaf3b2d932a3e0a04abeddd42a68715c07872c7c32ee746b514312fe99"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-dev20-tail/evaluation/summary.json",
+      "bytes": 10670,
+      "sha256": "7e89319953f67adcccf5bc361bfd45790683c62fe0e7654e4bbcaf12788fa4ac"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-dev20-tail/manifest.jsonl",
+      "bytes": 116870,
+      "sha256": "27434952c2010592a3f715c6305d0eb42c6a46301a98d2ce6c059b88fa5b7afd"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-dev20-tail/states.jsonl",
+      "bytes": 512749,
+      "sha256": "5cd0d22b546cf3aa1060ceb4993908250e34abecaaca2be9fb31388320693f22"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-dev20-tail/summary.json",
+      "bytes": 1875,
+      "sha256": "ffd7254f6ac05bd89e6b87447b2c7faafff0245b80a3484819ecbf504153bbef"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-dev7/atbench_rows.jsonl",
+      "bytes": 222656,
+      "sha256": "7a8a134a2841f20aeefaa9fcafcf2d8e4acf4d7a8d75b0c765e15b293bc93e9b"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-dev7/evaluation/pairs.jsonl",
+      "bytes": 7528,
+      "sha256": "17788a3e81fdc9cf327e2a16b7ca986f94f3af76201debd6f595f2c1e4ba34d6"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-dev7/evaluation/predictions.jsonl",
+      "bytes": 38139,
+      "sha256": "f8f543f0ef064b6904dd0de7d36131ba99916746cd5274a7ae7ae4813fba3d06"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-dev7/evaluation/summary.json",
+      "bytes": 15366,
+      "sha256": "083495ce2eb38313a1fc49ad993cf8c30b2e015df69e89054169913047a84bd9"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-dev7/manifest.jsonl",
+      "bytes": 78926,
+      "sha256": "7672b209dc9779151a7277b8f5e70c1064c409a37fbdd6cfb006f3ea7f05de37"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-dev7/states.jsonl",
+      "bytes": 224940,
+      "sha256": "bf2bd9bcb045b4e79ed02f6a210c0d618baea2786d3fd2f209bbe314836dcca7"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-dev7/summary.json",
+      "bytes": 1652,
+      "sha256": "ac7dae62c8f5338ffcd8e6411a266da94385b8f4e3115000221bc110e8287d00"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-dev7-v2/atbench_rows.jsonl",
+      "bytes": 249018,
+      "sha256": "cf24edb729af56ed10270c31d2648ac051c52144d962b05aa0fe5f4c74cfcbe4"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-dev7-v2/evaluation/pairs.jsonl",
+      "bytes": 7665,
+      "sha256": "e3ffcd72e5cd53b7456fdda816e0d7baca8491f915a65966aef6ae61fa2df83e"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-dev7-v2/evaluation/predictions.jsonl",
+      "bytes": 38339,
+      "sha256": "f7ac2df737bc5dadf170d5ded147c49cbad5ede98fa1c800de90841e053e40d2"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-dev7-v2/evaluation/summary.json",
+      "bytes": 15369,
+      "sha256": "3e2db4cf39b7bf43cfabc3251a1e85419f3dbf9a999dc65a16e22df4d320cfcf"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-dev7-v2/manifest.jsonl",
+      "bytes": 111830,
+      "sha256": "3bd2cbc64fb7c205deb675c657a557050baa1154e8860232f93bcc12d31249b2"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-dev7-v2/states.jsonl",
+      "bytes": 251302,
+      "sha256": "14166180fbe9a7a98790e7e9b44c29fa5ab7a205c2e1d021d57f44fcead068a5"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-dev7-v2/summary.json",
+      "bytes": 1739,
+      "sha256": "fcc094f2128ef00ab6a3b75b1265ddbeeaf33ac9c0cbaff8db0e38991ae67d91"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-holdout100-tail/atbench_rows.jsonl",
+      "bytes": 2895211,
+      "sha256": "20474137d9de84f1918129a5fb7490b0ec7097466a7d85c67e73448f9e90cdb7"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-holdout100-tail/cross-judge/comparison.json",
+      "bytes": 8758,
+      "sha256": "68827a51f58707800b2981a886611be139be38075f5c29350438d401b6d04c43"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-holdout100-tail/cross-judge/per_parent.jsonl",
+      "bytes": 85745,
+      "sha256": "b1b57a966ddbcc254a73f5109c16ecb6ecac83d643e658bad2dcf6ae96989493"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-holdout100-tail/cross-judge/run_manifest.json",
+      "bytes": 1728,
+      "sha256": "be282c067edbe004cc25d532f483eb06302b0ef0d467799fd3121d42e67fb49d"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-holdout100-tail/evaluation/pairs.jsonl",
+      "bytes": 53631,
+      "sha256": "0b9aaef2c06359a1214b1a368fe61c360f075a9bdeb1bf3ef816e77ec2c6a8f6"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-holdout100-tail/evaluation/predictions.jsonl",
+      "bytes": 272028,
+      "sha256": "d48ff98cfeb1a006862a70b735aeb663050d3a8fe25d60c938f6ca92c0ed35a4"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-holdout100-tail/evaluation/summary.json",
+      "bytes": 10743,
+      "sha256": "20f66f73dda5335864877a1fec0f5baec622668bba93988df8aed8093f0f1770"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-holdout100-tail/health_snapshot.json",
+      "bytes": 112,
+      "sha256": "427c1fd23bf18623b22b5fc4d875b3b1aec32e3c1999634777a1841b894e1cc7"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-holdout100-tail/health_snapshot_after.json",
+      "bytes": 112,
+      "sha256": "427c1fd23bf18623b22b5fc4d875b3b1aec32e3c1999634777a1841b894e1cc7"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-holdout100-tail/id12_exhibit/adversarial_full.json",
+      "bytes": 13035,
+      "sha256": "34945d8ba45f13e28caef76139f04696a03301653405767fc8bbea2046d411a1"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-holdout100-tail/id12_exhibit/judge_input_attack.txt",
+      "bytes": 10603,
+      "sha256": "2b40696c38529d53a9b10962a993c7b63c91338a32fce1237dd7d1ffa6387019"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-holdout100-tail/id12_exhibit/judge_input_clean.txt",
+      "bytes": 10344,
+      "sha256": "d853f41a10656836397ee45dfb58926ff24dcaea45c2c32d4717a10fbc16eed1"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-holdout100-tail/id12_exhibit/original_full.json",
+      "bytes": 12335,
+      "sha256": "0cfe07939e02883a9b8e8818edfb0085691a10902fac8fe1a27c7843409faa2f"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-holdout100-tail/id12_exhibit/original_vs_adversarial_full.md",
+      "bytes": 26459,
+      "sha256": "5f9f115e82ac9ec742b7df22ef127897f942b7c0ba2fe8a329c8ab24779eb649"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-holdout100-tail/manifest.jsonl",
+      "bytes": 717830,
+      "sha256": "f8a106eb77378aa045413b3dde68413d1d46d2e892c919d7364621431e6df4c1"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-holdout100-tail/run_manifest.json",
+      "bytes": 2900,
+      "sha256": "62939e4161a9e5c214d99b1c8afe4c9b7bc3dcb90a28c0223a7fbfebe56d5eb4"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-holdout100-tail/states.jsonl",
+      "bytes": 2929914,
+      "sha256": "c6192ee2cd10ec0479e4aa74f78fd3f5e710d5a17aa9e8835e9faa0c696d0c5a"
+    },
+    {
+      "path": "outputs/jev-adversarial-trajectories-holdout100-tail/summary.json",
+      "bytes": 2821,
+      "sha256": "dc4ef0b1c4fe606d4f4ae9a0b9086b74e7382e013e4efc17ccd9d9296007a432"
+    },
+    {
+      "path": "outputs/jev-atbench/predictions.jsonl",
+      "bytes": 255557,
+      "sha256": "0db78babe96c79deefea799d297168a48eb8a88dc129e32317f58cd62ed7f975"
+    },
+    {
+      "path": "outputs/jev-atbench/summary.json",
+      "bytes": 1989,
+      "sha256": "e5602bf5418249e1eb77a30576388f114b7b30f7260f1174e997eb89bea2e7a9"
+    },
+    {
+      "path": "outputs/jev-atbench-identity-check/predictions.jsonl",
+      "bytes": 288,
+      "sha256": "780c7ea53b30c5899b481291ddb67196b1896af9bbd250b283e2f8a6170d1e23"
+    },
+    {
+      "path": "outputs/jev-atbench-identity-check/summary.json",
+      "bytes": 1818,
+      "sha256": "ef7520dda7a7b8779f04bf0078a26691f1c8c086d33131387ac98495be881ae5"
+    },
+    {
+      "path": "outputs/jev-atbench-stepwise/step_predictions.jsonl",
+      "bytes": 2877547,
+      "sha256": "4d205df547c531f11bfaad0597c5432457ba81e7230720e7ce592891cec2d734"
+    },
+    {
+      "path": "outputs/jev-atbench-stepwise/step_predictions_final.jsonl",
+      "bytes": 2874909,
+      "sha256": "1b908399c3d4d6daf3ff007870a3fddfafdc446affdcd273b9bdb31f40dcab16"
+    },
+    {
+      "path": "outputs/jev-atbench-stepwise/summary.json",
+      "bytes": 2983,
+      "sha256": "3b58490dc42555dbb3c2edf5996d52557a14c698b1c40388e9b3bd5edbca1b0f"
+    },
+    {
+      "path": "outputs/jev-atbench-stepwise/trajectory_timelines.jsonl",
+      "bytes": 542937,
+      "sha256": "8560f9da1565150a560032f66af1192373984bb9a12e57565db626a039dfbaa1"
+    },
+    {
+      "path": "outputs/jev-local-parity-all-short.json",
+      "bytes": 10185,
+      "sha256": "3c959d68b23eac82cb7320410888565395d9916a7ac620e33be08b7ea5b1c174"
+    },
+    {
+      "path": "outputs/jev-local-parity-bf16.json",
+      "bytes": 1806,
+      "sha256": "342170b59ec015b8b4d8c7a0a0941a140e5d0bc91c4fd7822cbdd76eda5efadd"
+    },
+    {
+      "path": "outputs/jev-local-parity.json",
+      "bytes": 1804,
+      "sha256": "3eb79988e33d09eef2c21da2df32b4d7886c11901cbfd0c4a45b8ecbb04a52b5"
+    },
+    {
+      "path": "outputs/typesafe-adversarial-holdout100-tail-jev-1.13.0/pairs.jsonl",
+      "bytes": 49382,
+      "sha256": "4ba152fd94d5d2be49799b6a569411ec827f6bec59d03024dc50952421c6691b"
+    },
+    {
+      "path": "outputs/typesafe-adversarial-holdout100-tail-jev-1.13.0/predictions.jsonl",
+      "bytes": 269100,
+      "sha256": "812f99a17693586e129a4a951565b376161400ca926b4798c9e1aafc0b601d0e"
+    },
+    {
+      "path": "outputs/typesafe-adversarial-holdout100-tail-jev-1.13.0/run_manifest.json",
+      "bytes": 2020,
+      "sha256": "e64ccb8d4d92437ebbee760a3346680e9cd75eb110708528a1f50fdeb0831238"
+    },
+    {
+      "path": "outputs/typesafe-adversarial-holdout100-tail-jev-1.13.0/summary.json",
+      "bytes": 10995,
+      "sha256": "3a56fd7fdb30db36ff4fa87974eba3d93056a738ddccd6b43175835b5b5d75a1"
+    },
+    {
+      "path": "outputs/typesafe-adversarial-holdout100-tail-jev-1.14.0/pairs.jsonl",
+      "bytes": 49381,
+      "sha256": "e5ebce811ec53a98d03df47c946ead3a603588658c0b6be928d8f6d25289df73"
+    },
+    {
+      "path": "outputs/typesafe-adversarial-holdout100-tail-jev-1.14.0/predictions.jsonl",
+      "bytes": 269087,
+      "sha256": "c62f6e02a0efef9dda68b699531d3f352c45878675ef839d35219076a245ba7b"
+    },
+    {
+      "path": "outputs/typesafe-adversarial-holdout100-tail-jev-1.14.0/run_manifest.json",
+      "bytes": 2020,
+      "sha256": "cba301ad70cc6d57d5d745b29eb35613c3566bd089bd46691719ca4db95b2c50"
+    },
+    {
+      "path": "outputs/typesafe-adversarial-holdout100-tail-jev-1.14.0/summary.json",
+      "bytes": 11003,
+      "sha256": "25f970cd8ec785e85121d2d13803a74dd9a8cf07b67d302d7614f22acd4c0d6a"
+    },
+    {
+      "path": "outputs/typesafe-atbench-jev-1.13.0/full/predictions.jsonl",
+      "bytes": 618933,
+      "sha256": "5ad353ba1b9cf383eebbb03132042f1f906f7040a4abdc9036c0c7c344d5b672"
+    },
+    {
+      "path": "outputs/typesafe-atbench-jev-1.13.0/full/summary.json",
+      "bytes": 2239,
+      "sha256": "90d032ea04db52ba8a34bc34a23c11d9f4a4447f00ba6149f25cce1d9160b0db"
+    },
+    {
+      "path": "outputs/typesafe-atbench-jev-1.13.0/stepwise/step_predictions.jsonl",
+      "bytes": 3461079,
+      "sha256": "ea0464389ade373911afcbc6b70a8f1cf3ef4dfb58020399424b835e6f33b8a9"
+    },
+    {
+      "path": "outputs/typesafe-atbench-jev-1.13.0/stepwise/step_predictions_final.jsonl",
+      "bytes": 3461079,
+      "sha256": "7c71d76ce230fcfed68f150b3664e64ed411f8e191d675556fa43d6f3ec90456"
+    },
+    {
+      "path": "outputs/typesafe-atbench-jev-1.13.0/stepwise/summary.json",
+      "bytes": 3532,
+      "sha256": "6d0226e32b6faa6f342c10694678beb0c1862a9d99e0b483d60f2294c6737648"
+    },
+    {
+      "path": "outputs/typesafe-atbench-jev-1.13.0/stepwise/trajectory_timelines.jsonl",
+      "bytes": 446026,
+      "sha256": "9df85fc510b9568c23ebed85f12c05fd79c690a72529f86b401db73738fdc107"
+    },
+    {
+      "path": "outputs/typesafe-recheck-jev-1.13.0/full/predictions.jsonl",
+      "bytes": 617,
+      "sha256": "be782d90e9e6434e78befe045646570eb414e8604a68e05faf8dab2cb8e1d350"
+    },
+    {
+      "path": "outputs/typesafe-recheck-jev-1.13.0/full/summary.json",
+      "bytes": 2065,
+      "sha256": "bd0fa282187542ea3d489cd698f83eff9e226e0615b60544812328bed0529721"
+    }
+  ]
+}

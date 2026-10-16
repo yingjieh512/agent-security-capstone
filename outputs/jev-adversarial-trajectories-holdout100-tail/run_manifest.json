@@ -1,0 +1,47 @@
+{
+  "recorded_at_utc": "2026-10-16T06:19:24.226080+00:00",
+  "purpose": "frozen ATBench-style tail_safety paired holdout audit of Jev Guard v3.2 2B safety head",
+  "selection": "100 smallest SHA256(jev-guard-adv-holdout-v1:<parent_id>) among prior clean true positives, excluding dev7",
+  "family": "tail_safety",
+  "variants": [
+    "clean",
+    "control",
+    "attack"
+  ],
+  "health_before": {
+    "status": "ready",
+    "model": "jev-v3.2-2b",
+    "checkpoint_updates": 1508,
+    "context_limit": 16384
+  },
+  "health_after": {
+    "status": "ready",
+    "model": "jev-v3.2-2b",
+    "checkpoint_updates": 1508,
+    "context_limit": 16384
+  },
+  "n_states": 300,
+  "n_scored": 300,
+  "n_pairs": 100,
+  "replay_order_seed": 20261016,
+  "bootstrap_seed": 20261015,
+  "bootstrap_replicates": 2000,
+  "sha256": {
+    "data/raw/atbench/test.json": "80c534b5f3517c872b528a2e6b64e34495206968edd184f4aed563d39f0cca09",
+    "reports/jev_guard_v3_2_atbench_api_2026-10-09/predictions.jsonl": "0db78babe96c79deefea799d297168a48eb8a88dc129e32317f58cd62ed7f975",
+    "outputs/jev-adversarial-holdout-selection-2026-10-15.json": "84f71010f066fbc9edcf81fda3776b67a80e02d320355ca809477ecaed47c2a2",
+    "outputs/jev-adversarial-dev20-selection-2026-10-15.json": "2f54477192a0d9b1684118fee805231aeb2d73cf6bd45bc5b3802126bbb1ec54",
+    "src/trajectory_audit/adversarial.py": "1eb500aeb97424f350c19b896bff50030d32f5080aabdf47dad6db4f4e1833ab",
+    "scripts/construct_jev_adversarial.py": "fb4c376302a8eea2026048f324d71304c28a9f73a3b3722d8680cab37ee64b68",
+    "scripts/eval_jev_adversarial_pairs.py": "375db0452127e5a0bc2597830d0b5b5cd093c13d373a51d77756053724c12fb0",
+    "outputs/jev-adversarial-trajectories-holdout100-tail/states.jsonl": "c6192ee2cd10ec0479e4aa74f78fd3f5e710d5a17aa9e8835e9faa0c696d0c5a",
+    "outputs/jev-adversarial-trajectories-holdout100-tail/manifest.jsonl": "f8a106eb77378aa045413b3dde68413d1d46d2e892c919d7364621431e6df4c1",
+    "outputs/jev-adversarial-trajectories-holdout100-tail/atbench_rows.jsonl": "20474137d9de84f1918129a5fb7490b0ec7097466a7d85c67e73448f9e90cdb7",
+    "outputs/jev-adversarial-trajectories-holdout100-tail/evaluation/predictions.jsonl": "d48ff98cfeb1a006862a70b735aeb663050d3a8fe25d60c938f6ca92c0ed35a4",
+    "outputs/jev-adversarial-trajectories-holdout100-tail/evaluation/pairs.jsonl": "0b9aaef2c06359a1214b1a368fe61c360f075a9bdeb1bf3ef816e77ec2c6a8f6",
+    "outputs/jev-adversarial-trajectories-holdout100-tail/evaluation/summary.json": "20f66f73dda5335864877a1fec0f5baec622668bba93988df8aed8093f0f1770"
+  },
+  "command": "python scripts/eval_jev_adversarial_pairs.py --states outputs/jev-adversarial-trajectories-holdout100-tail/states.jsonl --output-dir outputs/jev-adversarial-trajectories-holdout100-tail/evaluation --requests-per-second 2 --seed 20261015",
+  "requests_per_second": 2.0,
+  "max_attempts": 3
+}
