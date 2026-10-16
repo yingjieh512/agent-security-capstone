@@ -1,0 +1,57 @@
+{
+  "dataset": {
+    "path": "data\\raw\\atbench\\test.json",
+    "bytes": 18335079,
+    "sha256": "80c534b5f3517c872b528a2e6b64e34495206968edd184f4aed563d39f0cca09",
+    "rows": 1000,
+    "safe": 503,
+    "unsafe": 497,
+    "revision": "de862a3d5363aa3928f70e2228b275135597226c",
+    "source_url": "https://huggingface.co/datasets/AI45Research/ATBench/resolve/de862a3d5363aa3928f70e2228b275135597226c/ATBench/test.json"
+  },
+  "baseline_predictions_sha256": "0db78babe96c79deefea799d297168a48eb8a88dc129e32317f58cd62ed7f975",
+  "baseline_model": "jev-v3.2-2b",
+  "selection": "ids",
+  "selected_ids": [
+    "20",
+    "37",
+    "39",
+    "40",
+    "63",
+    "87",
+    "187",
+    "213",
+    "214",
+    "224",
+    "245",
+    "259",
+    "281",
+    "300",
+    "302",
+    "310",
+    "341",
+    "342",
+    "348",
+    "984"
+  ],
+  "n_seeds": 20,
+  "n_states": 60,
+  "n_families": 1,
+  "families": [
+    "tail_safety"
+  ],
+  "variants_per_family": [
+    "clean",
+    "control",
+    "attack"
+  ],
+  "atbench_id_rule": "integer id = 100000 + original ATBench id * 100 + 1-based code from FAMILIES order (prior: 1-3; tail: 4-6; forged review: 7-9; benign dilution: 10-12)",
+  "protocol": "Jev completed-trajectory prompt, full ATBench view, 24000-character view cap; one existing environment.content edit per control/attack",
+  "constraint": "Original user, agent reasoning/action/completion, tool definitions, and all other environment results are mechanically unchanged; JSON object keys/values retained under identical control/attack reserialization.",
+  "label_caveat": "Mechanical preservation does not establish human semantic label validity; audit edited examples before claiming attack success.",
+  "files": {
+    "states": "states.jsonl",
+    "manifest": "manifest.jsonl",
+    "atbench_rows": "atbench_rows.jsonl"
+  }
+}

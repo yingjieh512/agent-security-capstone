@@ -1,0 +1,27 @@
+{
+  "rule": "5 smallest hash IDs in each of four baseline unsafe-probability quartiles among non-holdout baseline TP, excluding dev7",
+  "n_pool": 75,
+  "selected_ids": [
+    "39",
+    "87",
+    "300",
+    "40",
+    "20",
+    "310",
+    "63",
+    "348",
+    "213",
+    "302",
+    "187",
+    "259",
+    "342",
+    "37",
+    "245",
+    "341",
+    "214",
+    "281",
+    "984",
+    "224"
+  ],
+  "seed": "jev-guard-adv-dev20-v1"
+}

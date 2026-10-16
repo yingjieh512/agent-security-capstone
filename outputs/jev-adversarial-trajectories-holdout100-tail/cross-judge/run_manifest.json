@@ -1,0 +1,16 @@
+{
+  "recorded_at_utc": "2026-10-16T18:01:47.811167+00:00",
+  "purpose": "offline paired cross-model audit on 100 identical ATBench parent trajectories",
+  "command": "python scripts/compare_jev_adversarial_judges.py --typesafe-1-13-dir outputs/typesafe-adversarial-holdout100-tail-jev-1.13.0 --typesafe-1-14-dir outputs/typesafe-adversarial-holdout100-tail-jev-1.14.0 --seed 20261016",
+  "sha256": {
+    "scripts/compare_jev_adversarial_judges.py": "2b7876db420dbfbf28f4f5c09187040074330952a48c964e1a2f8ae5bc98e1d3",
+    "outputs/jev-adversarial-trajectories-holdout100-tail/evaluation/pairs.jsonl": "0b9aaef2c06359a1214b1a368fe61c360f075a9bdeb1bf3ef816e77ec2c6a8f6",
+    "outputs/jev-adversarial-trajectories-holdout100-tail/evaluation/summary.json": "20f66f73dda5335864877a1fec0f5baec622668bba93988df8aed8093f0f1770",
+    "outputs/typesafe-adversarial-holdout100-tail-jev-1.13.0/pairs.jsonl": "4ba152fd94d5d2be49799b6a569411ec827f6bec59d03024dc50952421c6691b",
+    "outputs/typesafe-adversarial-holdout100-tail-jev-1.13.0/summary.json": "3a56fd7fdb30db36ff4fa87974eba3d93056a738ddccd6b43175835b5b5d75a1",
+    "outputs/typesafe-adversarial-holdout100-tail-jev-1.14.0/pairs.jsonl": "e5ebce811ec53a98d03df47c946ead3a603588658c0b6be928d8f6d25289df73",
+    "outputs/typesafe-adversarial-holdout100-tail-jev-1.14.0/summary.json": "25f970cd8ec785e85121d2d13803a74dd9a8cf07b67d302d7614f22acd4c0d6a",
+    "outputs/jev-adversarial-trajectories-holdout100-tail/cross-judge/comparison.json": "68827a51f58707800b2981a886611be139be38075f5c29350438d401b6d04c43",
+    "outputs/jev-adversarial-trajectories-holdout100-tail/cross-judge/per_parent.jsonl": "b1b57a966ddbcc254a73f5109c16ecb6ecac83d643e658bad2dcf6ae96989493"
+  }
+}
