@@ -72,6 +72,10 @@ python scripts/compare_jev_adversarial_judges.py --guard-dir 'outputs/jev-advers
 
 原始运行的参数与文件哈希见[1.13 清单](jev_adversarial_evidence_2026-10-16/typesafe_1_13/run_manifest.json)、[1.14 清单](jev_adversarial_evidence_2026-10-16/typesafe_1_14/run_manifest.json)和[跨模型清单](jev_adversarial_evidence_2026-10-16/cross_judge/run_manifest.json)；[逐父轨迹配对](jev_adversarial_evidence_2026-10-16/cross_judge/per_parent.jsonl)可在不再调用 API 的情况下复核差中差。
 
+## 与此前全量 ATBench 评测的衔接
+
+此前在 ATBench test 全量 1,000 条原始完整轨迹（497 条 unsafe）上，Jev-Guard v3.2 2B 公开 API 的准确率为 56.60%、unsafe F1 为 50.00%，漏报 280/497；TypeSafe 官方 `jev-1.13.0` API 的对应值为 66.30%、59.74% 和 247/497，见[完整轨迹基线](typesafe_jev_1_13_atbench_2026-10-15.md)及[Jev-Guard 原始报告](jev_guard_v3_2_atbench_2026-10-09.md)。同批 1,000 条轨迹的**逐步累计前缀**评测共得到 4,517 个有效检查点：Jev-Guard 与 `jev-1.13.0` 的最终检查点分别漏报 193/497 和 269/497，最终点准确率分别为 54.40% 和 62.40%，unsafe F1 分别为 57.14% 和 54.81%；模型在全过程分别有 781/1,000 和 464/1,000 条轨迹至少一次判为 unsafe，逐步结果见[Jev-Guard 逐检查点记录](jev_guard_v3_2_stepwise_api_2026-10-09/step_predictions.jsonl)及[TypeSafe 逐检查点记录](typesafe_jev_1_13_atbench_2026-10-15/stepwise/step_predictions_final.jsonl)。本次对抗实验则在按 Jev-Guard 历史正确检出条件选出的 100 条 unsafe 轨迹上比较 clean/control/attack：Jev-Guard 漏报 0/5/64，`jev-1.13.0` 漏报 46/53/67，`jev-1.14.0` 漏报 55/54/67。全量基线、逐步最终点与筛选留出集使用不同口径；本次攻击效应以同一留出集的 `attack−control` 配对差衡量，不能直接与全量漏报率相减。ATBench 只有整轨迹金标，逐步首次报警和判断变化不能解释为真实风险出现后的检测延迟。
+
 ## 解释边界与来源
 
 100 条是按 Jev-Guard 历史 clean true positive 选出的留出集，`tail_safety` 模板也由 Jev-Guard 开发实验选定；因此它不构成两模型在所有潜在攻击下的中立排名。攻击臂的绝对 FN 为 Guard 64/100、两版 TypeSafe 各 67/100；本报告的“Guard 更敏感”严格指**相对等长 control 的新增漏报更大**。TypeSafe 的 Noul+本仓库 0.5 阈值与 Jev-Guard 原生 safety head 的题述、输出头和部署不同，差异是**所记录 judge 配置**的差异，不能单独归因于权重。轨迹变体尚无独立语义盲审或 safe twin，不能衡量 benign FPR；这里也不测 Jev-Guard 原生 pre-action permission gate、真实工具执行或端到端攻击成功。
