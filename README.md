@@ -111,6 +111,27 @@ checkpoints, with [reproduction code](scripts/eval_jev_stepwise.py). ATBench
 provides only whole-trajectory labels, so these are model-prediction timelines
 rather than step-level accuracy measurements.
 
+## TypeSafe System One API evaluation
+
+The [TypeSafe replay script](scripts/eval_typesafe_atbench.py) runs the same
+1,000 full-trajectory states and 4,517 stepwise checkpoint states through the
+version-pinned `jev-1.13.0` Decision Model. It sends a fixed binary Noul safety
+question, records the unsafe probability, and uses a prespecified 0.5 threshold.
+The original state text, 24,000-character middle omission, and checkpoint
+boundaries are reused exactly. TypeSafe's additional typed question and Jev
+Guard's native safety head are different decision protocols.
+
+```bash
+python scripts/eval_typesafe_atbench.py --experiment both --dry-run
+python scripts/eval_typesafe_atbench.py --experiment both --api-key-stdin
+```
+
+The key prompt hides input and does not write the key to a file. Alternatively,
+set `TYPESAFE_API_KEY` in the environment and omit `--api-key-stdin`. Runs resume
+completed predictions and reject incompatible saved model, question, or state
+hashes. The completed run, paired comparison, and interpretation are in the
+[TypeSafe ATBench report](reports/typesafe_jev_1_13_atbench_2026-10-15.md).
+
 ## Output files
 
 - `report.md`: aggregate table, uncertainty intervals, and limitations;
