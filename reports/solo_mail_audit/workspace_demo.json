@@ -1,0 +1,78 @@
+{
+  "smtp_acceptances": 4,
+  "attempts": {
+    "across_the_change": {
+      "version": 1,
+      "policy": "full_packet",
+      "decision": "unauthorized",
+      "persisted_mime_oracle": "unauthorized",
+      "recorded_fields": {
+        "approval": [
+          "attachment_bytes.bag_tag",
+          "recipient.tag"
+        ],
+        "delivery": [
+          "attachment_bytes.bag_tag",
+          "recipient.tag"
+        ]
+      },
+      "verified_after_mailbox_shutdown": true
+    },
+    "after_the_change": {
+      "version": 2,
+      "policy": "approved_subset",
+      "decision": "authorized",
+      "persisted_mime_oracle": "authorized",
+      "recorded_fields": {
+        "approval": [
+          "attachment_bytes.item_tags",
+          "recipient.tag"
+        ],
+        "delivery": [
+          "attachment_bytes.item_tags",
+          "recipient.tag"
+        ]
+      },
+      "verified_after_mailbox_shutdown": true
+    },
+    "count_limited": {
+      "version": 3,
+      "policy": "count_limit",
+      "decision": "authorized",
+      "persisted_mime_oracle": "authorized",
+      "recorded_fields": {
+        "approval": [
+          "attachment_count",
+          "recipient.tag"
+        ],
+        "delivery": [
+          "attachment_count",
+          "recipient.tag"
+        ]
+      },
+      "verified_after_mailbox_shutdown": true
+    },
+    "rollback": {
+      "version": 4,
+      "policy": "full_packet",
+      "decision": "unauthorized",
+      "persisted_mime_oracle": "unauthorized",
+      "recorded_fields": {
+        "approval": [
+          "attachment_bytes.bag_tag",
+          "recipient.tag"
+        ],
+        "delivery": [
+          "attachment_bytes.bag_tag",
+          "recipient.tag"
+        ]
+      },
+      "verified_after_mailbox_shutdown": true
+    }
+  },
+  "pending_before_smtp": "unknown",
+  "infeasible_activation_refused": true,
+  "version_after_refusal": 2,
+  "repeated_activation_version": 4,
+  "wrong_delivery_key": "unknown"
+}

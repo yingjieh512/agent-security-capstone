@@ -1,0 +1,14 @@
+{
+  "policy_at_approval": {"all": [{"op": "eq", "field": "recipient"}, {"op": "eq", "field": "items"}]},
+  "policy_before_delivery": {"all": [{"op": "eq", "field": "recipient"}, {"op": "subset", "field": "items"}]},
+  "grant": {
+    "recipient": "desk@example.invalid",
+    "body": "Send the approved files",
+    "attachments": [{"name": "alpha.txt", "content": "A"}, {"name": "beta.txt", "content": "B"}]
+  },
+  "message": {
+    "recipient": "desk@example.invalid",
+    "body": "One file attached",
+    "attachments": [{"name": "alpha.txt", "content": "A"}]
+  }
+}

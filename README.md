@@ -1,6 +1,19 @@
 # Trajectory Audit
 
-The [single-operator capstone](reports/solo_mail_audit/README.md) builds a mail audit policy migration tool. It includes a local two-message demonstration and a reproducible study of 56 policy changes.
+## Single-operator capstone · Mail authorization audit
+
+When a mail agent's authorization policy changes, can the approval service and the receiving mailbox still produce enough evidence to audit the next send? The system compiles a policy and two source capability declarations into collection rules. It reports fields to add or retire, produces replayable examples of missing evidence, and pins each send to the version in effect at approval. A local Mailpit backend provides real SMTP delivery. The study covers 56 directed policy changes and 160 single-field capability losses. The Chinese [one-page faculty proposal](capstone/solo_mail_audit_proposal_zh.pdf) and [final report](capstone/solo_mail_audit_final_zh.pdf) describe the research contribution and limits.
+
+With Python 3.10+ on macOS or Linux, run the following from the repository root. The first command provisions Mailpit v1.34.0 and checks three experiments against their archived results. The second runs an editable case that spans a policy change.
+
+```sh
+python3 scripts/reproduce_mail_capstone.py
+PYTHONPATH=src:scripts python3 scripts/run_mail_case.py examples/mail_audit/local_case.json
+```
+
+For a portable source, report and results bundle, run `python3 scripts/package_mail_capstone.py`. It writes `outputs/mail_capstone/solo-mail-audit.zip`. The [final experiment protocol](reports/solo_mail_audit/final_protocol.md) records the acceptance criteria and the [Chinese project report](reports/solo_mail_audit/final_report.md) explains the measurements.
+
+## Earlier benchmark experiments
 
 An executable MVP for testing whether an agent-safety benchmark can be predicted
 without reading the full multi-step trajectory.
