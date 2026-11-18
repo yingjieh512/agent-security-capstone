@@ -1,0 +1,46 @@
+{
+  "expert": {
+    "approval": [
+      "recipient.tag",
+      "attachment_bytes.item_tags",
+      "attachment_names.raw"
+    ],
+    "delivery": [
+      "recipient.tag",
+      "attachment_bytes.item_tags",
+      "attachment_names.raw"
+    ]
+  },
+  "incomplete": {
+    "approval": [
+      "recipient.tag",
+      "attachment_bytes.bag_tag",
+      "attachment_names.raw"
+    ],
+    "delivery": [
+      "recipient.tag",
+      "attachment_bytes.bag_tag",
+      "attachment_names.raw"
+    ]
+  },
+  "overcollected": {
+    "approval": [
+      "recipient.tag",
+      "attachment_bytes.item_tags",
+      "attachment_names.raw",
+      "recipient.raw",
+      "body.raw",
+      "attachment_content.raw",
+      "attachment_sizes.list"
+    ],
+    "delivery": [
+      "recipient.tag",
+      "attachment_bytes.item_tags",
+      "attachment_names.raw",
+      "recipient.raw",
+      "body.raw",
+      "attachment_content.raw",
+      "attachment_sizes.list"
+    ]
+  }
+}

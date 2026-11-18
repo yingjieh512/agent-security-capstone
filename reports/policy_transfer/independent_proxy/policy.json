@@ -1,0 +1,28 @@
+{
+  "all": [
+    {
+      "op": "eq",
+      "field": "recipient"
+    },
+    {
+      "any": [
+        {
+          "op": "eq",
+          "field": "items"
+        },
+        {
+          "all": [
+            {
+              "op": "subset",
+              "field": "items"
+            },
+            {
+              "op": "subset",
+              "field": "names"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
