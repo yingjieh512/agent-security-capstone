@@ -1,5 +1,7 @@
 # Trajectory Audit
 
+The [single-operator capstone](reports/solo_mail_audit/README.md) builds a mail audit policy migration tool. It includes a local two-message demonstration and a reproducible study of 56 policy changes.
+
 An executable MVP for testing whether an agent-safety benchmark can be predicted
 without reading the full multi-step trajectory.
 
