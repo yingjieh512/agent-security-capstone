@@ -1,0 +1,26 @@
+{
+  "approval": [
+    "attachment_bytes.bag_tag",
+    "attachment_bytes.item_tags",
+    "attachment_content.raw",
+    "attachment_count",
+    "attachment_names.raw",
+    "attachment_sizes.list",
+    "body.raw",
+    "recipient.raw",
+    "recipient.tag",
+    "status"
+  ],
+  "delivery": [
+    "attachment_bytes.bag_tag",
+    "attachment_bytes.item_tags",
+    "attachment_content.raw",
+    "attachment_count",
+    "attachment_names.raw",
+    "attachment_sizes.list",
+    "body.raw",
+    "recipient.raw",
+    "recipient.tag",
+    "status"
+  ]
+}

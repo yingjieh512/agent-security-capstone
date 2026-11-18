@@ -1,0 +1,24 @@
+{
+  "original_commit": "596fc9251b99e8b47de1d4c5adaad4115d3038bf",
+  "prospective_tag": "codex/declarative-mail-preblind",
+  "files": {
+    "scripts/mail_policy_runtime.py": "6e378a93ac7a06ea0651935a5a0759c61e6dbaa9ad51807e88c2c92f91700cce",
+    "scripts/mail_policy_search.py": "45dbb47b24212da61aca8b40ce93293136239ed2db6c11dfa24b3593636aa1ea",
+    "scripts/compile_mail_policy.py": "7116328220b818cbcfa03ee88d6b340cebf79b710b1a1403aebe0e7ebb3e186e",
+    "scripts/run_declaration_holdout.py": "04d600020e87d625f47176c6f44ed3ad5df414a9f467065223ecb20e3001abc3",
+    "scripts/attachment_projection.py": "a3fceab2a34d53503490fdffacee71974b8e9f06f819b94ae670a9fa65209cc1",
+    "scripts/attachment_schema_check.py": "728f10a6a8be0af550c123dcf0ff3a9baebe9e604c8b5ca384a365632577460e",
+    "scripts/attachment_hand_configs.json": "5ffecffab84f89548d605ce8904fd7d72f966c8bfb620a1bfd4b39f9b7c2c3c6",
+    "scripts/attachment_mail_backend.py": "665fb909592842fca9bab0dc9ea983cfc49bdb4330ff6c9111636387b6a189b2",
+    "scripts/attachment_benchmark_shapes.py": "7ef396b2ca211cf3f6fe566cb0ebee8b11d5ead201a5e9654e55d053048d62cf",
+    "scripts/run_attachment_holdout_pilot.py": "a519d0c8608a13d07d8b9c6b0442765f88de8c5aa84ef9a6f84145c6548977d4",
+    "scripts/attachment_witness_replay.py": "1b0c872067cd3c5f8b222a653b2c1cdeda2c46a53791e7a03c0df9a049c80b23",
+    "scripts/run_send_field_inventory.py": "6a02fa31807a12f7d41e6eadb9838e2874bf2b8818528cded520c5a2c9dd1b05",
+    "scripts/evidence_pilot_data.py": "bb1d5de0d517892edef28edcc464c658f2cdbe99f3baaebaaf4a691ce66a453a",
+    "src/trajectory_audit/send_log.py": "8bb4aebe8d2ebb3657e0e7d9e4e505c0ee8994bbf2a96da0bd881f963a07a7a5",
+    "reports/policy_transfer/author_kit.md": "b0987dcd39013a1c64b45a451c68b978e6967074558ad63f341cb3ef8296a252",
+    "reports/policy_transfer/capabilities.json": "1c872b7eff593f0d0534c98c12f38c99577e82ba44226100211052d100f90353",
+    "reports/policy_transfer/protocol.md": "e900afdfa3e4cb98f9c08e68e6ba6d8b1649eeb76cc6ac8bcff2c80703d7ea94",
+    "tests/test_mail_policy_language.py": "0dac9dae94434b1ee1be0df166f3eb0f546c604ad0813c2c015f11972154cefe"
+  }
+}
