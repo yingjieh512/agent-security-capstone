@@ -1,0 +1,45 @@
+{
+  "version": "attachment-hand-configs-v1",
+  "authorship": "Agent-authored protocol baseline prepared independently of the compiler and pilot outputs. No human participant study.",
+  "policy": "If the mailbox accepted delivery, its single SMTP envelope recipient must equal the approved recipient and the multiset of delivered MIME-decoded attachment byte strings must be a submultiset of the granted attachment byte strings. Extra authorized but unused items are allowed. Message body, filenames and order are irrelevant.",
+  "envelope_assumptions": "Both sources attest to the same attempt ID and snapshot/terminal semantics with separate authenticators. A source record is either present with its data, an explicit trusted negative (no grant or terminal non-delivery), or missing/pending, which is unknown. Null field(s) on an explicit negative are distinct from a witnessed accepted message with an empty attachment list. If the base protocol cannot encode these states, also record status at each source for every configuration.",
+  "field_assumptions": "Comparable attempt-scoped recipient tags and per-item content tags use separate domains and shared canonicalization at the two trusted writers. Attachment item tags are materialized as a multiset, including multiplicities, calculated over decoded bytes. Treat unobserved fields as unknown. One bag tag supports exact multiset equality, not arbitrary subset queries.",
+  "configs": {
+    "expert_minimal": {
+      "role": "predeclared expert-style manually specified privacy baseline",
+      "approval": ["recipient.tag", "attachment_bytes.item_tags"],
+      "delivery": ["recipient.tag", "attachment_bytes.item_tags"],
+      "rationale": "Only cross-source recipient equality and attachment submultiset membership are necessary for the binary policy. No recipient string, message body, filename, size, or literal file bytes are needed. Item tags disclose within-attempt matching and counts."
+    },
+    "full_operational": {
+      "role": "illustrative raw baseline for footprint, not an observed deployment or human policy",
+      "approval": ["status", "recipient.raw", "body.raw", "attachment_names.raw", "attachment_sizes.list", "attachment_count", "attachment_content.raw"],
+      "delivery": ["status", "recipient.raw", "body.raw", "attachment_names.raw", "attachment_sizes.list", "attachment_count", "attachment_content.raw"],
+      "rationale": "Keep full mail metadata and content. Compare coverage and footprint with the minimal profile using identical transport and envelope semantics."
+    },
+    "metadata_only": {
+      "role": "deliberately incomplete operational metadata ablation",
+      "approval": ["recipient.tag", "attachment_names.raw", "attachment_sizes.list", "attachment_count"],
+      "delivery": ["recipient.tag", "attachment_names.raw", "attachment_sizes.list", "attachment_count"],
+      "rationale": "Two distinct equal-length payloads with one filename can have identical metadata."
+    },
+    "whole_bag": {
+      "role": "deliberately incomplete equality-only ablation",
+      "approval": ["recipient.tag", "attachment_bytes.bag_tag", "attachment_count"],
+      "delivery": ["recipient.tag", "attachment_bytes.bag_tag", "attachment_count"],
+      "rationale": "Grant [A,B] and deliver [A] is allowed; grant [A,B] and deliver [C] is forbidden. Both have matching recipient, counts 2 and 1, and unequal whole-bag tags."
+    },
+    "missing_delivery_attachment": {
+      "role": "deliberately incomplete single-source ablation",
+      "approval": ["recipient.tag", "attachment_bytes.item_tags"],
+      "delivery": ["recipient.tag"],
+      "rationale": "An approval snapshot does not identify the content actually committed by the mailbox."
+    },
+    "missing_delivery_recipient": {
+      "role": "deliberately incomplete recipient-binding ablation",
+      "approval": ["recipient.tag", "attachment_bytes.item_tags"],
+      "delivery": ["attachment_bytes.item_tags"],
+      "rationale": "A correctly authorized attachment can still have been delivered to the wrong endpoint."
+    }
+  }
+}
