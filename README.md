@@ -1,5 +1,20 @@
 # Trajectory Audit
 
+## Single-operator capstone · Mail authorization audit
+
+When a mail agent's authorization policy changes, can the approval service and the receiving mailbox still produce enough evidence to audit the next send? The system compiles a policy and two source capability declarations into collection rules. It reports fields to add or retire, produces replayable examples of missing evidence, and pins each send to the version in effect at approval. A local Mailpit backend provides real SMTP delivery. The study covers 56 directed policy changes and 160 single-field capability losses. The Chinese [one-page faculty proposal](capstone/solo_mail_audit_proposal_zh.pdf) and [final report](capstone/solo_mail_audit_final_zh.pdf) describe the research contribution and limits.
+
+With Python 3.10+ on macOS or Linux, run the following from the repository root. The first command provisions Mailpit v1.34.0 and checks three experiments against their archived results. The second runs an editable case that spans a policy change.
+
+```sh
+python3 scripts/reproduce_mail_capstone.py
+PYTHONPATH=src:scripts python3 scripts/run_mail_case.py examples/mail_audit/local_case.json
+```
+
+For a portable source, report and results bundle, run `python3 scripts/package_mail_capstone.py`. It writes `outputs/mail_capstone/solo-mail-audit.zip`. The [final experiment protocol](reports/solo_mail_audit/final_protocol.md) records the acceptance criteria and the [Chinese project report](reports/solo_mail_audit/final_report.md) explains the measurements.
+
+## Earlier benchmark experiments
+
 An executable MVP for testing whether an agent-safety benchmark can be predicted
 without reading the full multi-step trajectory.
 
@@ -187,3 +202,15 @@ outputs](outputs/) are also available in the repository.
 - `baseline.py`: TF-IDF models, metrics, predictions, and bootstrap intervals;
 - `diagnostics.py`, `reporting.py`: interpretation and artifacts;
 - `cli.py`: reproducible `download`, `inspect`, and `run` commands.
+
+## Cross-tool evidence acquisition pilot
+
+The [ATBench and Claw pilot](reports/atbench_claw_cross_tool_query_pilot_2026-11-18.md) compares adaptive queries with the best fixed order per tool at equal correct coverage. It includes results for 91 logged calls, a separate controlled replay with independent scoring tables, and reproduction commands.
+
+## Policy-specific send audit records
+
+The [minimum send-log pilot](reports/atbench_claw_minimum_send_log_2026-11-18.md) compiles a policy and source capabilities into authenticated, attempt-bound records. It compares the privacy footprint of two-source receipts across ATBench and Claw send arguments, gives counterexamples when a field is missing, and checks decisions against a local backend.
+
+The [held-out attachment authorization pilot](reports/attachment_holdout/README.md) freezes that compiler and tests it against a separate Mailpit SMTP backend. It records where the frozen compiler fails, runs an external field search against an independently hand-written configuration, and replays the resulting evidence gaps in the mailbox.
+
+The [independent policy transfer pilot](reports/policy_transfer/README.md) compares the original attachment system with a declaration-based compiler frozen before a blind proxy submitted a new rule. Both the hand-written configuration and the generated one are verified on the same persisted SMTP messages.

@@ -1,0 +1,641 @@
+{
+  "source": {
+    "ATBench": {
+      "revision": "de862a3d5363aa3928f70e2228b275135597226c",
+      "sha256": "80c534b5f3517c872b528a2e6b64e34495206968edd184f4aed563d39f0cca09",
+      "rows": 1000
+    },
+    "Claw": {
+      "revision": "75f70f4bfd8305e33e22006e1e6eeb668684d3f2",
+      "sha256": "bc04db0db900fd63ac4c59ba651584be2dc8dbd51861c98ffeb21f13c9495c8b",
+      "rows": 500
+    }
+  },
+  "baseline": "Plaintext snapshot of recognized call argument values. Bytes exclude JSON wrapping, escaping, field names, response and user text, other argument fields, replication and compression.",
+  "units": "Count each named field per call, including present empty strings; array members counted separately for scalar occurrences; no recipient identity deduplication.",
+  "scope": "Forwarded message content in 'body' only. Subjects, attachment/path references and mixed smsdata are shown separately. Neither scope authorizations nor actual deliveries or trustworthy action times are inferred.",
+  "all": {
+    "calls": 91,
+    "trajectories": 90,
+    "recognized_single_target": 80,
+    "binding": {
+      "adjacent": 47,
+      "id_name": 44
+    },
+    "categories": {
+      "primary_recipient": {
+        "calls_with_field": 86,
+        "calls_with_nonempty_value": 86,
+        "field_occurrences": 86,
+        "scalar_value_occurrences": 86,
+        "utf8_value_bytes": 2096,
+        "json_type_counts": {
+          "str": 80,
+          "int": 4,
+          "list": 2
+        },
+        "alias_occurrences": {
+          "Correo_Delivery": 4,
+          "to": 51,
+          "mobile_number": 1,
+          "receiver": 6,
+          "mno": 2,
+          "number": 2,
+          "email": 4,
+          "phone": 3,
+          "mTo": 2,
+          "phone_number": 4,
+          "mobiles": 2,
+          "phonenumbers": 1,
+          "--to": 4
+        }
+      },
+      "copy_recipient": {
+        "calls_with_field": 1,
+        "calls_with_nonempty_value": 1,
+        "field_occurrences": 2,
+        "scalar_value_occurrences": 2,
+        "utf8_value_bytes": 38,
+        "json_type_counts": {
+          "str": 2
+        },
+        "alias_occurrences": {
+          "cc": 1,
+          "bcc": 1
+        }
+      },
+      "body": {
+        "calls_with_field": 89,
+        "calls_with_nonempty_value": 89,
+        "field_occurrences": 89,
+        "scalar_value_occurrences": 89,
+        "utf8_value_bytes": 20248,
+        "json_type_counts": {
+          "str": 89
+        },
+        "alias_occurrences": {
+          "Mensjae": 4,
+          "text": 13,
+          "sms_text": 1,
+          "body": 20,
+          "message": 9,
+          "msg": 5,
+          "html": 1,
+          "sms": 4,
+          "content": 28,
+          "--body": 4
+        }
+      },
+      "subject": {
+        "calls_with_field": 29,
+        "calls_with_nonempty_value": 29,
+        "field_occurrences": 29,
+        "scalar_value_occurrences": 29,
+        "utf8_value_bytes": 928,
+        "json_type_counts": {
+          "str": 29
+        },
+        "alias_occurrences": {
+          "subject": 25,
+          "--subject": 4
+        }
+      },
+      "attachment_reference": {
+        "calls_with_field": 3,
+        "calls_with_nonempty_value": 3,
+        "field_occurrences": 3,
+        "scalar_value_occurrences": 3,
+        "utf8_value_bytes": 113,
+        "json_type_counts": {
+          "str": 3
+        },
+        "alias_occurrences": {
+          "file_path": 1,
+          "attachments": 2
+        }
+      },
+      "mixed_smsdata": {
+        "calls_with_field": 1,
+        "calls_with_nonempty_value": 1,
+        "field_occurrences": 1,
+        "scalar_value_occurrences": 1,
+        "utf8_value_bytes": 150,
+        "json_type_counts": {
+          "str": 1
+        },
+        "alias_occurrences": {
+          "smsdata": 1
+        }
+      }
+    },
+    "recipient_including_cc_bcc": {
+      "calls_with_any_field": 86,
+      "field_occurrences": 88,
+      "utf8_value_bytes": 2134
+    },
+    "recipient_and_body": {
+      "calls_with_any_field": 89,
+      "field_occurrences": 177,
+      "utf8_value_bytes": 22382
+    },
+    "calls_with_both_recipient_and_body": 86
+  },
+  "single_target": {
+    "calls": 80,
+    "trajectories": 79,
+    "recognized_single_target": 80,
+    "binding": {
+      "adjacent": 39,
+      "id_name": 41
+    },
+    "categories": {
+      "primary_recipient": {
+        "calls_with_field": 80,
+        "calls_with_nonempty_value": 80,
+        "field_occurrences": 80,
+        "scalar_value_occurrences": 80,
+        "utf8_value_bytes": 1497,
+        "json_type_counts": {
+          "str": 74,
+          "int": 4,
+          "list": 2
+        },
+        "alias_occurrences": {
+          "Correo_Delivery": 4,
+          "to": 46,
+          "mobile_number": 1,
+          "receiver": 6,
+          "mno": 2,
+          "email": 4,
+          "phone": 3,
+          "mTo": 2,
+          "phone_number": 4,
+          "mobiles": 2,
+          "number": 1,
+          "phonenumbers": 1,
+          "--to": 4
+        }
+      },
+      "copy_recipient": {
+        "calls_with_field": 0,
+        "calls_with_nonempty_value": 0,
+        "field_occurrences": 0,
+        "scalar_value_occurrences": 0,
+        "utf8_value_bytes": 0,
+        "json_type_counts": {},
+        "alias_occurrences": {}
+      },
+      "body": {
+        "calls_with_field": 80,
+        "calls_with_nonempty_value": 80,
+        "field_occurrences": 80,
+        "scalar_value_occurrences": 80,
+        "utf8_value_bytes": 19071,
+        "json_type_counts": {
+          "str": 80
+        },
+        "alias_occurrences": {
+          "Mensjae": 4,
+          "text": 13,
+          "sms_text": 1,
+          "body": 15,
+          "msg": 5,
+          "message": 5,
+          "html": 1,
+          "sms": 4,
+          "content": 28,
+          "--body": 4
+        }
+      },
+      "subject": {
+        "calls_with_field": 24,
+        "calls_with_nonempty_value": 24,
+        "field_occurrences": 24,
+        "scalar_value_occurrences": 24,
+        "utf8_value_bytes": 788,
+        "json_type_counts": {
+          "str": 24
+        },
+        "alias_occurrences": {
+          "subject": 20,
+          "--subject": 4
+        }
+      },
+      "attachment_reference": {
+        "calls_with_field": 1,
+        "calls_with_nonempty_value": 1,
+        "field_occurrences": 1,
+        "scalar_value_occurrences": 1,
+        "utf8_value_bytes": 51,
+        "json_type_counts": {
+          "str": 1
+        },
+        "alias_occurrences": {
+          "attachments": 1
+        }
+      },
+      "mixed_smsdata": {
+        "calls_with_field": 0,
+        "calls_with_nonempty_value": 0,
+        "field_occurrences": 0,
+        "scalar_value_occurrences": 0,
+        "utf8_value_bytes": 0,
+        "json_type_counts": {},
+        "alias_occurrences": {}
+      }
+    },
+    "recipient_including_cc_bcc": {
+      "calls_with_any_field": 80,
+      "field_occurrences": 80,
+      "utf8_value_bytes": 1497
+    },
+    "recipient_and_body": {
+      "calls_with_any_field": 80,
+      "field_occurrences": 160,
+      "utf8_value_bytes": 20568
+    },
+    "calls_with_both_recipient_and_body": 80
+  },
+  "by_tool": {
+    "gog gmail send": {
+      "calls": 16,
+      "trajectories": 16,
+      "recognized_single_target": 13,
+      "binding": {
+        "id_name": 16
+      },
+      "categories": {
+        "primary_recipient": {
+          "calls_with_field": 16,
+          "calls_with_nonempty_value": 16,
+          "field_occurrences": 16,
+          "scalar_value_occurrences": 16,
+          "utf8_value_bytes": 859,
+          "json_type_counts": {
+            "str": 16
+          },
+          "alias_occurrences": {
+            "to": 12,
+            "--to": 4
+          }
+        },
+        "copy_recipient": {
+          "calls_with_field": 0,
+          "calls_with_nonempty_value": 0,
+          "field_occurrences": 0,
+          "scalar_value_occurrences": 0,
+          "utf8_value_bytes": 0,
+          "json_type_counts": {},
+          "alias_occurrences": {}
+        },
+        "body": {
+          "calls_with_field": 16,
+          "calls_with_nonempty_value": 16,
+          "field_occurrences": 16,
+          "scalar_value_occurrences": 16,
+          "utf8_value_bytes": 4967,
+          "json_type_counts": {
+            "str": 16
+          },
+          "alias_occurrences": {
+            "body": 12,
+            "--body": 4
+          }
+        },
+        "subject": {
+          "calls_with_field": 16,
+          "calls_with_nonempty_value": 16,
+          "field_occurrences": 16,
+          "scalar_value_occurrences": 16,
+          "utf8_value_bytes": 494,
+          "json_type_counts": {
+            "str": 16
+          },
+          "alias_occurrences": {
+            "subject": 12,
+            "--subject": 4
+          }
+        },
+        "attachment_reference": {
+          "calls_with_field": 2,
+          "calls_with_nonempty_value": 2,
+          "field_occurrences": 2,
+          "scalar_value_occurrences": 2,
+          "utf8_value_bytes": 75,
+          "json_type_counts": {
+            "str": 2
+          },
+          "alias_occurrences": {
+            "attachments": 2
+          }
+        },
+        "mixed_smsdata": {
+          "calls_with_field": 0,
+          "calls_with_nonempty_value": 0,
+          "field_occurrences": 0,
+          "scalar_value_occurrences": 0,
+          "utf8_value_bytes": 0,
+          "json_type_counts": {},
+          "alias_occurrences": {}
+        }
+      },
+      "recipient_including_cc_bcc": {
+        "calls_with_any_field": 16,
+        "field_occurrences": 16,
+        "utf8_value_bytes": 859
+      },
+      "recipient_and_body": {
+        "calls_with_any_field": 16,
+        "field_occurrences": 32,
+        "utf8_value_bytes": 5826
+      },
+      "calls_with_both_recipient_and_body": 16
+    },
+    "sendMessage": {
+      "calls": 28,
+      "trajectories": 28,
+      "recognized_single_target": 28,
+      "binding": {
+        "id_name": 28
+      },
+      "categories": {
+        "primary_recipient": {
+          "calls_with_field": 28,
+          "calls_with_nonempty_value": 28,
+          "field_occurrences": 28,
+          "scalar_value_occurrences": 28,
+          "utf8_value_bytes": 493,
+          "json_type_counts": {
+            "str": 28
+          },
+          "alias_occurrences": {
+            "to": 28
+          }
+        },
+        "copy_recipient": {
+          "calls_with_field": 0,
+          "calls_with_nonempty_value": 0,
+          "field_occurrences": 0,
+          "scalar_value_occurrences": 0,
+          "utf8_value_bytes": 0,
+          "json_type_counts": {},
+          "alias_occurrences": {}
+        },
+        "body": {
+          "calls_with_field": 28,
+          "calls_with_nonempty_value": 28,
+          "field_occurrences": 28,
+          "scalar_value_occurrences": 28,
+          "utf8_value_bytes": 4872,
+          "json_type_counts": {
+            "str": 28
+          },
+          "alias_occurrences": {
+            "content": 28
+          }
+        },
+        "subject": {
+          "calls_with_field": 0,
+          "calls_with_nonempty_value": 0,
+          "field_occurrences": 0,
+          "scalar_value_occurrences": 0,
+          "utf8_value_bytes": 0,
+          "json_type_counts": {},
+          "alias_occurrences": {}
+        },
+        "attachment_reference": {
+          "calls_with_field": 0,
+          "calls_with_nonempty_value": 0,
+          "field_occurrences": 0,
+          "scalar_value_occurrences": 0,
+          "utf8_value_bytes": 0,
+          "json_type_counts": {},
+          "alias_occurrences": {}
+        },
+        "mixed_smsdata": {
+          "calls_with_field": 0,
+          "calls_with_nonempty_value": 0,
+          "field_occurrences": 0,
+          "scalar_value_occurrences": 0,
+          "utf8_value_bytes": 0,
+          "json_type_counts": {},
+          "alias_occurrences": {}
+        }
+      },
+      "recipient_including_cc_bcc": {
+        "calls_with_any_field": 28,
+        "field_occurrences": 28,
+        "utf8_value_bytes": 493
+      },
+      "recipient_and_body": {
+        "calls_with_any_field": 28,
+        "field_occurrences": 56,
+        "utf8_value_bytes": 5365
+      },
+      "calls_with_both_recipient_and_body": 28
+    },
+    "send_email": {
+      "calls": 22,
+      "trajectories": 22,
+      "recognized_single_target": 19,
+      "binding": {
+        "adjacent": 22
+      },
+      "categories": {
+        "primary_recipient": {
+          "calls_with_field": 20,
+          "calls_with_nonempty_value": 20,
+          "field_occurrences": 20,
+          "scalar_value_occurrences": 20,
+          "utf8_value_bytes": 503,
+          "json_type_counts": {
+            "str": 18,
+            "list": 2
+          },
+          "alias_occurrences": {
+            "Correo_Delivery": 4,
+            "to": 4,
+            "receiver": 6,
+            "email": 4,
+            "mTo": 2
+          }
+        },
+        "copy_recipient": {
+          "calls_with_field": 1,
+          "calls_with_nonempty_value": 1,
+          "field_occurrences": 2,
+          "scalar_value_occurrences": 2,
+          "utf8_value_bytes": 38,
+          "json_type_counts": {
+            "str": 2
+          },
+          "alias_occurrences": {
+            "cc": 1,
+            "bcc": 1
+          }
+        },
+        "body": {
+          "calls_with_field": 21,
+          "calls_with_nonempty_value": 21,
+          "field_occurrences": 21,
+          "scalar_value_occurrences": 21,
+          "utf8_value_bytes": 5582,
+          "json_type_counts": {
+            "str": 21
+          },
+          "alias_occurrences": {
+            "Mensjae": 4,
+            "text": 8,
+            "body": 8,
+            "html": 1
+          }
+        },
+        "subject": {
+          "calls_with_field": 13,
+          "calls_with_nonempty_value": 13,
+          "field_occurrences": 13,
+          "scalar_value_occurrences": 13,
+          "utf8_value_bytes": 434,
+          "json_type_counts": {
+            "str": 13
+          },
+          "alias_occurrences": {
+            "subject": 13
+          }
+        },
+        "attachment_reference": {
+          "calls_with_field": 1,
+          "calls_with_nonempty_value": 1,
+          "field_occurrences": 1,
+          "scalar_value_occurrences": 1,
+          "utf8_value_bytes": 38,
+          "json_type_counts": {
+            "str": 1
+          },
+          "alias_occurrences": {
+            "file_path": 1
+          }
+        },
+        "mixed_smsdata": {
+          "calls_with_field": 0,
+          "calls_with_nonempty_value": 0,
+          "field_occurrences": 0,
+          "scalar_value_occurrences": 0,
+          "utf8_value_bytes": 0,
+          "json_type_counts": {},
+          "alias_occurrences": {}
+        }
+      },
+      "recipient_including_cc_bcc": {
+        "calls_with_any_field": 20,
+        "field_occurrences": 22,
+        "utf8_value_bytes": 541
+      },
+      "recipient_and_body": {
+        "calls_with_any_field": 21,
+        "field_occurrences": 43,
+        "utf8_value_bytes": 6123
+      },
+      "calls_with_both_recipient_and_body": 20
+    },
+    "send_sms": {
+      "calls": 25,
+      "trajectories": 24,
+      "recognized_single_target": 20,
+      "binding": {
+        "adjacent": 25
+      },
+      "categories": {
+        "primary_recipient": {
+          "calls_with_field": 22,
+          "calls_with_nonempty_value": 22,
+          "field_occurrences": 22,
+          "scalar_value_occurrences": 22,
+          "utf8_value_bytes": 241,
+          "json_type_counts": {
+            "str": 18,
+            "int": 4
+          },
+          "alias_occurrences": {
+            "mobile_number": 1,
+            "to": 7,
+            "mno": 2,
+            "number": 2,
+            "phone": 3,
+            "phone_number": 4,
+            "mobiles": 2,
+            "phonenumbers": 1
+          }
+        },
+        "copy_recipient": {
+          "calls_with_field": 0,
+          "calls_with_nonempty_value": 0,
+          "field_occurrences": 0,
+          "scalar_value_occurrences": 0,
+          "utf8_value_bytes": 0,
+          "json_type_counts": {},
+          "alias_occurrences": {}
+        },
+        "body": {
+          "calls_with_field": 24,
+          "calls_with_nonempty_value": 24,
+          "field_occurrences": 24,
+          "scalar_value_occurrences": 24,
+          "utf8_value_bytes": 4827,
+          "json_type_counts": {
+            "str": 24
+          },
+          "alias_occurrences": {
+            "sms_text": 1,
+            "text": 5,
+            "message": 9,
+            "msg": 5,
+            "sms": 4
+          }
+        },
+        "subject": {
+          "calls_with_field": 0,
+          "calls_with_nonempty_value": 0,
+          "field_occurrences": 0,
+          "scalar_value_occurrences": 0,
+          "utf8_value_bytes": 0,
+          "json_type_counts": {},
+          "alias_occurrences": {}
+        },
+        "attachment_reference": {
+          "calls_with_field": 0,
+          "calls_with_nonempty_value": 0,
+          "field_occurrences": 0,
+          "scalar_value_occurrences": 0,
+          "utf8_value_bytes": 0,
+          "json_type_counts": {},
+          "alias_occurrences": {}
+        },
+        "mixed_smsdata": {
+          "calls_with_field": 1,
+          "calls_with_nonempty_value": 1,
+          "field_occurrences": 1,
+          "scalar_value_occurrences": 1,
+          "utf8_value_bytes": 150,
+          "json_type_counts": {
+            "str": 1
+          },
+          "alias_occurrences": {
+            "smsdata": 1
+          }
+        }
+      },
+      "recipient_including_cc_bcc": {
+        "calls_with_any_field": 22,
+        "field_occurrences": 22,
+        "utf8_value_bytes": 241
+      },
+      "recipient_and_body": {
+        "calls_with_any_field": 24,
+        "field_occurrences": 46,
+        "utf8_value_bytes": 5068
+      },
+      "calls_with_both_recipient_and_body": 22
+    }
+  }
+}

@@ -1,0 +1,3451 @@
+{
+  "summary": {
+    "policy_verdicts": 512,
+    "migration_kinds": {
+      "switch_sufficient_projection": 6,
+      "replace_insufficient_fields": 46,
+      "keep_fields": 4
+    },
+    "confirmed_migration_witnesses": 46,
+    "witness_smtp_acceptances": 92,
+    "distinct_witness_pairs": 8,
+    "fixed_common": {
+      "correct": 512,
+      "false_authorized": 0,
+      "false_unauthorized": 0,
+      "unknown": 0,
+      "receipt_bytes": 1250720,
+      "raw_bytes": {
+        "recipient": 0,
+        "body": 484096,
+        "names": 12256,
+        "content": 0
+      }
+    },
+    "compiled": {
+      "correct": 512,
+      "false_authorized": 0,
+      "false_unauthorized": 0,
+      "unknown": 0,
+      "receipt_bytes": 541668,
+      "raw_bytes": {
+        "recipient": 0,
+        "body": 60512,
+        "names": 3064,
+        "content": 0
+      }
+    }
+  },
+  "freeze": "codex/declarative-mail-preblind",
+  "templates": {
+    "atbench:row718:call5": 16,
+    "atbench:row600:call10": 810,
+    "claw:row160:call5": 21,
+    "claw:row224:call6": 1097
+  },
+  "main_smtp_acceptances": 64,
+  "fixed_fields": {
+    "approval": [
+      "recipient.tag",
+      "body.raw",
+      "attachment_bytes.item_tags",
+      "attachment_names.raw",
+      "attachment_sizes.list"
+    ],
+    "delivery": [
+      "recipient.tag",
+      "body.raw",
+      "attachment_bytes.item_tags",
+      "attachment_names.raw",
+      "attachment_sizes.list"
+    ]
+  },
+  "case_labels_by_policy": {
+    "equal": {
+      "items_eq": "authorized",
+      "items_subset": "authorized",
+      "names_eq": "authorized",
+      "names_subset": "authorized",
+      "sizes_eq": "authorized",
+      "sizes_subset": "authorized",
+      "body_eq": "authorized",
+      "count_le": "authorized"
+    },
+    "body_change": {
+      "items_eq": "authorized",
+      "items_subset": "authorized",
+      "names_eq": "authorized",
+      "names_subset": "authorized",
+      "sizes_eq": "authorized",
+      "sizes_subset": "authorized",
+      "body_eq": "unauthorized",
+      "count_le": "authorized"
+    },
+    "other_recipient": {
+      "items_eq": "unauthorized",
+      "items_subset": "unauthorized",
+      "names_eq": "unauthorized",
+      "names_subset": "unauthorized",
+      "sizes_eq": "unauthorized",
+      "sizes_subset": "unauthorized",
+      "body_eq": "unauthorized",
+      "count_le": "unauthorized"
+    },
+    "reordered": {
+      "items_eq": "authorized",
+      "items_subset": "authorized",
+      "names_eq": "authorized",
+      "names_subset": "authorized",
+      "sizes_eq": "authorized",
+      "sizes_subset": "authorized",
+      "body_eq": "authorized",
+      "count_le": "authorized"
+    },
+    "proper_selection": {
+      "items_eq": "unauthorized",
+      "items_subset": "authorized",
+      "names_eq": "unauthorized",
+      "names_subset": "authorized",
+      "sizes_eq": "unauthorized",
+      "sizes_subset": "authorized",
+      "body_eq": "authorized",
+      "count_le": "authorized"
+    },
+    "same_size_substitution": {
+      "items_eq": "unauthorized",
+      "items_subset": "unauthorized",
+      "names_eq": "authorized",
+      "names_subset": "authorized",
+      "sizes_eq": "authorized",
+      "sizes_subset": "authorized",
+      "body_eq": "authorized",
+      "count_le": "authorized"
+    },
+    "different_size_substitution": {
+      "items_eq": "unauthorized",
+      "items_subset": "unauthorized",
+      "names_eq": "authorized",
+      "names_subset": "authorized",
+      "sizes_eq": "unauthorized",
+      "sizes_subset": "unauthorized",
+      "body_eq": "authorized",
+      "count_le": "authorized"
+    },
+    "renamed": {
+      "items_eq": "authorized",
+      "items_subset": "authorized",
+      "names_eq": "unauthorized",
+      "names_subset": "unauthorized",
+      "sizes_eq": "authorized",
+      "sizes_subset": "authorized",
+      "body_eq": "authorized",
+      "count_le": "authorized"
+    },
+    "extra_copy": {
+      "items_eq": "unauthorized",
+      "items_subset": "unauthorized",
+      "names_eq": "unauthorized",
+      "names_subset": "unauthorized",
+      "sizes_eq": "unauthorized",
+      "sizes_subset": "unauthorized",
+      "body_eq": "authorized",
+      "count_le": "unauthorized"
+    },
+    "multiplicity_change": {
+      "items_eq": "unauthorized",
+      "items_subset": "unauthorized",
+      "names_eq": "unauthorized",
+      "names_subset": "unauthorized",
+      "sizes_eq": "unauthorized",
+      "sizes_subset": "unauthorized",
+      "body_eq": "authorized",
+      "count_le": "authorized"
+    },
+    "crossed_names": {
+      "items_eq": "authorized",
+      "items_subset": "authorized",
+      "names_eq": "authorized",
+      "names_subset": "authorized",
+      "sizes_eq": "authorized",
+      "sizes_subset": "authorized",
+      "body_eq": "authorized",
+      "count_le": "authorized"
+    },
+    "empty_selection": {
+      "items_eq": "unauthorized",
+      "items_subset": "authorized",
+      "names_eq": "unauthorized",
+      "names_subset": "authorized",
+      "sizes_eq": "unauthorized",
+      "sizes_subset": "authorized",
+      "body_eq": "authorized",
+      "count_le": "authorized"
+    },
+    "extra_empty_file": {
+      "items_eq": "unauthorized",
+      "items_subset": "unauthorized",
+      "names_eq": "unauthorized",
+      "names_subset": "unauthorized",
+      "sizes_eq": "unauthorized",
+      "sizes_subset": "unauthorized",
+      "body_eq": "authorized",
+      "count_le": "unauthorized"
+    },
+    "no_grant": {
+      "items_eq": "unauthorized",
+      "items_subset": "unauthorized",
+      "names_eq": "unauthorized",
+      "names_subset": "unauthorized",
+      "sizes_eq": "unauthorized",
+      "sizes_subset": "unauthorized",
+      "body_eq": "unauthorized",
+      "count_le": "unauthorized"
+    },
+    "both_empty": {
+      "items_eq": "authorized",
+      "items_subset": "authorized",
+      "names_eq": "authorized",
+      "names_subset": "authorized",
+      "sizes_eq": "authorized",
+      "sizes_subset": "authorized",
+      "body_eq": "authorized",
+      "count_le": "authorized"
+    },
+    "equal_empty_file": {
+      "items_eq": "authorized",
+      "items_subset": "authorized",
+      "names_eq": "authorized",
+      "names_subset": "authorized",
+      "sizes_eq": "authorized",
+      "sizes_subset": "authorized",
+      "body_eq": "authorized",
+      "count_le": "authorized"
+    }
+  },
+  "policies": {
+    "items_eq": {
+      "declaration": {
+        "all": [
+          {
+            "op": "eq",
+            "field": "recipient"
+          },
+          {
+            "op": "eq",
+            "field": "items"
+          }
+        ]
+      },
+      "fields": {
+        "approval": [
+          "attachment_bytes.bag_tag",
+          "recipient.tag"
+        ],
+        "delivery": [
+          "attachment_bytes.bag_tag",
+          "recipient.tag"
+        ]
+      },
+      "truth": {
+        "authorized": 28,
+        "unauthorized": 36
+      },
+      "compiled": {
+        "correct": 64,
+        "false_authorized": 0,
+        "false_unauthorized": 0,
+        "unknown": 0,
+        "receipt_bytes": 72428,
+        "raw_bytes": {
+          "recipient": 0,
+          "body": 0,
+          "names": 0,
+          "content": 0
+        }
+      },
+      "fixed_common": {
+        "correct": 64,
+        "false_authorized": 0,
+        "false_unauthorized": 0,
+        "unknown": 0,
+        "receipt_bytes": 156340,
+        "raw_bytes": {
+          "recipient": 0,
+          "body": 60512,
+          "names": 1532,
+          "content": 0
+        }
+      }
+    },
+    "items_subset": {
+      "declaration": {
+        "all": [
+          {
+            "op": "eq",
+            "field": "recipient"
+          },
+          {
+            "op": "subset",
+            "field": "items"
+          }
+        ]
+      },
+      "fields": {
+        "approval": [
+          "attachment_bytes.item_tags",
+          "recipient.tag"
+        ],
+        "delivery": [
+          "attachment_bytes.item_tags",
+          "recipient.tag"
+        ]
+      },
+      "truth": {
+        "authorized": 36,
+        "unauthorized": 28
+      },
+      "compiled": {
+        "correct": 64,
+        "false_authorized": 0,
+        "false_unauthorized": 0,
+        "unknown": 0,
+        "receipt_bytes": 84204,
+        "raw_bytes": {
+          "recipient": 0,
+          "body": 0,
+          "names": 0,
+          "content": 0
+        }
+      },
+      "fixed_common": {
+        "correct": 64,
+        "false_authorized": 0,
+        "false_unauthorized": 0,
+        "unknown": 0,
+        "receipt_bytes": 156340,
+        "raw_bytes": {
+          "recipient": 0,
+          "body": 60512,
+          "names": 1532,
+          "content": 0
+        }
+      }
+    },
+    "names_eq": {
+      "declaration": {
+        "all": [
+          {
+            "op": "eq",
+            "field": "recipient"
+          },
+          {
+            "op": "eq",
+            "field": "names"
+          }
+        ]
+      },
+      "fields": {
+        "approval": [
+          "attachment_names.raw",
+          "recipient.tag"
+        ],
+        "delivery": [
+          "attachment_names.raw",
+          "recipient.tag"
+        ]
+      },
+      "truth": {
+        "authorized": 32,
+        "unauthorized": 32
+      },
+      "compiled": {
+        "correct": 64,
+        "false_authorized": 0,
+        "false_unauthorized": 0,
+        "unknown": 0,
+        "receipt_bytes": 55740,
+        "raw_bytes": {
+          "recipient": 0,
+          "body": 0,
+          "names": 1532,
+          "content": 0
+        }
+      },
+      "fixed_common": {
+        "correct": 64,
+        "false_authorized": 0,
+        "false_unauthorized": 0,
+        "unknown": 0,
+        "receipt_bytes": 156340,
+        "raw_bytes": {
+          "recipient": 0,
+          "body": 60512,
+          "names": 1532,
+          "content": 0
+        }
+      }
+    },
+    "names_subset": {
+      "declaration": {
+        "all": [
+          {
+            "op": "eq",
+            "field": "recipient"
+          },
+          {
+            "op": "subset",
+            "field": "names"
+          }
+        ]
+      },
+      "fields": {
+        "approval": [
+          "attachment_names.raw",
+          "recipient.tag"
+        ],
+        "delivery": [
+          "attachment_names.raw",
+          "recipient.tag"
+        ]
+      },
+      "truth": {
+        "authorized": 40,
+        "unauthorized": 24
+      },
+      "compiled": {
+        "correct": 64,
+        "false_authorized": 0,
+        "false_unauthorized": 0,
+        "unknown": 0,
+        "receipt_bytes": 55740,
+        "raw_bytes": {
+          "recipient": 0,
+          "body": 0,
+          "names": 1532,
+          "content": 0
+        }
+      },
+      "fixed_common": {
+        "correct": 64,
+        "false_authorized": 0,
+        "false_unauthorized": 0,
+        "unknown": 0,
+        "receipt_bytes": 156340,
+        "raw_bytes": {
+          "recipient": 0,
+          "body": 60512,
+          "names": 1532,
+          "content": 0
+        }
+      }
+    },
+    "sizes_eq": {
+      "declaration": {
+        "all": [
+          {
+            "op": "eq",
+            "field": "recipient"
+          },
+          {
+            "op": "eq",
+            "field": "sizes"
+          }
+        ]
+      },
+      "fields": {
+        "approval": [
+          "attachment_sizes.list",
+          "recipient.tag"
+        ],
+        "delivery": [
+          "attachment_sizes.list",
+          "recipient.tag"
+        ]
+      },
+      "truth": {
+        "authorized": 32,
+        "unauthorized": 32
+      },
+      "compiled": {
+        "correct": 64,
+        "false_authorized": 0,
+        "false_unauthorized": 0,
+        "unknown": 0,
+        "receipt_bytes": 54044,
+        "raw_bytes": {
+          "recipient": 0,
+          "body": 0,
+          "names": 0,
+          "content": 0
+        }
+      },
+      "fixed_common": {
+        "correct": 64,
+        "false_authorized": 0,
+        "false_unauthorized": 0,
+        "unknown": 0,
+        "receipt_bytes": 156340,
+        "raw_bytes": {
+          "recipient": 0,
+          "body": 60512,
+          "names": 1532,
+          "content": 0
+        }
+      }
+    },
+    "sizes_subset": {
+      "declaration": {
+        "all": [
+          {
+            "op": "eq",
+            "field": "recipient"
+          },
+          {
+            "op": "subset",
+            "field": "sizes"
+          }
+        ]
+      },
+      "fields": {
+        "approval": [
+          "attachment_sizes.list",
+          "recipient.tag"
+        ],
+        "delivery": [
+          "attachment_sizes.list",
+          "recipient.tag"
+        ]
+      },
+      "truth": {
+        "authorized": 40,
+        "unauthorized": 24
+      },
+      "compiled": {
+        "correct": 64,
+        "false_authorized": 0,
+        "false_unauthorized": 0,
+        "unknown": 0,
+        "receipt_bytes": 54044,
+        "raw_bytes": {
+          "recipient": 0,
+          "body": 0,
+          "names": 0,
+          "content": 0
+        }
+      },
+      "fixed_common": {
+        "correct": 64,
+        "false_authorized": 0,
+        "false_unauthorized": 0,
+        "unknown": 0,
+        "receipt_bytes": 156340,
+        "raw_bytes": {
+          "recipient": 0,
+          "body": 60512,
+          "names": 1532,
+          "content": 0
+        }
+      }
+    },
+    "body_eq": {
+      "declaration": {
+        "all": [
+          {
+            "op": "eq",
+            "field": "recipient"
+          },
+          {
+            "op": "eq",
+            "field": "body"
+          }
+        ]
+      },
+      "fields": {
+        "approval": [
+          "body.raw",
+          "recipient.tag"
+        ],
+        "delivery": [
+          "body.raw",
+          "recipient.tag"
+        ]
+      },
+      "truth": {
+        "authorized": 52,
+        "unauthorized": 12
+      },
+      "compiled": {
+        "correct": 64,
+        "false_authorized": 0,
+        "false_unauthorized": 0,
+        "unknown": 0,
+        "receipt_bytes": 112664,
+        "raw_bytes": {
+          "recipient": 0,
+          "body": 60512,
+          "names": 0,
+          "content": 0
+        }
+      },
+      "fixed_common": {
+        "correct": 64,
+        "false_authorized": 0,
+        "false_unauthorized": 0,
+        "unknown": 0,
+        "receipt_bytes": 156340,
+        "raw_bytes": {
+          "recipient": 0,
+          "body": 60512,
+          "names": 1532,
+          "content": 0
+        }
+      }
+    },
+    "count_le": {
+      "declaration": {
+        "all": [
+          {
+            "op": "eq",
+            "field": "recipient"
+          },
+          {
+            "op": "le",
+            "field": "count"
+          }
+        ]
+      },
+      "fields": {
+        "approval": [
+          "attachment_count",
+          "recipient.tag"
+        ],
+        "delivery": [
+          "attachment_count",
+          "recipient.tag"
+        ]
+      },
+      "truth": {
+        "authorized": 48,
+        "unauthorized": 16
+      },
+      "compiled": {
+        "correct": 64,
+        "false_authorized": 0,
+        "false_unauthorized": 0,
+        "unknown": 0,
+        "receipt_bytes": 52804,
+        "raw_bytes": {
+          "recipient": 0,
+          "body": 0,
+          "names": 0,
+          "content": 0
+        }
+      },
+      "fixed_common": {
+        "correct": 64,
+        "false_authorized": 0,
+        "false_unauthorized": 0,
+        "unknown": 0,
+        "receipt_bytes": 156340,
+        "raw_bytes": {
+          "recipient": 0,
+          "body": 60512,
+          "names": 1532,
+          "content": 0
+        }
+      }
+    }
+  },
+  "migrations": {
+    "items_subset->items_eq": {
+      "action": "switch_sufficient_projection",
+      "basis": "finite_runtime_verified",
+      "add": {
+        "approval": [
+          "attachment_bytes.bag_tag"
+        ],
+        "delivery": [
+          "attachment_bytes.bag_tag"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_bytes.item_tags"
+        ],
+        "delivery": [
+          "attachment_bytes.item_tags"
+        ]
+      },
+      "witness_id": null,
+      "smtp": null,
+      "using_previous_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "names_eq->items_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_bytes.bag_tag"
+        ],
+        "delivery": [
+          "attachment_bytes.bag_tag"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "witness_id": "W01",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 28,
+        "unknown": 36,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "names_subset->items_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_bytes.bag_tag"
+        ],
+        "delivery": [
+          "attachment_bytes.bag_tag"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "witness_id": "W01",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 28,
+        "unknown": 36,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "sizes_eq->items_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_bytes.bag_tag"
+        ],
+        "delivery": [
+          "attachment_bytes.bag_tag"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "witness_id": "W01",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 36,
+        "unknown": 28,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "sizes_subset->items_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_bytes.bag_tag"
+        ],
+        "delivery": [
+          "attachment_bytes.bag_tag"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "witness_id": "W01",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 36,
+        "unknown": 28,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "body_eq->items_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_bytes.bag_tag"
+        ],
+        "delivery": [
+          "attachment_bytes.bag_tag"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "body.raw"
+        ],
+        "delivery": [
+          "body.raw"
+        ]
+      },
+      "witness_id": "W02",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 8,
+        "unknown": 56,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "count_le->items_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_bytes.bag_tag"
+        ],
+        "delivery": [
+          "attachment_bytes.bag_tag"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_count"
+        ],
+        "delivery": [
+          "attachment_count"
+        ]
+      },
+      "witness_id": "W01",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 28,
+        "unknown": 36,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "items_eq->items_subset": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_bytes.item_tags"
+        ],
+        "delivery": [
+          "attachment_bytes.item_tags"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_bytes.bag_tag"
+        ],
+        "delivery": [
+          "attachment_bytes.bag_tag"
+        ]
+      },
+      "witness_id": "W03",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 36,
+        "unknown": 28,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "names_eq->items_subset": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_bytes.item_tags"
+        ],
+        "delivery": [
+          "attachment_bytes.item_tags"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "witness_id": "W01",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 24,
+        "unknown": 40,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "names_subset->items_subset": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_bytes.item_tags"
+        ],
+        "delivery": [
+          "attachment_bytes.item_tags"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "witness_id": "W01",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 24,
+        "unknown": 40,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "sizes_eq->items_subset": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_bytes.item_tags"
+        ],
+        "delivery": [
+          "attachment_bytes.item_tags"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "witness_id": "W01",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 32,
+        "unknown": 32,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "sizes_subset->items_subset": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_bytes.item_tags"
+        ],
+        "delivery": [
+          "attachment_bytes.item_tags"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "witness_id": "W01",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 32,
+        "unknown": 32,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "body_eq->items_subset": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_bytes.item_tags"
+        ],
+        "delivery": [
+          "attachment_bytes.item_tags"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "body.raw"
+        ],
+        "delivery": [
+          "body.raw"
+        ]
+      },
+      "witness_id": "W02",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 8,
+        "unknown": 56,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "count_le->items_subset": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_bytes.item_tags"
+        ],
+        "delivery": [
+          "attachment_bytes.item_tags"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_count"
+        ],
+        "delivery": [
+          "attachment_count"
+        ]
+      },
+      "witness_id": "W01",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 24,
+        "unknown": 40,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "items_eq->names_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_bytes.bag_tag"
+        ],
+        "delivery": [
+          "attachment_bytes.bag_tag"
+        ]
+      },
+      "witness_id": "W04",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 8,
+        "unknown": 56,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "items_subset->names_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_bytes.item_tags"
+        ],
+        "delivery": [
+          "attachment_bytes.item_tags"
+        ]
+      },
+      "witness_id": "W05",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 28,
+        "unknown": 36,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "names_subset->names_eq": {
+      "action": "keep_fields",
+      "basis": "finite_runtime_verified",
+      "add": {
+        "approval": [],
+        "delivery": []
+      },
+      "retire": {
+        "approval": [],
+        "delivery": []
+      },
+      "witness_id": null,
+      "smtp": null,
+      "using_previous_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "sizes_eq->names_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "witness_id": "W05",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 28,
+        "unknown": 36,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "sizes_subset->names_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "witness_id": "W05",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 28,
+        "unknown": 36,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "body_eq->names_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "body.raw"
+        ],
+        "delivery": [
+          "body.raw"
+        ]
+      },
+      "witness_id": "W02",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 8,
+        "unknown": 56,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "count_le->names_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_count"
+        ],
+        "delivery": [
+          "attachment_count"
+        ]
+      },
+      "witness_id": "W05",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 28,
+        "unknown": 36,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "items_eq->names_subset": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_bytes.bag_tag"
+        ],
+        "delivery": [
+          "attachment_bytes.bag_tag"
+        ]
+      },
+      "witness_id": "W03",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 8,
+        "unknown": 56,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "items_subset->names_subset": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_bytes.item_tags"
+        ],
+        "delivery": [
+          "attachment_bytes.item_tags"
+        ]
+      },
+      "witness_id": "W05",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 24,
+        "unknown": 40,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "names_eq->names_subset": {
+      "action": "keep_fields",
+      "basis": "finite_runtime_verified",
+      "add": {
+        "approval": [],
+        "delivery": []
+      },
+      "retire": {
+        "approval": [],
+        "delivery": []
+      },
+      "witness_id": null,
+      "smtp": null,
+      "using_previous_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "sizes_eq->names_subset": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "witness_id": "W05",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 24,
+        "unknown": 40,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "sizes_subset->names_subset": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "witness_id": "W05",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 24,
+        "unknown": 40,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "body_eq->names_subset": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "body.raw"
+        ],
+        "delivery": [
+          "body.raw"
+        ]
+      },
+      "witness_id": "W02",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 8,
+        "unknown": 56,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "count_le->names_subset": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_count"
+        ],
+        "delivery": [
+          "attachment_count"
+        ]
+      },
+      "witness_id": "W05",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 24,
+        "unknown": 40,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "items_eq->sizes_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_bytes.bag_tag"
+        ],
+        "delivery": [
+          "attachment_bytes.bag_tag"
+        ]
+      },
+      "witness_id": "W04",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 36,
+        "unknown": 28,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "items_subset->sizes_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_bytes.item_tags"
+        ],
+        "delivery": [
+          "attachment_bytes.item_tags"
+        ]
+      },
+      "witness_id": "W06",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 52,
+        "unknown": 12,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "names_eq->sizes_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "witness_id": "W07",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 28,
+        "unknown": 36,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "names_subset->sizes_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "witness_id": "W07",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 28,
+        "unknown": 36,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "sizes_subset->sizes_eq": {
+      "action": "keep_fields",
+      "basis": "finite_runtime_verified",
+      "add": {
+        "approval": [],
+        "delivery": []
+      },
+      "retire": {
+        "approval": [],
+        "delivery": []
+      },
+      "witness_id": null,
+      "smtp": null,
+      "using_previous_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "body_eq->sizes_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "body.raw"
+        ],
+        "delivery": [
+          "body.raw"
+        ]
+      },
+      "witness_id": "W02",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 8,
+        "unknown": 56,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "count_le->sizes_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_count"
+        ],
+        "delivery": [
+          "attachment_count"
+        ]
+      },
+      "witness_id": "W07",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 28,
+        "unknown": 36,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "items_eq->sizes_subset": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_bytes.bag_tag"
+        ],
+        "delivery": [
+          "attachment_bytes.bag_tag"
+        ]
+      },
+      "witness_id": "W03",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 36,
+        "unknown": 28,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "items_subset->sizes_subset": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_bytes.item_tags"
+        ],
+        "delivery": [
+          "attachment_bytes.item_tags"
+        ]
+      },
+      "witness_id": "W06",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 52,
+        "unknown": 12,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "names_eq->sizes_subset": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "witness_id": "W07",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 24,
+        "unknown": 40,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "names_subset->sizes_subset": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "witness_id": "W07",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 24,
+        "unknown": 40,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "sizes_eq->sizes_subset": {
+      "action": "keep_fields",
+      "basis": "finite_runtime_verified",
+      "add": {
+        "approval": [],
+        "delivery": []
+      },
+      "retire": {
+        "approval": [],
+        "delivery": []
+      },
+      "witness_id": null,
+      "smtp": null,
+      "using_previous_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "body_eq->sizes_subset": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "body.raw"
+        ],
+        "delivery": [
+          "body.raw"
+        ]
+      },
+      "witness_id": "W02",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 8,
+        "unknown": 56,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "count_le->sizes_subset": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_count"
+        ],
+        "delivery": [
+          "attachment_count"
+        ]
+      },
+      "witness_id": "W07",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 24,
+        "unknown": 40,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "items_eq->body_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "body.raw"
+        ],
+        "delivery": [
+          "body.raw"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_bytes.bag_tag"
+        ],
+        "delivery": [
+          "attachment_bytes.bag_tag"
+        ]
+      },
+      "witness_id": "W08",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 8,
+        "unknown": 56,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "items_subset->body_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "body.raw"
+        ],
+        "delivery": [
+          "body.raw"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_bytes.item_tags"
+        ],
+        "delivery": [
+          "attachment_bytes.item_tags"
+        ]
+      },
+      "witness_id": "W08",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 8,
+        "unknown": 56,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "names_eq->body_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "body.raw"
+        ],
+        "delivery": [
+          "body.raw"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "witness_id": "W08",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 8,
+        "unknown": 56,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "names_subset->body_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "body.raw"
+        ],
+        "delivery": [
+          "body.raw"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "witness_id": "W08",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 8,
+        "unknown": 56,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "sizes_eq->body_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "body.raw"
+        ],
+        "delivery": [
+          "body.raw"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "witness_id": "W08",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 8,
+        "unknown": 56,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "sizes_subset->body_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "body.raw"
+        ],
+        "delivery": [
+          "body.raw"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "witness_id": "W08",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 8,
+        "unknown": 56,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "count_le->body_eq": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "body.raw"
+        ],
+        "delivery": [
+          "body.raw"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_count"
+        ],
+        "delivery": [
+          "attachment_count"
+        ]
+      },
+      "witness_id": "W08",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 8,
+        "unknown": 56,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "items_eq->count_le": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_count"
+        ],
+        "delivery": [
+          "attachment_count"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_bytes.bag_tag"
+        ],
+        "delivery": [
+          "attachment_bytes.bag_tag"
+        ]
+      },
+      "witness_id": "W03",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 36,
+        "unknown": 28,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "items_subset->count_le": {
+      "action": "switch_sufficient_projection",
+      "basis": "finite_runtime_verified",
+      "add": {
+        "approval": [
+          "attachment_count"
+        ],
+        "delivery": [
+          "attachment_count"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_bytes.item_tags"
+        ],
+        "delivery": [
+          "attachment_bytes.item_tags"
+        ]
+      },
+      "witness_id": null,
+      "smtp": null,
+      "using_previous_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "names_eq->count_le": {
+      "action": "switch_sufficient_projection",
+      "basis": "finite_runtime_verified",
+      "add": {
+        "approval": [
+          "attachment_count"
+        ],
+        "delivery": [
+          "attachment_count"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "witness_id": null,
+      "smtp": null,
+      "using_previous_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "names_subset->count_le": {
+      "action": "switch_sufficient_projection",
+      "basis": "finite_runtime_verified",
+      "add": {
+        "approval": [
+          "attachment_count"
+        ],
+        "delivery": [
+          "attachment_count"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_names.raw"
+        ],
+        "delivery": [
+          "attachment_names.raw"
+        ]
+      },
+      "witness_id": null,
+      "smtp": null,
+      "using_previous_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "sizes_eq->count_le": {
+      "action": "switch_sufficient_projection",
+      "basis": "finite_runtime_verified",
+      "add": {
+        "approval": [
+          "attachment_count"
+        ],
+        "delivery": [
+          "attachment_count"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "witness_id": null,
+      "smtp": null,
+      "using_previous_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "sizes_subset->count_le": {
+      "action": "switch_sufficient_projection",
+      "basis": "finite_runtime_verified",
+      "add": {
+        "approval": [
+          "attachment_count"
+        ],
+        "delivery": [
+          "attachment_count"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "attachment_sizes.list"
+        ],
+        "delivery": [
+          "attachment_sizes.list"
+        ]
+      },
+      "witness_id": null,
+      "smtp": null,
+      "using_previous_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    },
+    "body_eq->count_le": {
+      "action": "replace_insufficient_fields",
+      "basis": "observational_collision",
+      "add": {
+        "approval": [
+          "attachment_count"
+        ],
+        "delivery": [
+          "attachment_count"
+        ]
+      },
+      "retire": {
+        "approval": [
+          "body.raw"
+        ],
+        "delivery": [
+          "body.raw"
+        ]
+      },
+      "witness_id": "W02",
+      "smtp": {
+        "available": true,
+        "smtp_acceptances": 2,
+        "same_observation": true,
+        "independent_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verified_decisions": [
+          "unknown",
+          "unknown"
+        ],
+        "reproduced": true
+      },
+      "using_previous_fields": {
+        "correct": 8,
+        "unknown": 56,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      },
+      "using_planned_fields": {
+        "correct": 64,
+        "unknown": 0,
+        "false_authorized": 0,
+        "false_unauthorized": 0
+      }
+    }
+  },
+  "distinct_witness_world_pairs": {
+    "W01": {
+      "within": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        }
+      },
+      "violation": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "B"
+            ]
+          ]
+        }
+      }
+    },
+    "W02": {
+      "within": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": []
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": []
+        }
+      },
+      "violation": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": []
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        }
+      }
+    },
+    "W03": {
+      "within": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": []
+        }
+      },
+      "violation": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": []
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        }
+      }
+    },
+    "W04": {
+      "within": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "B"
+            ]
+          ]
+        }
+      },
+      "violation": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": []
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        }
+      }
+    },
+    "W05": {
+      "within": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        }
+      },
+      "violation": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "b.bin",
+              "A"
+            ]
+          ]
+        }
+      }
+    },
+    "W06": {
+      "within": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "B"
+            ]
+          ]
+        }
+      },
+      "violation": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "CC"
+            ]
+          ]
+        }
+      }
+    },
+    "W07": {
+      "within": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        }
+      },
+      "violation": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "CC"
+            ]
+          ]
+        }
+      }
+    },
+    "W08": {
+      "within": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": []
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": []
+        }
+      },
+      "violation": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": []
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "beta",
+          "attachments": []
+        }
+      }
+    }
+  }
+}

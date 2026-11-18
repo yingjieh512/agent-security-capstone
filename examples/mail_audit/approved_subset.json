@@ -1,0 +1,6 @@
+{
+  "all": [
+    {"op": "eq", "field": "recipient"},
+    {"op": "subset", "field": "items"}
+  ]
+}

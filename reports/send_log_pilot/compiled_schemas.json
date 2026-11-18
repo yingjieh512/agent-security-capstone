@@ -1,0 +1,691 @@
+{
+  "full_menu": {
+    "recipient": {
+      "policy": "recipient",
+      "feasible": true,
+      "fields": [
+        "approval.recipient.tag",
+        "delivery.recipient.tag"
+      ],
+      "also_minimum_field_count": true,
+      "observable_equality_patterns": 5,
+      "schema_id": "7782939b262f928da18d28e70b9a8ff0cd4fe2f40fbeda05eb13cfa8ef686971",
+      "worlds": 25,
+      "menu_size": 18,
+      "possible_subsets": 262144,
+      "subsets_examined_in_cost_order": 37,
+      "privacy_cost": [
+        0,
+        0,
+        0,
+        2
+      ],
+      "deletion_witnesses": {
+        "approval.recipient.tag": {
+          "violation": [
+            null,
+            [
+              "R0",
+              "B0"
+            ]
+          ],
+          "within": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R0",
+              "B0"
+            ]
+          ]
+        },
+        "delivery.recipient.tag": {
+          "within": [
+            null,
+            null
+          ],
+          "violation": [
+            null,
+            [
+              "R0",
+              "B0"
+            ]
+          ]
+        }
+      }
+    },
+    "recipient_body": {
+      "policy": "recipient_body",
+      "feasible": true,
+      "fields": [
+        "approval.pair.tag",
+        "delivery.pair.tag"
+      ],
+      "also_minimum_field_count": true,
+      "observable_equality_patterns": 5,
+      "schema_id": "c5d20e6832a22978f5ae48dbe682f280b4ee82f3296693176efb486da2da2a72",
+      "worlds": 25,
+      "menu_size": 18,
+      "possible_subsets": 262144,
+      "subsets_examined_in_cost_order": 37,
+      "privacy_cost": [
+        0,
+        0,
+        0,
+        2
+      ],
+      "deletion_witnesses": {
+        "approval.pair.tag": {
+          "violation": [
+            null,
+            [
+              "R0",
+              "B0"
+            ]
+          ],
+          "within": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R0",
+              "B0"
+            ]
+          ]
+        },
+        "delivery.pair.tag": {
+          "within": [
+            null,
+            null
+          ],
+          "violation": [
+            null,
+            [
+              "R0",
+              "B0"
+            ]
+          ]
+        }
+      }
+    },
+    "explain": {
+      "policy": "explain",
+      "feasible": true,
+      "fields": [
+        "approval.pair.tag",
+        "approval.recipient.tag",
+        "delivery.pair.tag",
+        "delivery.recipient.tag"
+      ],
+      "also_minimum_field_count": true,
+      "observable_equality_patterns": 6,
+      "schema_id": "00405310acf85a9b632e597d5d7db58ef8ab26c094293366b0f0f99b2d160902",
+      "worlds": 25,
+      "menu_size": 18,
+      "possible_subsets": 262144,
+      "subsets_examined_in_cost_order": 163,
+      "privacy_cost": [
+        0,
+        0,
+        0,
+        4
+      ],
+      "deletion_witnesses": {
+        "approval.pair.tag": {
+          "within": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R0",
+              "B0"
+            ]
+          ],
+          "wrong_body": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R0",
+              "B1"
+            ]
+          ]
+        },
+        "approval.recipient.tag": {
+          "wrong_body": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R0",
+              "B1"
+            ]
+          ],
+          "wrong_recipient": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R1",
+              "B0"
+            ]
+          ]
+        },
+        "delivery.pair.tag": {
+          "within": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R0",
+              "B0"
+            ]
+          ],
+          "wrong_body": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R0",
+              "B1"
+            ]
+          ]
+        },
+        "delivery.recipient.tag": {
+          "wrong_body": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R0",
+              "B1"
+            ]
+          ],
+          "wrong_recipient": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R1",
+              "B0"
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "no_tuple_projection": {
+    "recipient": {
+      "policy": "recipient",
+      "feasible": true,
+      "fields": [
+        "approval.recipient.tag",
+        "delivery.recipient.tag"
+      ],
+      "also_minimum_field_count": true,
+      "observable_equality_patterns": 5,
+      "schema_id": "7782939b262f928da18d28e70b9a8ff0cd4fe2f40fbeda05eb13cfa8ef686971",
+      "worlds": 25,
+      "menu_size": 14,
+      "possible_subsets": 16384,
+      "subsets_examined_in_cost_order": 22,
+      "privacy_cost": [
+        0,
+        0,
+        0,
+        2
+      ],
+      "deletion_witnesses": {
+        "approval.recipient.tag": {
+          "violation": [
+            null,
+            [
+              "R0",
+              "B0"
+            ]
+          ],
+          "within": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R0",
+              "B0"
+            ]
+          ]
+        },
+        "delivery.recipient.tag": {
+          "within": [
+            null,
+            null
+          ],
+          "violation": [
+            null,
+            [
+              "R0",
+              "B0"
+            ]
+          ]
+        }
+      }
+    },
+    "recipient_body": {
+      "policy": "recipient_body",
+      "feasible": true,
+      "fields": [
+        "approval.body.tag",
+        "approval.recipient.tag",
+        "delivery.body.tag",
+        "delivery.recipient.tag"
+      ],
+      "also_minimum_field_count": true,
+      "observable_equality_patterns": 7,
+      "schema_id": "fb1810c320b127d948e45b9b80d760c7e6c7455dddd9a9ac80832c2fea2276f7",
+      "worlds": 25,
+      "menu_size": 14,
+      "possible_subsets": 16384,
+      "subsets_examined_in_cost_order": 57,
+      "privacy_cost": [
+        0,
+        0,
+        0,
+        4
+      ],
+      "deletion_witnesses": {
+        "approval.body.tag": {
+          "within": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R0",
+              "B0"
+            ]
+          ],
+          "violation": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R0",
+              "B1"
+            ]
+          ]
+        },
+        "approval.recipient.tag": {
+          "within": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R0",
+              "B0"
+            ]
+          ],
+          "violation": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R1",
+              "B0"
+            ]
+          ]
+        },
+        "delivery.body.tag": {
+          "within": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R0",
+              "B0"
+            ]
+          ],
+          "violation": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R0",
+              "B1"
+            ]
+          ]
+        },
+        "delivery.recipient.tag": {
+          "within": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R0",
+              "B0"
+            ]
+          ],
+          "violation": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R1",
+              "B0"
+            ]
+          ]
+        }
+      }
+    },
+    "explain": {
+      "policy": "explain",
+      "feasible": true,
+      "fields": [
+        "approval.body.tag",
+        "approval.recipient.tag",
+        "delivery.body.tag",
+        "delivery.recipient.tag"
+      ],
+      "also_minimum_field_count": true,
+      "observable_equality_patterns": 7,
+      "schema_id": "b7c1022cdb40caab666b3ee9136ea0ae9b8d6f05e73692c538e002d946d8592b",
+      "worlds": 25,
+      "menu_size": 14,
+      "possible_subsets": 16384,
+      "subsets_examined_in_cost_order": 57,
+      "privacy_cost": [
+        0,
+        0,
+        0,
+        4
+      ],
+      "deletion_witnesses": {
+        "approval.body.tag": {
+          "within": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R0",
+              "B0"
+            ]
+          ],
+          "wrong_body": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R0",
+              "B1"
+            ]
+          ]
+        },
+        "approval.recipient.tag": {
+          "within": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R0",
+              "B0"
+            ]
+          ],
+          "wrong_recipient": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R1",
+              "B0"
+            ]
+          ]
+        },
+        "delivery.body.tag": {
+          "within": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R0",
+              "B0"
+            ]
+          ],
+          "wrong_body": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R0",
+              "B1"
+            ]
+          ]
+        },
+        "delivery.recipient.tag": {
+          "within": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R0",
+              "B0"
+            ]
+          ],
+          "wrong_recipient": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R1",
+              "B0"
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "recipient_only_sink": {
+    "recipient": {
+      "policy": "recipient",
+      "feasible": true,
+      "fields": [
+        "approval.recipient.tag",
+        "delivery.recipient.tag"
+      ],
+      "also_minimum_field_count": true,
+      "observable_equality_patterns": 5,
+      "schema_id": "7782939b262f928da18d28e70b9a8ff0cd4fe2f40fbeda05eb13cfa8ef686971",
+      "worlds": 25,
+      "menu_size": 6,
+      "possible_subsets": 64,
+      "subsets_examined_in_cost_order": 22,
+      "privacy_cost": [
+        0,
+        0,
+        0,
+        2
+      ],
+      "deletion_witnesses": {
+        "approval.recipient.tag": {
+          "violation": [
+            null,
+            [
+              "R0",
+              "B0"
+            ]
+          ],
+          "within": [
+            [
+              "R0",
+              "B0"
+            ],
+            [
+              "R0",
+              "B0"
+            ]
+          ]
+        },
+        "delivery.recipient.tag": {
+          "within": [
+            null,
+            null
+          ],
+          "violation": [
+            null,
+            [
+              "R0",
+              "B0"
+            ]
+          ]
+        }
+      }
+    },
+    "recipient_body": {
+      "policy": "recipient_body",
+      "feasible": false,
+      "allowed": [
+        "approval.body.tag",
+        "approval.pair.tag",
+        "approval.present",
+        "approval.recipient.tag",
+        "delivery.present",
+        "delivery.recipient.tag"
+      ],
+      "witness": {
+        "within": [
+          [
+            "R0",
+            "B0"
+          ],
+          [
+            "R0",
+            "B0"
+          ]
+        ],
+        "violation": [
+          [
+            "R0",
+            "B0"
+          ],
+          [
+            "R0",
+            "B1"
+          ]
+        ]
+      }
+    },
+    "explain": {
+      "policy": "explain",
+      "feasible": false,
+      "allowed": [
+        "approval.body.tag",
+        "approval.pair.tag",
+        "approval.present",
+        "approval.recipient.tag",
+        "delivery.present",
+        "delivery.recipient.tag"
+      ],
+      "witness": {
+        "within": [
+          [
+            "R0",
+            "B0"
+          ],
+          [
+            "R0",
+            "B0"
+          ]
+        ],
+        "wrong_body": [
+          [
+            "R0",
+            "B0"
+          ],
+          [
+            "R0",
+            "B1"
+          ]
+        ]
+      }
+    }
+  },
+  "no_trusted_emitters": {
+    "recipient": {
+      "policy": "recipient",
+      "feasible": false,
+      "allowed": [],
+      "witness": {
+        "within": [
+          null,
+          null
+        ],
+        "violation": [
+          null,
+          [
+            "R0",
+            "B0"
+          ]
+        ]
+      }
+    },
+    "recipient_body": {
+      "policy": "recipient_body",
+      "feasible": false,
+      "allowed": [],
+      "witness": {
+        "within": [
+          null,
+          null
+        ],
+        "violation": [
+          null,
+          [
+            "R0",
+            "B0"
+          ]
+        ]
+      }
+    },
+    "explain": {
+      "policy": "explain",
+      "feasible": false,
+      "allowed": [],
+      "witness": {
+        "within": [
+          null,
+          null
+        ],
+        "no_grant": [
+          null,
+          [
+            "R0",
+            "B0"
+          ]
+        ]
+      }
+    }
+  }
+}

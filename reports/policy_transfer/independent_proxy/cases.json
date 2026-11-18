@@ -1,0 +1,484 @@
+[
+  {
+    "id": "no-grant",
+    "approval": null,
+    "delivery": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": []
+    },
+    "authorized": false
+  },
+  {
+    "id": "complete-renamed",
+    "approval": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "map.bin",
+          "content": "AB"
+        },
+        {
+          "name": "key.bin",
+          "content": "CD"
+        },
+        {
+          "name": "log.bin",
+          "content": "EF"
+        }
+      ]
+    },
+    "delivery": {
+      "recipient": "R0",
+      "body": "B1",
+      "attachments": [
+        {
+          "name": "x.bin",
+          "content": "EF"
+        },
+        {
+          "name": "y.bin",
+          "content": "AB"
+        },
+        {
+          "name": "z.bin",
+          "content": "CD"
+        }
+      ]
+    },
+    "authorized": true
+  },
+  {
+    "id": "complete-wrong-recipient",
+    "approval": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "map.bin",
+          "content": "AB"
+        },
+        {
+          "name": "key.bin",
+          "content": "CD"
+        },
+        {
+          "name": "log.bin",
+          "content": "EF"
+        }
+      ]
+    },
+    "delivery": {
+      "recipient": "R1",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "map.bin",
+          "content": "AB"
+        },
+        {
+          "name": "key.bin",
+          "content": "CD"
+        },
+        {
+          "name": "log.bin",
+          "content": "EF"
+        }
+      ]
+    },
+    "authorized": false
+  },
+  {
+    "id": "selection-approved",
+    "approval": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "map.bin",
+          "content": "AB"
+        },
+        {
+          "name": "key.bin",
+          "content": "CD"
+        },
+        {
+          "name": "log.bin",
+          "content": "EF"
+        }
+      ]
+    },
+    "delivery": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "map.bin",
+          "content": "AB"
+        }
+      ]
+    },
+    "authorized": true
+  },
+  {
+    "id": "selection-substitution",
+    "approval": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "map.bin",
+          "content": "AB"
+        },
+        {
+          "name": "key.bin",
+          "content": "CD"
+        },
+        {
+          "name": "log.bin",
+          "content": "EF"
+        }
+      ]
+    },
+    "delivery": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "map.bin",
+          "content": "ZZ"
+        }
+      ]
+    },
+    "authorized": false
+  },
+  {
+    "id": "selection-case-change",
+    "approval": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "map.bin",
+          "content": "AB"
+        },
+        {
+          "name": "key.bin",
+          "content": "CD"
+        },
+        {
+          "name": "log.bin",
+          "content": "EF"
+        }
+      ]
+    },
+    "delivery": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "Map.bin",
+          "content": "AB"
+        }
+      ]
+    },
+    "authorized": false
+  },
+  {
+    "id": "selection-wrong-recipient",
+    "approval": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "map.bin",
+          "content": "AB"
+        },
+        {
+          "name": "key.bin",
+          "content": "CD"
+        },
+        {
+          "name": "log.bin",
+          "content": "EF"
+        }
+      ]
+    },
+    "delivery": {
+      "recipient": "R1",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "map.bin",
+          "content": "AB"
+        }
+      ]
+    },
+    "authorized": false
+  },
+  {
+    "id": "selection-crossed-label",
+    "approval": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "map.bin",
+          "content": "AB"
+        },
+        {
+          "name": "key.bin",
+          "content": "CD"
+        },
+        {
+          "name": "log.bin",
+          "content": "EF"
+        }
+      ]
+    },
+    "delivery": {
+      "recipient": "R0",
+      "body": "B2",
+      "attachments": [
+        {
+          "name": "log.bin",
+          "content": "AB"
+        }
+      ]
+    },
+    "authorized": true
+  },
+  {
+    "id": "selection-name-overuse",
+    "approval": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "map.bin",
+          "content": "AB"
+        },
+        {
+          "name": "key.bin",
+          "content": "CD"
+        },
+        {
+          "name": "log.bin",
+          "content": "EF"
+        }
+      ]
+    },
+    "delivery": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "map.bin",
+          "content": "AB"
+        },
+        {
+          "name": "map.bin",
+          "content": "CD"
+        }
+      ]
+    },
+    "authorized": false
+  },
+  {
+    "id": "selection-content-overuse",
+    "approval": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "map.bin",
+          "content": "AB"
+        },
+        {
+          "name": "key.bin",
+          "content": "CD"
+        },
+        {
+          "name": "log.bin",
+          "content": "EF"
+        }
+      ]
+    },
+    "delivery": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "map.bin",
+          "content": "AB"
+        },
+        {
+          "name": "key.bin",
+          "content": "AB"
+        }
+      ]
+    },
+    "authorized": false
+  },
+  {
+    "id": "selection-duplicates-approved",
+    "approval": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "map.bin",
+          "content": "AB"
+        },
+        {
+          "name": "map.bin",
+          "content": "AB"
+        },
+        {
+          "name": "log.bin",
+          "content": "EF"
+        }
+      ]
+    },
+    "delivery": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "map.bin",
+          "content": "AB"
+        },
+        {
+          "name": "map.bin",
+          "content": "AB"
+        }
+      ]
+    },
+    "authorized": true
+  },
+  {
+    "id": "complete-count-only",
+    "approval": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "map.bin",
+          "content": "AB"
+        },
+        {
+          "name": "key.bin",
+          "content": "CD"
+        },
+        {
+          "name": "log.bin",
+          "content": "EF"
+        }
+      ]
+    },
+    "delivery": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "map.bin",
+          "content": "AB"
+        },
+        {
+          "name": "key.bin",
+          "content": "CD"
+        },
+        {
+          "name": "log.bin",
+          "content": "ZZ"
+        }
+      ]
+    },
+    "authorized": false
+  },
+  {
+    "id": "selection-empty",
+    "approval": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "map.bin",
+          "content": "AB"
+        },
+        {
+          "name": "key.bin",
+          "content": "CD"
+        },
+        {
+          "name": "log.bin",
+          "content": "EF"
+        }
+      ]
+    },
+    "delivery": {
+      "recipient": "R0",
+      "body": "",
+      "attachments": []
+    },
+    "authorized": true
+  },
+  {
+    "id": "both-empty",
+    "approval": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": []
+    },
+    "delivery": {
+      "recipient": "R0",
+      "body": "B1",
+      "attachments": []
+    },
+    "authorized": true
+  },
+  {
+    "id": "extra-empty-file",
+    "approval": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": []
+    },
+    "delivery": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "zero.bin",
+          "content": ""
+        }
+      ]
+    },
+    "authorized": false
+  },
+  {
+    "id": "complete-empty-file-renamed",
+    "approval": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "zero.bin",
+          "content": ""
+        }
+      ]
+    },
+    "delivery": {
+      "recipient": "R0",
+      "body": "B0",
+      "attachments": [
+        {
+          "name": "blank.bin",
+          "content": ""
+        }
+      ]
+    },
+    "authorized": true
+  }
+]

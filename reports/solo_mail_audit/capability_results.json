@@ -1,0 +1,2118 @@
+{
+  "freeze": "codex/declarative-mail-preblind",
+  "full_capabilities": {
+    "approval": [
+      "attachment_bytes.bag_tag",
+      "attachment_bytes.item_tags",
+      "attachment_content.raw",
+      "attachment_count",
+      "attachment_names.raw",
+      "attachment_sizes.list",
+      "body.raw",
+      "recipient.raw",
+      "recipient.tag",
+      "status"
+    ],
+    "delivery": [
+      "attachment_bytes.bag_tag",
+      "attachment_bytes.item_tags",
+      "attachment_content.raw",
+      "attachment_count",
+      "attachment_names.raw",
+      "attachment_sizes.list",
+      "body.raw",
+      "recipient.raw",
+      "recipient.tag",
+      "status"
+    ]
+  },
+  "templates": {
+    "atbench:row718:call5": 16,
+    "atbench:row600:call10": 810,
+    "claw:row160:call5": 21,
+    "claw:row224:call6": 1097
+  },
+  "units": {
+    "omission": "Role/field key removes just that field on that role from full_capabilities.",
+    "scores": "Per policy, each same selected schema reuses its measured row on the same corpus.",
+    "unsupported": "No generated receipts or footprint assigned to an infeasible schema.",
+    "delta": "Selected schema minus the same policy's full-capability control, across the 64 messages.",
+    "witness": "Deduplicated ordered (authorized world, unauthorized world) with literal fixture values."
+  },
+  "summary": {
+    "full_menu_controls": 8,
+    "restricted_settings": 160,
+    "restricted_feasible": 154,
+    "restricted_outcomes": {
+      "unchanged": 128,
+      "fallback_without_new_raw": 4,
+      "fallback_with_new_raw": 22,
+      "infeasible_with_collision": 6,
+      "infeasible_without_collision": 0
+    },
+    "main_smtp_acceptances": 64,
+    "distinct_policy_schema_combinations_scored": 24,
+    "control_policy_verdicts": {
+      "correct": 512,
+      "unknown": 0,
+      "false_authorized": 0,
+      "false_unauthorized": 0
+    },
+    "restricted_feasible_setting_verdicts": {
+      "correct": 9856,
+      "unknown": 0,
+      "false_authorized": 0,
+      "false_unauthorized": 0
+    },
+    "restricted_feasible_setting_verdict_denominator": 9856,
+    "distinct_witness_world_pairs": 4,
+    "confirmed_witness_replays": 6,
+    "witness_smtp_acceptances": 12
+  },
+  "policies": {
+    "items_eq": {
+      "policy": {
+        "all": [
+          {
+            "op": "eq",
+            "field": "recipient"
+          },
+          {
+            "op": "eq",
+            "field": "items"
+          }
+        ]
+      },
+      "control_worlds_checked": 12544,
+      "control": "control",
+      "schemas": {
+        "control": {
+          "fields": {
+            "approval": [
+              "attachment_bytes.bag_tag",
+              "recipient.tag"
+            ],
+            "delivery": [
+              "attachment_bytes.bag_tag",
+              "recipient.tag"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 72428,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": 0,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          }
+        },
+        "alternate1": {
+          "fields": {
+            "approval": [
+              "attachment_bytes.item_tags",
+              "recipient.tag"
+            ],
+            "delivery": [
+              "attachment_bytes.item_tags",
+              "recipient.tag"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 84204,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": 11776,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          }
+        },
+        "alternate2": {
+          "fields": {
+            "approval": [
+              "attachment_bytes.bag_tag",
+              "recipient.raw"
+            ],
+            "delivery": [
+              "attachment_bytes.bag_tag",
+              "recipient.raw"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 56184,
+            "raw_bytes": {
+              "recipient": 2232,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": -16244,
+            "raw_bytes": {
+              "recipient": 2232,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          }
+        }
+      },
+      "single_deletions": {
+        "approval/attachment_bytes.bag_tag": {
+          "outcome": "fallback_without_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate1"
+        },
+        "approval/attachment_bytes.item_tags": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_content.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_count": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_names.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_sizes.list": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/body.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/recipient.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/recipient.tag": {
+          "outcome": "fallback_with_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate2"
+        },
+        "approval/status": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_bytes.bag_tag": {
+          "outcome": "fallback_without_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate1"
+        },
+        "delivery/attachment_bytes.item_tags": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_content.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_count": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_names.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_sizes.list": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/body.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/recipient.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/recipient.tag": {
+          "outcome": "fallback_with_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate2"
+        },
+        "delivery/status": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        }
+      },
+      "corpus_truth": {
+        "authorized": 28,
+        "unauthorized": 36
+      }
+    },
+    "items_subset": {
+      "policy": {
+        "all": [
+          {
+            "op": "eq",
+            "field": "recipient"
+          },
+          {
+            "op": "subset",
+            "field": "items"
+          }
+        ]
+      },
+      "control_worlds_checked": 12544,
+      "control": "control",
+      "schemas": {
+        "control": {
+          "fields": {
+            "approval": [
+              "attachment_bytes.item_tags",
+              "recipient.tag"
+            ],
+            "delivery": [
+              "attachment_bytes.item_tags",
+              "recipient.tag"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 84204,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": 0,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          }
+        },
+        "alternate1": {
+          "fields": {
+            "approval": [
+              "attachment_content.raw",
+              "recipient.tag"
+            ],
+            "delivery": [
+              "attachment_content.raw",
+              "recipient.tag"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 55584,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 384
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": -28620,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 384
+            }
+          }
+        },
+        "alternate2": {
+          "fields": {
+            "approval": [
+              "attachment_bytes.item_tags",
+              "recipient.raw"
+            ],
+            "delivery": [
+              "attachment_bytes.item_tags",
+              "recipient.raw"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 67960,
+            "raw_bytes": {
+              "recipient": 2232,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": -16244,
+            "raw_bytes": {
+              "recipient": 2232,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          }
+        }
+      },
+      "single_deletions": {
+        "approval/attachment_bytes.bag_tag": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_bytes.item_tags": {
+          "outcome": "fallback_with_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate1"
+        },
+        "approval/attachment_content.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_count": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_names.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_sizes.list": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/body.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/recipient.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/recipient.tag": {
+          "outcome": "fallback_with_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate2"
+        },
+        "approval/status": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_bytes.bag_tag": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_bytes.item_tags": {
+          "outcome": "fallback_with_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate1"
+        },
+        "delivery/attachment_content.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_count": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_names.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_sizes.list": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/body.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/recipient.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/recipient.tag": {
+          "outcome": "fallback_with_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate2"
+        },
+        "delivery/status": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        }
+      },
+      "corpus_truth": {
+        "authorized": 36,
+        "unauthorized": 28
+      }
+    },
+    "names_eq": {
+      "policy": {
+        "all": [
+          {
+            "op": "eq",
+            "field": "recipient"
+          },
+          {
+            "op": "eq",
+            "field": "names"
+          }
+        ]
+      },
+      "control_worlds_checked": 12544,
+      "control": "control",
+      "schemas": {
+        "control": {
+          "fields": {
+            "approval": [
+              "attachment_names.raw",
+              "recipient.tag"
+            ],
+            "delivery": [
+              "attachment_names.raw",
+              "recipient.tag"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 55740,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 1532,
+              "content": 0
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": 0,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          }
+        },
+        "alternate1": {
+          "fields": {
+            "approval": [
+              "attachment_names.raw",
+              "recipient.raw"
+            ],
+            "delivery": [
+              "attachment_names.raw",
+              "recipient.raw"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 39496,
+            "raw_bytes": {
+              "recipient": 2232,
+              "body": 0,
+              "names": 1532,
+              "content": 0
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": -16244,
+            "raw_bytes": {
+              "recipient": 2232,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          }
+        }
+      },
+      "single_deletions": {
+        "approval/attachment_bytes.bag_tag": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_bytes.item_tags": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_content.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_count": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_names.raw": {
+          "outcome": "infeasible_with_collision",
+          "compiler_basis": "full_menu_observational_collision",
+          "schema": null,
+          "witness": "W01",
+          "witness_replay": {
+            "available": true,
+            "smtp_acceptances": 2,
+            "same_observation": true,
+            "independent_truths": [
+              "authorized",
+              "unauthorized"
+            ],
+            "verified_decisions": [
+              "unknown",
+              "unknown"
+            ],
+            "reproduced": true
+          }
+        },
+        "approval/attachment_sizes.list": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/body.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/recipient.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/recipient.tag": {
+          "outcome": "fallback_with_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate1"
+        },
+        "approval/status": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_bytes.bag_tag": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_bytes.item_tags": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_content.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_count": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_names.raw": {
+          "outcome": "infeasible_with_collision",
+          "compiler_basis": "full_menu_observational_collision",
+          "schema": null,
+          "witness": "W02",
+          "witness_replay": {
+            "available": true,
+            "smtp_acceptances": 2,
+            "same_observation": true,
+            "independent_truths": [
+              "authorized",
+              "unauthorized"
+            ],
+            "verified_decisions": [
+              "unknown",
+              "unknown"
+            ],
+            "reproduced": true
+          }
+        },
+        "delivery/attachment_sizes.list": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/body.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/recipient.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/recipient.tag": {
+          "outcome": "fallback_with_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate1"
+        },
+        "delivery/status": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        }
+      },
+      "corpus_truth": {
+        "authorized": 32,
+        "unauthorized": 32
+      }
+    },
+    "names_subset": {
+      "policy": {
+        "all": [
+          {
+            "op": "eq",
+            "field": "recipient"
+          },
+          {
+            "op": "subset",
+            "field": "names"
+          }
+        ]
+      },
+      "control_worlds_checked": 12544,
+      "control": "control",
+      "schemas": {
+        "control": {
+          "fields": {
+            "approval": [
+              "attachment_names.raw",
+              "recipient.tag"
+            ],
+            "delivery": [
+              "attachment_names.raw",
+              "recipient.tag"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 55740,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 1532,
+              "content": 0
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": 0,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          }
+        },
+        "alternate1": {
+          "fields": {
+            "approval": [
+              "attachment_names.raw",
+              "recipient.raw"
+            ],
+            "delivery": [
+              "attachment_names.raw",
+              "recipient.raw"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 39496,
+            "raw_bytes": {
+              "recipient": 2232,
+              "body": 0,
+              "names": 1532,
+              "content": 0
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": -16244,
+            "raw_bytes": {
+              "recipient": 2232,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          }
+        }
+      },
+      "single_deletions": {
+        "approval/attachment_bytes.bag_tag": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_bytes.item_tags": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_content.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_count": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_names.raw": {
+          "outcome": "infeasible_with_collision",
+          "compiler_basis": "full_menu_observational_collision",
+          "schema": null,
+          "witness": "W01",
+          "witness_replay": {
+            "available": true,
+            "smtp_acceptances": 2,
+            "same_observation": true,
+            "independent_truths": [
+              "authorized",
+              "unauthorized"
+            ],
+            "verified_decisions": [
+              "unknown",
+              "unknown"
+            ],
+            "reproduced": true
+          }
+        },
+        "approval/attachment_sizes.list": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/body.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/recipient.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/recipient.tag": {
+          "outcome": "fallback_with_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate1"
+        },
+        "approval/status": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_bytes.bag_tag": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_bytes.item_tags": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_content.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_count": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_names.raw": {
+          "outcome": "infeasible_with_collision",
+          "compiler_basis": "full_menu_observational_collision",
+          "schema": null,
+          "witness": "W02",
+          "witness_replay": {
+            "available": true,
+            "smtp_acceptances": 2,
+            "same_observation": true,
+            "independent_truths": [
+              "authorized",
+              "unauthorized"
+            ],
+            "verified_decisions": [
+              "unknown",
+              "unknown"
+            ],
+            "reproduced": true
+          }
+        },
+        "delivery/attachment_sizes.list": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/body.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/recipient.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/recipient.tag": {
+          "outcome": "fallback_with_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate1"
+        },
+        "delivery/status": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        }
+      },
+      "corpus_truth": {
+        "authorized": 40,
+        "unauthorized": 24
+      }
+    },
+    "sizes_eq": {
+      "policy": {
+        "all": [
+          {
+            "op": "eq",
+            "field": "recipient"
+          },
+          {
+            "op": "eq",
+            "field": "sizes"
+          }
+        ]
+      },
+      "control_worlds_checked": 12544,
+      "control": "control",
+      "schemas": {
+        "control": {
+          "fields": {
+            "approval": [
+              "attachment_sizes.list",
+              "recipient.tag"
+            ],
+            "delivery": [
+              "attachment_sizes.list",
+              "recipient.tag"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 54044,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": 0,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          }
+        },
+        "alternate1": {
+          "fields": {
+            "approval": [
+              "attachment_content.raw",
+              "recipient.tag"
+            ],
+            "delivery": [
+              "attachment_sizes.list",
+              "recipient.tag"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 54832,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 192
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": 788,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 192
+            }
+          }
+        },
+        "alternate2": {
+          "fields": {
+            "approval": [
+              "attachment_sizes.list",
+              "recipient.raw"
+            ],
+            "delivery": [
+              "attachment_sizes.list",
+              "recipient.raw"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 37800,
+            "raw_bytes": {
+              "recipient": 2232,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": -16244,
+            "raw_bytes": {
+              "recipient": 2232,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          }
+        },
+        "alternate3": {
+          "fields": {
+            "approval": [
+              "attachment_sizes.list",
+              "recipient.tag"
+            ],
+            "delivery": [
+              "attachment_content.raw",
+              "recipient.tag"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 54796,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 192
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": 752,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 192
+            }
+          }
+        }
+      },
+      "single_deletions": {
+        "approval/attachment_bytes.bag_tag": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_bytes.item_tags": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_content.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_count": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_names.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_sizes.list": {
+          "outcome": "fallback_with_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate1"
+        },
+        "approval/body.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/recipient.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/recipient.tag": {
+          "outcome": "fallback_with_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate2"
+        },
+        "approval/status": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_bytes.bag_tag": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_bytes.item_tags": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_content.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_count": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_names.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_sizes.list": {
+          "outcome": "fallback_with_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate3"
+        },
+        "delivery/body.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/recipient.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/recipient.tag": {
+          "outcome": "fallback_with_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate2"
+        },
+        "delivery/status": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        }
+      },
+      "corpus_truth": {
+        "authorized": 32,
+        "unauthorized": 32
+      }
+    },
+    "sizes_subset": {
+      "policy": {
+        "all": [
+          {
+            "op": "eq",
+            "field": "recipient"
+          },
+          {
+            "op": "subset",
+            "field": "sizes"
+          }
+        ]
+      },
+      "control_worlds_checked": 12544,
+      "control": "control",
+      "schemas": {
+        "control": {
+          "fields": {
+            "approval": [
+              "attachment_sizes.list",
+              "recipient.tag"
+            ],
+            "delivery": [
+              "attachment_sizes.list",
+              "recipient.tag"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 54044,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": 0,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          }
+        },
+        "alternate1": {
+          "fields": {
+            "approval": [
+              "attachment_content.raw",
+              "recipient.tag"
+            ],
+            "delivery": [
+              "attachment_sizes.list",
+              "recipient.tag"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 54832,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 192
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": 788,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 192
+            }
+          }
+        },
+        "alternate2": {
+          "fields": {
+            "approval": [
+              "attachment_sizes.list",
+              "recipient.raw"
+            ],
+            "delivery": [
+              "attachment_sizes.list",
+              "recipient.raw"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 37800,
+            "raw_bytes": {
+              "recipient": 2232,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": -16244,
+            "raw_bytes": {
+              "recipient": 2232,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          }
+        },
+        "alternate3": {
+          "fields": {
+            "approval": [
+              "attachment_sizes.list",
+              "recipient.tag"
+            ],
+            "delivery": [
+              "attachment_content.raw",
+              "recipient.tag"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 54796,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 192
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": 752,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 192
+            }
+          }
+        }
+      },
+      "single_deletions": {
+        "approval/attachment_bytes.bag_tag": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_bytes.item_tags": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_content.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_count": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_names.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_sizes.list": {
+          "outcome": "fallback_with_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate1"
+        },
+        "approval/body.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/recipient.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/recipient.tag": {
+          "outcome": "fallback_with_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate2"
+        },
+        "approval/status": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_bytes.bag_tag": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_bytes.item_tags": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_content.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_count": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_names.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_sizes.list": {
+          "outcome": "fallback_with_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate3"
+        },
+        "delivery/body.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/recipient.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/recipient.tag": {
+          "outcome": "fallback_with_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate2"
+        },
+        "delivery/status": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        }
+      },
+      "corpus_truth": {
+        "authorized": 40,
+        "unauthorized": 24
+      }
+    },
+    "body_eq": {
+      "policy": {
+        "all": [
+          {
+            "op": "eq",
+            "field": "recipient"
+          },
+          {
+            "op": "eq",
+            "field": "body"
+          }
+        ]
+      },
+      "control_worlds_checked": 12544,
+      "control": "control",
+      "schemas": {
+        "control": {
+          "fields": {
+            "approval": [
+              "body.raw",
+              "recipient.tag"
+            ],
+            "delivery": [
+              "body.raw",
+              "recipient.tag"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 112664,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 60512,
+              "names": 0,
+              "content": 0
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": 0,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          }
+        },
+        "alternate1": {
+          "fields": {
+            "approval": [
+              "body.raw",
+              "recipient.raw"
+            ],
+            "delivery": [
+              "body.raw",
+              "recipient.raw"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 96420,
+            "raw_bytes": {
+              "recipient": 2232,
+              "body": 60512,
+              "names": 0,
+              "content": 0
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": -16244,
+            "raw_bytes": {
+              "recipient": 2232,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          }
+        }
+      },
+      "single_deletions": {
+        "approval/attachment_bytes.bag_tag": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_bytes.item_tags": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_content.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_count": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_names.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_sizes.list": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/body.raw": {
+          "outcome": "infeasible_with_collision",
+          "compiler_basis": "full_menu_observational_collision",
+          "schema": null,
+          "witness": "W03",
+          "witness_replay": {
+            "available": true,
+            "smtp_acceptances": 2,
+            "same_observation": true,
+            "independent_truths": [
+              "authorized",
+              "unauthorized"
+            ],
+            "verified_decisions": [
+              "unknown",
+              "unknown"
+            ],
+            "reproduced": true
+          }
+        },
+        "approval/recipient.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/recipient.tag": {
+          "outcome": "fallback_with_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate1"
+        },
+        "approval/status": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_bytes.bag_tag": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_bytes.item_tags": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_content.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_count": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_names.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_sizes.list": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/body.raw": {
+          "outcome": "infeasible_with_collision",
+          "compiler_basis": "full_menu_observational_collision",
+          "schema": null,
+          "witness": "W04",
+          "witness_replay": {
+            "available": true,
+            "smtp_acceptances": 2,
+            "same_observation": true,
+            "independent_truths": [
+              "authorized",
+              "unauthorized"
+            ],
+            "verified_decisions": [
+              "unknown",
+              "unknown"
+            ],
+            "reproduced": true
+          }
+        },
+        "delivery/recipient.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/recipient.tag": {
+          "outcome": "fallback_with_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate1"
+        },
+        "delivery/status": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        }
+      },
+      "corpus_truth": {
+        "authorized": 52,
+        "unauthorized": 12
+      }
+    },
+    "count_le": {
+      "policy": {
+        "all": [
+          {
+            "op": "eq",
+            "field": "recipient"
+          },
+          {
+            "op": "le",
+            "field": "count"
+          }
+        ]
+      },
+      "control_worlds_checked": 12544,
+      "control": "control",
+      "schemas": {
+        "control": {
+          "fields": {
+            "approval": [
+              "attachment_count",
+              "recipient.tag"
+            ],
+            "delivery": [
+              "attachment_count",
+              "recipient.tag"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 52804,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": 0,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          }
+        },
+        "alternate1": {
+          "fields": {
+            "approval": [
+              "attachment_sizes.list",
+              "recipient.tag"
+            ],
+            "delivery": [
+              "attachment_count",
+              "recipient.tag"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 53428,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": 624,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          }
+        },
+        "alternate2": {
+          "fields": {
+            "approval": [
+              "attachment_count",
+              "recipient.raw"
+            ],
+            "delivery": [
+              "attachment_count",
+              "recipient.raw"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 36560,
+            "raw_bytes": {
+              "recipient": 2232,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": -16244,
+            "raw_bytes": {
+              "recipient": 2232,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          }
+        },
+        "alternate3": {
+          "fields": {
+            "approval": [
+              "attachment_count",
+              "recipient.tag"
+            ],
+            "delivery": [
+              "attachment_sizes.list",
+              "recipient.tag"
+            ]
+          },
+          "measured": {
+            "correct": 64,
+            "false_authorized": 0,
+            "false_unauthorized": 0,
+            "unknown": 0,
+            "receipt_bytes": 53420,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          },
+          "delta_from_control": {
+            "receipt_bytes": 616,
+            "raw_bytes": {
+              "recipient": 0,
+              "body": 0,
+              "names": 0,
+              "content": 0
+            }
+          }
+        }
+      },
+      "single_deletions": {
+        "approval/attachment_bytes.bag_tag": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_bytes.item_tags": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_content.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_count": {
+          "outcome": "fallback_without_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate1"
+        },
+        "approval/attachment_names.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/attachment_sizes.list": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/body.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/recipient.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "approval/recipient.tag": {
+          "outcome": "fallback_with_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate2"
+        },
+        "approval/status": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_bytes.bag_tag": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_bytes.item_tags": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_content.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_count": {
+          "outcome": "fallback_without_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate3"
+        },
+        "delivery/attachment_names.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/attachment_sizes.list": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/body.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/recipient.raw": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        },
+        "delivery/recipient.tag": {
+          "outcome": "fallback_with_new_raw",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "alternate2"
+        },
+        "delivery/status": {
+          "outcome": "unchanged",
+          "compiler_basis": "finite_runtime_verified",
+          "schema": "control"
+        }
+      },
+      "corpus_truth": {
+        "authorized": 48,
+        "unauthorized": 16
+      }
+    }
+  },
+  "witnesses": {
+    "W01": {
+      "within": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        }
+      },
+      "violation": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "b.bin",
+              "A"
+            ]
+          ]
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        }
+      }
+    },
+    "W02": {
+      "within": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        }
+      },
+      "violation": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "b.bin",
+              "A"
+            ]
+          ]
+        }
+      }
+    },
+    "W03": {
+      "within": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": []
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": []
+        }
+      },
+      "violation": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "beta",
+          "attachments": []
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": []
+        }
+      }
+    },
+    "W04": {
+      "within": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": []
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": []
+        }
+      },
+      "violation": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": []
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "beta",
+          "attachments": []
+        }
+      }
+    }
+  }
+}

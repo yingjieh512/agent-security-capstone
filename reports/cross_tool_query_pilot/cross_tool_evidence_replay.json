@@ -1,0 +1,1517 @@
+{
+  "manifest": {
+    "ATBench": {
+      "revision": "de862a3d5363aa3928f70e2228b275135597226c",
+      "sha256": "80c534b5f3517c872b528a2e6b64e34495206968edd184f4aed563d39f0cca09",
+      "rows": 1000
+    },
+    "Claw": {
+      "revision": "75f70f4bfd8305e33e22006e1e6eeb668684d3f2",
+      "sha256": "bc04db0db900fd63ac4c59ba651584be2dc8dbd51861c98ffeb21f13c9495c8b",
+      "rows": 500
+    }
+  },
+  "scanned_calls": 91,
+  "eligible_calls": 80,
+  "eligible_trajectories": 79,
+  "cases_by_tool": {
+    "send_email": 19,
+    "send_sms": 20,
+    "sendMessage": 28,
+    "gog gmail send": 13
+  },
+  "fixed_orders": [
+    {
+      "route": "direct",
+      "condition": "complete",
+      "budget": 1,
+      "order": [
+        "approval",
+        "mailbox"
+      ]
+    },
+    {
+      "route": "direct",
+      "condition": "complete",
+      "budget": 2,
+      "order": [
+        "mailbox",
+        "approval"
+      ]
+    },
+    {
+      "route": "direct",
+      "condition": "complete",
+      "budget": 3,
+      "order": [
+        "mailbox",
+        "approval"
+      ]
+    },
+    {
+      "route": "direct",
+      "condition": "visibility_stress",
+      "budget": 1,
+      "order": [
+        "approval",
+        "mailbox"
+      ]
+    },
+    {
+      "route": "direct",
+      "condition": "visibility_stress",
+      "budget": 2,
+      "order": [
+        "mailbox",
+        "approval"
+      ]
+    },
+    {
+      "route": "direct",
+      "condition": "visibility_stress",
+      "budget": 3,
+      "order": [
+        "mailbox",
+        "approval"
+      ]
+    },
+    {
+      "route": "indexed",
+      "condition": "complete",
+      "budget": 1,
+      "order": [
+        "approval",
+        "mailbox",
+        "request_index"
+      ]
+    },
+    {
+      "route": "indexed",
+      "condition": "complete",
+      "budget": 2,
+      "order": [
+        "approval",
+        "mailbox",
+        "request_index"
+      ]
+    },
+    {
+      "route": "indexed",
+      "condition": "complete",
+      "budget": 3,
+      "order": [
+        "mailbox",
+        "request_index",
+        "approval"
+      ]
+    },
+    {
+      "route": "indexed",
+      "condition": "visibility_stress",
+      "budget": 1,
+      "order": [
+        "approval",
+        "mailbox",
+        "request_index"
+      ]
+    },
+    {
+      "route": "indexed",
+      "condition": "visibility_stress",
+      "budget": 2,
+      "order": [
+        "approval",
+        "mailbox",
+        "request_index"
+      ]
+    },
+    {
+      "route": "indexed",
+      "condition": "visibility_stress",
+      "budget": 3,
+      "order": [
+        "mailbox",
+        "request_index",
+        "approval"
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "condition": "complete",
+      "budget": 1,
+      "group": "all",
+      "policy": "adaptive",
+      "n": 720,
+      "reads": 369,
+      "correct": 123,
+      "wrong": 0,
+      "unknown": 597
+    },
+    {
+      "condition": "complete",
+      "budget": 1,
+      "group": "all",
+      "policy": "fixed",
+      "n": 720,
+      "reads": 369,
+      "correct": 123,
+      "wrong": 0,
+      "unknown": 597
+    },
+    {
+      "condition": "complete",
+      "budget": 1,
+      "group": "all",
+      "policy": "read_all",
+      "n": 720,
+      "reads": 720,
+      "correct": 123,
+      "wrong": 0,
+      "unknown": 597
+    },
+    {
+      "condition": "complete",
+      "budget": 1,
+      "group": "all",
+      "policy": "receipt_first",
+      "n": 720,
+      "reads": 369,
+      "correct": 123,
+      "wrong": 0,
+      "unknown": 597
+    },
+    {
+      "condition": "complete",
+      "budget": 1,
+      "group": "gog gmail send",
+      "policy": "adaptive",
+      "n": 117,
+      "reads": 117,
+      "correct": 39,
+      "wrong": 0,
+      "unknown": 78
+    },
+    {
+      "condition": "complete",
+      "budget": 1,
+      "group": "gog gmail send",
+      "policy": "fixed",
+      "n": 117,
+      "reads": 117,
+      "correct": 39,
+      "wrong": 0,
+      "unknown": 78
+    },
+    {
+      "condition": "complete",
+      "budget": 1,
+      "group": "gog gmail send",
+      "policy": "read_all",
+      "n": 117,
+      "reads": 117,
+      "correct": 39,
+      "wrong": 0,
+      "unknown": 78
+    },
+    {
+      "condition": "complete",
+      "budget": 1,
+      "group": "gog gmail send",
+      "policy": "receipt_first",
+      "n": 117,
+      "reads": 117,
+      "correct": 39,
+      "wrong": 0,
+      "unknown": 78
+    },
+    {
+      "condition": "complete",
+      "budget": 1,
+      "group": "sendMessage",
+      "policy": "adaptive",
+      "n": 252,
+      "reads": 252,
+      "correct": 84,
+      "wrong": 0,
+      "unknown": 168
+    },
+    {
+      "condition": "complete",
+      "budget": 1,
+      "group": "sendMessage",
+      "policy": "fixed",
+      "n": 252,
+      "reads": 252,
+      "correct": 84,
+      "wrong": 0,
+      "unknown": 168
+    },
+    {
+      "condition": "complete",
+      "budget": 1,
+      "group": "sendMessage",
+      "policy": "read_all",
+      "n": 252,
+      "reads": 252,
+      "correct": 84,
+      "wrong": 0,
+      "unknown": 168
+    },
+    {
+      "condition": "complete",
+      "budget": 1,
+      "group": "sendMessage",
+      "policy": "receipt_first",
+      "n": 252,
+      "reads": 252,
+      "correct": 84,
+      "wrong": 0,
+      "unknown": 168
+    },
+    {
+      "condition": "complete",
+      "budget": 1,
+      "group": "send_email",
+      "policy": "adaptive",
+      "n": 171,
+      "reads": 0,
+      "correct": 0,
+      "wrong": 0,
+      "unknown": 171
+    },
+    {
+      "condition": "complete",
+      "budget": 1,
+      "group": "send_email",
+      "policy": "fixed",
+      "n": 171,
+      "reads": 0,
+      "correct": 0,
+      "wrong": 0,
+      "unknown": 171
+    },
+    {
+      "condition": "complete",
+      "budget": 1,
+      "group": "send_email",
+      "policy": "read_all",
+      "n": 171,
+      "reads": 171,
+      "correct": 0,
+      "wrong": 0,
+      "unknown": 171
+    },
+    {
+      "condition": "complete",
+      "budget": 1,
+      "group": "send_email",
+      "policy": "receipt_first",
+      "n": 171,
+      "reads": 0,
+      "correct": 0,
+      "wrong": 0,
+      "unknown": 171
+    },
+    {
+      "condition": "complete",
+      "budget": 1,
+      "group": "send_sms",
+      "policy": "adaptive",
+      "n": 180,
+      "reads": 0,
+      "correct": 0,
+      "wrong": 0,
+      "unknown": 180
+    },
+    {
+      "condition": "complete",
+      "budget": 1,
+      "group": "send_sms",
+      "policy": "fixed",
+      "n": 180,
+      "reads": 0,
+      "correct": 0,
+      "wrong": 0,
+      "unknown": 180
+    },
+    {
+      "condition": "complete",
+      "budget": 1,
+      "group": "send_sms",
+      "policy": "read_all",
+      "n": 180,
+      "reads": 180,
+      "correct": 0,
+      "wrong": 0,
+      "unknown": 180
+    },
+    {
+      "condition": "complete",
+      "budget": 1,
+      "group": "send_sms",
+      "policy": "receipt_first",
+      "n": 180,
+      "reads": 0,
+      "correct": 0,
+      "wrong": 0,
+      "unknown": 180
+    },
+    {
+      "condition": "complete",
+      "budget": 2,
+      "group": "all",
+      "policy": "adaptive",
+      "n": 720,
+      "reads": 1317,
+      "correct": 486,
+      "wrong": 0,
+      "unknown": 234
+    },
+    {
+      "condition": "complete",
+      "budget": 2,
+      "group": "all",
+      "policy": "fixed",
+      "n": 720,
+      "reads": 1317,
+      "correct": 486,
+      "wrong": 0,
+      "unknown": 234
+    },
+    {
+      "condition": "complete",
+      "budget": 2,
+      "group": "all",
+      "policy": "read_all",
+      "n": 720,
+      "reads": 1440,
+      "correct": 486,
+      "wrong": 0,
+      "unknown": 234
+    },
+    {
+      "condition": "complete",
+      "budget": 2,
+      "group": "all",
+      "policy": "receipt_first",
+      "n": 720,
+      "reads": 1317,
+      "correct": 486,
+      "wrong": 0,
+      "unknown": 234
+    },
+    {
+      "condition": "complete",
+      "budget": 2,
+      "group": "gog gmail send",
+      "policy": "adaptive",
+      "n": 117,
+      "reads": 195,
+      "correct": 117,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 2,
+      "group": "gog gmail send",
+      "policy": "fixed",
+      "n": 117,
+      "reads": 195,
+      "correct": 117,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 2,
+      "group": "gog gmail send",
+      "policy": "read_all",
+      "n": 117,
+      "reads": 234,
+      "correct": 117,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 2,
+      "group": "gog gmail send",
+      "policy": "receipt_first",
+      "n": 117,
+      "reads": 195,
+      "correct": 117,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 2,
+      "group": "sendMessage",
+      "policy": "adaptive",
+      "n": 252,
+      "reads": 420,
+      "correct": 252,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 2,
+      "group": "sendMessage",
+      "policy": "fixed",
+      "n": 252,
+      "reads": 420,
+      "correct": 252,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 2,
+      "group": "sendMessage",
+      "policy": "read_all",
+      "n": 252,
+      "reads": 504,
+      "correct": 252,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 2,
+      "group": "sendMessage",
+      "policy": "receipt_first",
+      "n": 252,
+      "reads": 420,
+      "correct": 252,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 2,
+      "group": "send_email",
+      "policy": "adaptive",
+      "n": 171,
+      "reads": 342,
+      "correct": 57,
+      "wrong": 0,
+      "unknown": 114
+    },
+    {
+      "condition": "complete",
+      "budget": 2,
+      "group": "send_email",
+      "policy": "fixed",
+      "n": 171,
+      "reads": 342,
+      "correct": 57,
+      "wrong": 0,
+      "unknown": 114
+    },
+    {
+      "condition": "complete",
+      "budget": 2,
+      "group": "send_email",
+      "policy": "read_all",
+      "n": 171,
+      "reads": 342,
+      "correct": 57,
+      "wrong": 0,
+      "unknown": 114
+    },
+    {
+      "condition": "complete",
+      "budget": 2,
+      "group": "send_email",
+      "policy": "receipt_first",
+      "n": 171,
+      "reads": 342,
+      "correct": 57,
+      "wrong": 0,
+      "unknown": 114
+    },
+    {
+      "condition": "complete",
+      "budget": 2,
+      "group": "send_sms",
+      "policy": "adaptive",
+      "n": 180,
+      "reads": 360,
+      "correct": 60,
+      "wrong": 0,
+      "unknown": 120
+    },
+    {
+      "condition": "complete",
+      "budget": 2,
+      "group": "send_sms",
+      "policy": "fixed",
+      "n": 180,
+      "reads": 360,
+      "correct": 60,
+      "wrong": 0,
+      "unknown": 120
+    },
+    {
+      "condition": "complete",
+      "budget": 2,
+      "group": "send_sms",
+      "policy": "read_all",
+      "n": 180,
+      "reads": 360,
+      "correct": 60,
+      "wrong": 0,
+      "unknown": 120
+    },
+    {
+      "condition": "complete",
+      "budget": 2,
+      "group": "send_sms",
+      "policy": "receipt_first",
+      "n": 180,
+      "reads": 360,
+      "correct": 60,
+      "wrong": 0,
+      "unknown": 120
+    },
+    {
+      "condition": "complete",
+      "budget": 3,
+      "group": "all",
+      "policy": "adaptive",
+      "n": 720,
+      "reads": 1551,
+      "correct": 720,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 3,
+      "group": "all",
+      "policy": "fixed",
+      "n": 720,
+      "reads": 1551,
+      "correct": 720,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 3,
+      "group": "all",
+      "policy": "read_all",
+      "n": 720,
+      "reads": 1791,
+      "correct": 720,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 3,
+      "group": "all",
+      "policy": "receipt_first",
+      "n": 720,
+      "reads": 1551,
+      "correct": 720,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 3,
+      "group": "gog gmail send",
+      "policy": "adaptive",
+      "n": 117,
+      "reads": 195,
+      "correct": 117,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 3,
+      "group": "gog gmail send",
+      "policy": "fixed",
+      "n": 117,
+      "reads": 195,
+      "correct": 117,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 3,
+      "group": "gog gmail send",
+      "policy": "read_all",
+      "n": 117,
+      "reads": 234,
+      "correct": 117,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 3,
+      "group": "gog gmail send",
+      "policy": "receipt_first",
+      "n": 117,
+      "reads": 195,
+      "correct": 117,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 3,
+      "group": "sendMessage",
+      "policy": "adaptive",
+      "n": 252,
+      "reads": 420,
+      "correct": 252,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 3,
+      "group": "sendMessage",
+      "policy": "fixed",
+      "n": 252,
+      "reads": 420,
+      "correct": 252,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 3,
+      "group": "sendMessage",
+      "policy": "read_all",
+      "n": 252,
+      "reads": 504,
+      "correct": 252,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 3,
+      "group": "sendMessage",
+      "policy": "receipt_first",
+      "n": 252,
+      "reads": 420,
+      "correct": 252,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 3,
+      "group": "send_email",
+      "policy": "adaptive",
+      "n": 171,
+      "reads": 456,
+      "correct": 171,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 3,
+      "group": "send_email",
+      "policy": "fixed",
+      "n": 171,
+      "reads": 456,
+      "correct": 171,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 3,
+      "group": "send_email",
+      "policy": "read_all",
+      "n": 171,
+      "reads": 513,
+      "correct": 171,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 3,
+      "group": "send_email",
+      "policy": "receipt_first",
+      "n": 171,
+      "reads": 456,
+      "correct": 171,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 3,
+      "group": "send_sms",
+      "policy": "adaptive",
+      "n": 180,
+      "reads": 480,
+      "correct": 180,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 3,
+      "group": "send_sms",
+      "policy": "fixed",
+      "n": 180,
+      "reads": 480,
+      "correct": 180,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 3,
+      "group": "send_sms",
+      "policy": "read_all",
+      "n": 180,
+      "reads": 540,
+      "correct": 180,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "complete",
+      "budget": 3,
+      "group": "send_sms",
+      "policy": "receipt_first",
+      "n": 180,
+      "reads": 480,
+      "correct": 180,
+      "wrong": 0,
+      "unknown": 0
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 1,
+      "group": "all",
+      "policy": "adaptive",
+      "n": 2880,
+      "reads": 1476,
+      "correct": 246,
+      "wrong": 0,
+      "unknown": 2634
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 1,
+      "group": "all",
+      "policy": "fixed",
+      "n": 2880,
+      "reads": 1476,
+      "correct": 246,
+      "wrong": 0,
+      "unknown": 2634
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 1,
+      "group": "all",
+      "policy": "read_all",
+      "n": 2880,
+      "reads": 2880,
+      "correct": 246,
+      "wrong": 0,
+      "unknown": 2634
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 1,
+      "group": "all",
+      "policy": "receipt_first",
+      "n": 2880,
+      "reads": 1476,
+      "correct": 246,
+      "wrong": 0,
+      "unknown": 2634
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 1,
+      "group": "gog gmail send",
+      "policy": "adaptive",
+      "n": 468,
+      "reads": 468,
+      "correct": 78,
+      "wrong": 0,
+      "unknown": 390
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 1,
+      "group": "gog gmail send",
+      "policy": "fixed",
+      "n": 468,
+      "reads": 468,
+      "correct": 78,
+      "wrong": 0,
+      "unknown": 390
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 1,
+      "group": "gog gmail send",
+      "policy": "read_all",
+      "n": 468,
+      "reads": 468,
+      "correct": 78,
+      "wrong": 0,
+      "unknown": 390
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 1,
+      "group": "gog gmail send",
+      "policy": "receipt_first",
+      "n": 468,
+      "reads": 468,
+      "correct": 78,
+      "wrong": 0,
+      "unknown": 390
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 1,
+      "group": "sendMessage",
+      "policy": "adaptive",
+      "n": 1008,
+      "reads": 1008,
+      "correct": 168,
+      "wrong": 0,
+      "unknown": 840
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 1,
+      "group": "sendMessage",
+      "policy": "fixed",
+      "n": 1008,
+      "reads": 1008,
+      "correct": 168,
+      "wrong": 0,
+      "unknown": 840
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 1,
+      "group": "sendMessage",
+      "policy": "read_all",
+      "n": 1008,
+      "reads": 1008,
+      "correct": 168,
+      "wrong": 0,
+      "unknown": 840
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 1,
+      "group": "sendMessage",
+      "policy": "receipt_first",
+      "n": 1008,
+      "reads": 1008,
+      "correct": 168,
+      "wrong": 0,
+      "unknown": 840
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 1,
+      "group": "send_email",
+      "policy": "adaptive",
+      "n": 684,
+      "reads": 0,
+      "correct": 0,
+      "wrong": 0,
+      "unknown": 684
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 1,
+      "group": "send_email",
+      "policy": "fixed",
+      "n": 684,
+      "reads": 0,
+      "correct": 0,
+      "wrong": 0,
+      "unknown": 684
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 1,
+      "group": "send_email",
+      "policy": "read_all",
+      "n": 684,
+      "reads": 684,
+      "correct": 0,
+      "wrong": 0,
+      "unknown": 684
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 1,
+      "group": "send_email",
+      "policy": "receipt_first",
+      "n": 684,
+      "reads": 0,
+      "correct": 0,
+      "wrong": 0,
+      "unknown": 684
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 1,
+      "group": "send_sms",
+      "policy": "adaptive",
+      "n": 720,
+      "reads": 0,
+      "correct": 0,
+      "wrong": 0,
+      "unknown": 720
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 1,
+      "group": "send_sms",
+      "policy": "fixed",
+      "n": 720,
+      "reads": 0,
+      "correct": 0,
+      "wrong": 0,
+      "unknown": 720
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 1,
+      "group": "send_sms",
+      "policy": "read_all",
+      "n": 720,
+      "reads": 720,
+      "correct": 0,
+      "wrong": 0,
+      "unknown": 720
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 1,
+      "group": "send_sms",
+      "policy": "receipt_first",
+      "n": 720,
+      "reads": 0,
+      "correct": 0,
+      "wrong": 0,
+      "unknown": 720
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 2,
+      "group": "all",
+      "policy": "adaptive",
+      "n": 2880,
+      "reads": 4776,
+      "correct": 726,
+      "wrong": 0,
+      "unknown": 2154
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 2,
+      "group": "all",
+      "policy": "fixed",
+      "n": 2880,
+      "reads": 4776,
+      "correct": 726,
+      "wrong": 0,
+      "unknown": 2154
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 2,
+      "group": "all",
+      "policy": "read_all",
+      "n": 2880,
+      "reads": 5760,
+      "correct": 726,
+      "wrong": 0,
+      "unknown": 2154
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 2,
+      "group": "all",
+      "policy": "receipt_first",
+      "n": 2880,
+      "reads": 4776,
+      "correct": 726,
+      "wrong": 0,
+      "unknown": 2154
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 2,
+      "group": "gog gmail send",
+      "policy": "adaptive",
+      "n": 468,
+      "reads": 624,
+      "correct": 156,
+      "wrong": 0,
+      "unknown": 312
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 2,
+      "group": "gog gmail send",
+      "policy": "fixed",
+      "n": 468,
+      "reads": 624,
+      "correct": 156,
+      "wrong": 0,
+      "unknown": 312
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 2,
+      "group": "gog gmail send",
+      "policy": "read_all",
+      "n": 468,
+      "reads": 936,
+      "correct": 156,
+      "wrong": 0,
+      "unknown": 312
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 2,
+      "group": "gog gmail send",
+      "policy": "receipt_first",
+      "n": 468,
+      "reads": 624,
+      "correct": 156,
+      "wrong": 0,
+      "unknown": 312
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 2,
+      "group": "sendMessage",
+      "policy": "adaptive",
+      "n": 1008,
+      "reads": 1344,
+      "correct": 336,
+      "wrong": 0,
+      "unknown": 672
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 2,
+      "group": "sendMessage",
+      "policy": "fixed",
+      "n": 1008,
+      "reads": 1344,
+      "correct": 336,
+      "wrong": 0,
+      "unknown": 672
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 2,
+      "group": "sendMessage",
+      "policy": "read_all",
+      "n": 1008,
+      "reads": 2016,
+      "correct": 336,
+      "wrong": 0,
+      "unknown": 672
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 2,
+      "group": "sendMessage",
+      "policy": "receipt_first",
+      "n": 1008,
+      "reads": 1344,
+      "correct": 336,
+      "wrong": 0,
+      "unknown": 672
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 2,
+      "group": "send_email",
+      "policy": "adaptive",
+      "n": 684,
+      "reads": 1368,
+      "correct": 114,
+      "wrong": 0,
+      "unknown": 570
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 2,
+      "group": "send_email",
+      "policy": "fixed",
+      "n": 684,
+      "reads": 1368,
+      "correct": 114,
+      "wrong": 0,
+      "unknown": 570
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 2,
+      "group": "send_email",
+      "policy": "read_all",
+      "n": 684,
+      "reads": 1368,
+      "correct": 114,
+      "wrong": 0,
+      "unknown": 570
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 2,
+      "group": "send_email",
+      "policy": "receipt_first",
+      "n": 684,
+      "reads": 1368,
+      "correct": 114,
+      "wrong": 0,
+      "unknown": 570
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 2,
+      "group": "send_sms",
+      "policy": "adaptive",
+      "n": 720,
+      "reads": 1440,
+      "correct": 120,
+      "wrong": 0,
+      "unknown": 600
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 2,
+      "group": "send_sms",
+      "policy": "fixed",
+      "n": 720,
+      "reads": 1440,
+      "correct": 120,
+      "wrong": 0,
+      "unknown": 600
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 2,
+      "group": "send_sms",
+      "policy": "read_all",
+      "n": 720,
+      "reads": 1440,
+      "correct": 120,
+      "wrong": 0,
+      "unknown": 600
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 2,
+      "group": "send_sms",
+      "policy": "receipt_first",
+      "n": 720,
+      "reads": 1440,
+      "correct": 120,
+      "wrong": 0,
+      "unknown": 600
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 3,
+      "group": "all",
+      "policy": "adaptive",
+      "n": 2880,
+      "reads": 5244,
+      "correct": 960,
+      "wrong": 0,
+      "unknown": 1920
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 3,
+      "group": "all",
+      "policy": "fixed",
+      "n": 2880,
+      "reads": 5244,
+      "correct": 960,
+      "wrong": 0,
+      "unknown": 1920
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 3,
+      "group": "all",
+      "policy": "read_all",
+      "n": 2880,
+      "reads": 7164,
+      "correct": 960,
+      "wrong": 0,
+      "unknown": 1920
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 3,
+      "group": "all",
+      "policy": "receipt_first",
+      "n": 2880,
+      "reads": 5244,
+      "correct": 960,
+      "wrong": 0,
+      "unknown": 1920
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 3,
+      "group": "gog gmail send",
+      "policy": "adaptive",
+      "n": 468,
+      "reads": 624,
+      "correct": 156,
+      "wrong": 0,
+      "unknown": 312
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 3,
+      "group": "gog gmail send",
+      "policy": "fixed",
+      "n": 468,
+      "reads": 624,
+      "correct": 156,
+      "wrong": 0,
+      "unknown": 312
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 3,
+      "group": "gog gmail send",
+      "policy": "read_all",
+      "n": 468,
+      "reads": 936,
+      "correct": 156,
+      "wrong": 0,
+      "unknown": 312
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 3,
+      "group": "gog gmail send",
+      "policy": "receipt_first",
+      "n": 468,
+      "reads": 624,
+      "correct": 156,
+      "wrong": 0,
+      "unknown": 312
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 3,
+      "group": "sendMessage",
+      "policy": "adaptive",
+      "n": 1008,
+      "reads": 1344,
+      "correct": 336,
+      "wrong": 0,
+      "unknown": 672
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 3,
+      "group": "sendMessage",
+      "policy": "fixed",
+      "n": 1008,
+      "reads": 1344,
+      "correct": 336,
+      "wrong": 0,
+      "unknown": 672
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 3,
+      "group": "sendMessage",
+      "policy": "read_all",
+      "n": 1008,
+      "reads": 2016,
+      "correct": 336,
+      "wrong": 0,
+      "unknown": 672
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 3,
+      "group": "sendMessage",
+      "policy": "receipt_first",
+      "n": 1008,
+      "reads": 1344,
+      "correct": 336,
+      "wrong": 0,
+      "unknown": 672
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 3,
+      "group": "send_email",
+      "policy": "adaptive",
+      "n": 684,
+      "reads": 1596,
+      "correct": 228,
+      "wrong": 0,
+      "unknown": 456
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 3,
+      "group": "send_email",
+      "policy": "fixed",
+      "n": 684,
+      "reads": 1596,
+      "correct": 228,
+      "wrong": 0,
+      "unknown": 456
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 3,
+      "group": "send_email",
+      "policy": "read_all",
+      "n": 684,
+      "reads": 2052,
+      "correct": 228,
+      "wrong": 0,
+      "unknown": 456
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 3,
+      "group": "send_email",
+      "policy": "receipt_first",
+      "n": 684,
+      "reads": 1596,
+      "correct": 228,
+      "wrong": 0,
+      "unknown": 456
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 3,
+      "group": "send_sms",
+      "policy": "adaptive",
+      "n": 720,
+      "reads": 1680,
+      "correct": 240,
+      "wrong": 0,
+      "unknown": 480
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 3,
+      "group": "send_sms",
+      "policy": "fixed",
+      "n": 720,
+      "reads": 1680,
+      "correct": 240,
+      "wrong": 0,
+      "unknown": 480
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 3,
+      "group": "send_sms",
+      "policy": "read_all",
+      "n": 720,
+      "reads": 2160,
+      "correct": 240,
+      "wrong": 0,
+      "unknown": 480
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 3,
+      "group": "send_sms",
+      "policy": "receipt_first",
+      "n": 720,
+      "reads": 1680,
+      "correct": 240,
+      "wrong": 0,
+      "unknown": 480
+    }
+  ],
+  "paired": [
+    {
+      "condition": "complete",
+      "budget": 1,
+      "n": 720,
+      "decision_disagreement": 0,
+      "fewer": 0,
+      "more": 0,
+      "equal": 720
+    },
+    {
+      "condition": "complete",
+      "budget": 2,
+      "n": 720,
+      "decision_disagreement": 0,
+      "fewer": 0,
+      "more": 0,
+      "equal": 720
+    },
+    {
+      "condition": "complete",
+      "budget": 3,
+      "n": 720,
+      "decision_disagreement": 0,
+      "fewer": 0,
+      "more": 0,
+      "equal": 720
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 1,
+      "n": 2880,
+      "decision_disagreement": 0,
+      "fewer": 0,
+      "more": 0,
+      "equal": 2880
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 2,
+      "n": 2880,
+      "decision_disagreement": 0,
+      "fewer": 0,
+      "more": 0,
+      "equal": 2880
+    },
+    {
+      "condition": "visibility_stress",
+      "budget": 3,
+      "n": 2880,
+      "decision_disagreement": 0,
+      "fewer": 0,
+      "more": 0,
+      "equal": 2880
+    }
+  ]
+}

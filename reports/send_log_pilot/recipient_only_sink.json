@@ -1,0 +1,4 @@
+{
+  "approval": ["present", "recipient.tag", "body.tag", "pair.tag"],
+  "delivery": ["present", "recipient.tag"]
+}
