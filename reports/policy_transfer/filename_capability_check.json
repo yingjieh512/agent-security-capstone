@@ -1,0 +1,300 @@
+{
+  "approval": {
+    "capabilities": {
+      "approval": [
+        "attachment_bytes.bag_tag",
+        "attachment_bytes.item_tags",
+        "attachment_content.raw",
+        "attachment_count",
+        "attachment_sizes.list",
+        "body.raw",
+        "recipient.raw",
+        "recipient.tag",
+        "status"
+      ],
+      "delivery": [
+        "attachment_bytes.bag_tag",
+        "attachment_bytes.item_tags",
+        "attachment_content.raw",
+        "attachment_count",
+        "attachment_names.raw",
+        "attachment_sizes.list",
+        "body.raw",
+        "recipient.raw",
+        "recipient.tag",
+        "status"
+      ]
+    },
+    "compiled": {
+      "selected": null,
+      "feasible": false,
+      "domain": {
+        "bodies": [
+          "alpha",
+          "beta"
+        ],
+        "contents": [
+          "A",
+          "B",
+          "CC"
+        ],
+        "max_attachments": 2,
+        "names": [
+          "a.bin",
+          "b.bin"
+        ],
+        "recipients": [
+          "a@pilot.invalid",
+          "b@pilot.invalid"
+        ],
+        "facts_per_role": 112,
+        "worlds": 12544,
+        "scope": "positive authenticated sources, one shared attempt, UTF-8 contents, unordered bags",
+        "token_equivalence": "projection-specific consistent renaming across approval and delivery"
+      },
+      "stats": {
+        "menu_configurations": 524288,
+        "candidates_popped": 0,
+        "configurations_audited": 1,
+        "collision_constraints": 0,
+        "runtime_failure_expansions": 0
+      },
+      "witness": {
+        "within": {
+          "approval": {
+            "recipient": "a@pilot.invalid",
+            "body": "alpha",
+            "attachments": [
+              [
+                "a.bin",
+                "A"
+              ],
+              [
+                "b.bin",
+                "A"
+              ]
+            ]
+          },
+          "delivery": {
+            "recipient": "a@pilot.invalid",
+            "body": "alpha",
+            "attachments": [
+              [
+                "b.bin",
+                "A"
+              ]
+            ]
+          }
+        },
+        "violation": {
+          "approval": {
+            "recipient": "a@pilot.invalid",
+            "body": "alpha",
+            "attachments": [
+              [
+                "a.bin",
+                "A"
+              ],
+              [
+                "a.bin",
+                "A"
+              ]
+            ]
+          },
+          "delivery": {
+            "recipient": "a@pilot.invalid",
+            "body": "alpha",
+            "attachments": [
+              [
+                "b.bin",
+                "A"
+              ]
+            ]
+          }
+        }
+      },
+      "basis": "full_menu_observational_collision",
+      "cost_order": [
+        "raw role-field count",
+        "role-field count",
+        "summed exposure rank",
+        "lexicographic role-field sequence"
+      ],
+      "exposure_ranks": {
+        "status": 0,
+        "attachment_count": 1,
+        "recipient.tag": 2,
+        "attachment_bytes.bag_tag": 2,
+        "attachment_sizes.list": 3,
+        "attachment_bytes.item_tags": 4,
+        "recipient.raw": 5,
+        "attachment_names.raw": 6,
+        "body.raw": 7,
+        "attachment_content.raw": 8
+      }
+    },
+    "smtp": {
+      "available": true,
+      "smtp_acceptances": 2,
+      "same_observation": true,
+      "independent_truths": [
+        "authorized",
+        "unauthorized"
+      ],
+      "verified_decisions": [
+        "unknown",
+        "unknown"
+      ],
+      "reproduced": true
+    }
+  },
+  "delivery": {
+    "capabilities": {
+      "approval": [
+        "attachment_bytes.bag_tag",
+        "attachment_bytes.item_tags",
+        "attachment_content.raw",
+        "attachment_count",
+        "attachment_names.raw",
+        "attachment_sizes.list",
+        "body.raw",
+        "recipient.raw",
+        "recipient.tag",
+        "status"
+      ],
+      "delivery": [
+        "attachment_bytes.bag_tag",
+        "attachment_bytes.item_tags",
+        "attachment_content.raw",
+        "attachment_count",
+        "attachment_sizes.list",
+        "body.raw",
+        "recipient.raw",
+        "recipient.tag",
+        "status"
+      ]
+    },
+    "compiled": {
+      "selected": null,
+      "feasible": false,
+      "domain": {
+        "bodies": [
+          "alpha",
+          "beta"
+        ],
+        "contents": [
+          "A",
+          "B",
+          "CC"
+        ],
+        "max_attachments": 2,
+        "names": [
+          "a.bin",
+          "b.bin"
+        ],
+        "recipients": [
+          "a@pilot.invalid",
+          "b@pilot.invalid"
+        ],
+        "facts_per_role": 112,
+        "worlds": 12544,
+        "scope": "positive authenticated sources, one shared attempt, UTF-8 contents, unordered bags",
+        "token_equivalence": "projection-specific consistent renaming across approval and delivery"
+      },
+      "stats": {
+        "menu_configurations": 524288,
+        "candidates_popped": 0,
+        "configurations_audited": 1,
+        "collision_constraints": 0,
+        "runtime_failure_expansions": 0
+      },
+      "witness": {
+        "within": {
+          "approval": {
+            "recipient": "a@pilot.invalid",
+            "body": "alpha",
+            "attachments": [
+              [
+                "a.bin",
+                "A"
+              ],
+              [
+                "a.bin",
+                "A"
+              ]
+            ]
+          },
+          "delivery": {
+            "recipient": "a@pilot.invalid",
+            "body": "alpha",
+            "attachments": [
+              [
+                "a.bin",
+                "A"
+              ]
+            ]
+          }
+        },
+        "violation": {
+          "approval": {
+            "recipient": "a@pilot.invalid",
+            "body": "alpha",
+            "attachments": [
+              [
+                "a.bin",
+                "A"
+              ],
+              [
+                "a.bin",
+                "A"
+              ]
+            ]
+          },
+          "delivery": {
+            "recipient": "a@pilot.invalid",
+            "body": "alpha",
+            "attachments": [
+              [
+                "b.bin",
+                "A"
+              ]
+            ]
+          }
+        }
+      },
+      "basis": "full_menu_observational_collision",
+      "cost_order": [
+        "raw role-field count",
+        "role-field count",
+        "summed exposure rank",
+        "lexicographic role-field sequence"
+      ],
+      "exposure_ranks": {
+        "status": 0,
+        "attachment_count": 1,
+        "recipient.tag": 2,
+        "attachment_bytes.bag_tag": 2,
+        "attachment_sizes.list": 3,
+        "attachment_bytes.item_tags": 4,
+        "recipient.raw": 5,
+        "attachment_names.raw": 6,
+        "body.raw": 7,
+        "attachment_content.raw": 8
+      }
+    },
+    "smtp": {
+      "available": true,
+      "smtp_acceptances": 2,
+      "same_observation": true,
+      "independent_truths": [
+        "authorized",
+        "unauthorized"
+      ],
+      "verified_decisions": [
+        "unknown",
+        "unknown"
+      ],
+      "reproduced": true
+    }
+  }
+}

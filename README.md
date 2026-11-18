@@ -197,3 +197,5 @@ The [ATBench and Claw pilot](reports/atbench_claw_cross_tool_query_pilot_2026-11
 The [minimum send-log pilot](reports/atbench_claw_minimum_send_log_2026-11-18.md) compiles a policy and source capabilities into authenticated, attempt-bound records. It compares the privacy footprint of two-source receipts across ATBench and Claw send arguments, gives counterexamples when a field is missing, and checks decisions against a local backend.
 
 The [held-out attachment authorization pilot](reports/attachment_holdout/README.md) freezes that compiler and tests it against a separate Mailpit SMTP backend. It records where the frozen compiler fails, runs an external field search against an independently hand-written configuration, and replays the resulting evidence gaps in the mailbox.
+
+The [independent policy transfer pilot](reports/policy_transfer/README.md) compares the original attachment system with a declaration-based compiler frozen before a blind proxy submitted a new rule. Both the hand-written configuration and the generated one are verified on the same persisted SMTP messages.

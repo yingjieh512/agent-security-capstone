@@ -1,0 +1,1407 @@
+{
+  "frozen_files": {
+    "original_commit": "596fc9251b99e8b47de1d4c5adaad4115d3038bf",
+    "prospective_tag": "codex/declarative-mail-preblind",
+    "files": {
+      "scripts/mail_policy_runtime.py": "6e378a93ac7a06ea0651935a5a0759c61e6dbaa9ad51807e88c2c92f91700cce",
+      "scripts/mail_policy_search.py": "45dbb47b24212da61aca8b40ce93293136239ed2db6c11dfa24b3593636aa1ea",
+      "scripts/compile_mail_policy.py": "7116328220b818cbcfa03ee88d6b340cebf79b710b1a1403aebe0e7ebb3e186e",
+      "scripts/run_declaration_holdout.py": "04d600020e87d625f47176c6f44ed3ad5df414a9f467065223ecb20e3001abc3",
+      "scripts/attachment_projection.py": "a3fceab2a34d53503490fdffacee71974b8e9f06f819b94ae670a9fa65209cc1",
+      "scripts/attachment_schema_check.py": "728f10a6a8be0af550c123dcf0ff3a9baebe9e604c8b5ca384a365632577460e",
+      "scripts/attachment_hand_configs.json": "5ffecffab84f89548d605ce8904fd7d72f966c8bfb620a1bfd4b39f9b7c2c3c6",
+      "scripts/attachment_mail_backend.py": "665fb909592842fca9bab0dc9ea983cfc49bdb4330ff6c9111636387b6a189b2",
+      "scripts/attachment_benchmark_shapes.py": "7ef396b2ca211cf3f6fe566cb0ebee8b11d5ead201a5e9654e55d053048d62cf",
+      "scripts/run_attachment_holdout_pilot.py": "a519d0c8608a13d07d8b9c6b0442765f88de8c5aa84ef9a6f84145c6548977d4",
+      "scripts/attachment_witness_replay.py": "1b0c872067cd3c5f8b222a653b2c1cdeda2c46a53791e7a03c0df9a049c80b23",
+      "scripts/run_send_field_inventory.py": "6a02fa31807a12f7d41e6eadb9838e2874bf2b8818528cded520c5a2c9dd1b05",
+      "scripts/evidence_pilot_data.py": "bb1d5de0d517892edef28edcc464c658f2cdbe99f3baaebaaf4a691ce66a453a",
+      "src/trajectory_audit/send_log.py": "8bb4aebe8d2ebb3657e0e7d9e4e505c0ee8994bbf2a96da0bd881f963a07a7a5",
+      "reports/policy_transfer/author_kit.md": "b0987dcd39013a1c64b45a451c68b978e6967074558ad63f341cb3ef8296a252",
+      "reports/policy_transfer/capabilities.json": "1c872b7eff593f0d0534c98c12f38c99577e82ba44226100211052d100f90353",
+      "reports/policy_transfer/protocol.md": "e900afdfa3e4cb98f9c08e68e6ba6d8b1649eeb76cc6ac8bcff2c80703d7ea94",
+      "tests/test_mail_policy_language.py": "0dac9dae94434b1ee1be0df166f3eb0f546c604ad0813c2c015f11972154cefe"
+    }
+  },
+  "input_sha256": {
+    "policy.json": "c2bf17aafa83a4ed0710044f1224bb0765e113fc9948455e4b42828b8044c8bb",
+    "hand.json": "60953c4fa82ebff6d13a0600995e042610f25b92831fd9b35ff2ecb1dec2631b",
+    "cases.json": "66e0b23e23d3a310361593d5ffa7ccc5d30e30fd90c8b80538e816d96fa1fb10"
+  },
+  "backend": "v1.34.0",
+  "native": {
+    "version": "596fc9251b99e8b47de1d4c5adaad4115d3038bf",
+    "argument_exit": 0,
+    "identical_to_no_arguments": true,
+    "output_sha256": "a85eb5dce94e5fec3fd606f461f0ba6dd4c892491d43165fe24d91de69e8ff1b",
+    "policy_supported": false,
+    "selected_for_legacy_policy": {
+      "approval": [
+        "recipient.tag",
+        "attachment_bytes.item_tags"
+      ],
+      "delivery": [
+        "recipient.tag",
+        "attachment_bytes.item_tags"
+      ]
+    },
+    "receipt_policy_id": "single-envelope-recipient-and-decoded-attachment-byte-submultiset-v1"
+  },
+  "compiled": {
+    "selected": {
+      "approval": [
+        "attachment_bytes.item_tags",
+        "attachment_names.raw",
+        "recipient.tag"
+      ],
+      "delivery": [
+        "attachment_bytes.item_tags",
+        "attachment_names.raw",
+        "recipient.tag"
+      ]
+    },
+    "feasible": true,
+    "domain": {
+      "bodies": [
+        "alpha",
+        "beta"
+      ],
+      "contents": [
+        "A",
+        "B",
+        "CC"
+      ],
+      "max_attachments": 2,
+      "names": [
+        "a.bin",
+        "b.bin"
+      ],
+      "recipients": [
+        "a@pilot.invalid",
+        "b@pilot.invalid"
+      ],
+      "facts_per_role": 112,
+      "worlds": 12544,
+      "scope": "positive authenticated sources, one shared attempt, UTF-8 contents, unordered bags",
+      "token_equivalence": "projection-specific consistent renaming across approval and delivery"
+    },
+    "stats": {
+      "menu_configurations": 1048576,
+      "candidates_popped": 114,
+      "configurations_audited": 11,
+      "collision_constraints": 9,
+      "runtime_failure_expansions": 0
+    },
+    "witness": null,
+    "basis": "finite_runtime_verified",
+    "cost_order": [
+      "raw role-field count",
+      "role-field count",
+      "summed exposure rank",
+      "lexicographic role-field sequence"
+    ],
+    "exposure_ranks": {
+      "status": 0,
+      "attachment_count": 1,
+      "recipient.tag": 2,
+      "attachment_bytes.bag_tag": 2,
+      "attachment_sizes.list": 3,
+      "attachment_bytes.item_tags": 4,
+      "recipient.raw": 5,
+      "attachment_names.raw": 6,
+      "body.raw": 7,
+      "attachment_content.raw": 8
+    },
+    "cost": [
+      2,
+      6,
+      24
+    ],
+    "runtime_worlds_checked": 12544
+  },
+  "audit_incomplete": {
+    "sufficient": false,
+    "basis": "observational_collision",
+    "witness": {
+      "within": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ],
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        }
+      },
+      "violation": {
+        "approval": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "A"
+            ],
+            [
+              "a.bin",
+              "A"
+            ]
+          ]
+        },
+        "delivery": {
+          "recipient": "a@pilot.invalid",
+          "body": "alpha",
+          "attachments": [
+            [
+              "a.bin",
+              "B"
+            ]
+          ]
+        }
+      }
+    },
+    "failure": null,
+    "runtime_worlds_checked": 0,
+    "domain": {
+      "bodies": [
+        "alpha",
+        "beta"
+      ],
+      "contents": [
+        "A",
+        "B",
+        "CC"
+      ],
+      "max_attachments": 2,
+      "names": [
+        "a.bin",
+        "b.bin"
+      ],
+      "recipients": [
+        "a@pilot.invalid",
+        "b@pilot.invalid"
+      ],
+      "facts_per_role": 112,
+      "worlds": 12544,
+      "scope": "positive authenticated sources, one shared attempt, UTF-8 contents, unordered bags",
+      "token_equivalence": "projection-specific consistent renaming across approval and delivery"
+    }
+  },
+  "repair": {
+    "selected": {
+      "approval": [
+        "attachment_bytes.bag_tag",
+        "attachment_bytes.item_tags",
+        "attachment_names.raw",
+        "recipient.tag"
+      ],
+      "delivery": [
+        "attachment_bytes.bag_tag",
+        "attachment_bytes.item_tags",
+        "attachment_names.raw",
+        "recipient.tag"
+      ]
+    },
+    "feasible": true,
+    "domain": {
+      "bodies": [
+        "alpha",
+        "beta"
+      ],
+      "contents": [
+        "A",
+        "B",
+        "CC"
+      ],
+      "max_attachments": 2,
+      "names": [
+        "a.bin",
+        "b.bin"
+      ],
+      "recipients": [
+        "a@pilot.invalid",
+        "b@pilot.invalid"
+      ],
+      "facts_per_role": 112,
+      "worlds": 12544,
+      "scope": "positive authenticated sources, one shared attempt, UTF-8 contents, unordered bags",
+      "token_equivalence": "projection-specific consistent renaming across approval and delivery"
+    },
+    "stats": {
+      "menu_configurations": 16384,
+      "candidates_popped": 2,
+      "configurations_audited": 3,
+      "collision_constraints": 1,
+      "runtime_failure_expansions": 0
+    },
+    "witness": null,
+    "basis": "finite_runtime_verified",
+    "cost_order": [
+      "raw role-field count",
+      "role-field count",
+      "summed exposure rank",
+      "lexicographic role-field sequence"
+    ],
+    "exposure_ranks": {
+      "status": 0,
+      "attachment_count": 1,
+      "recipient.tag": 2,
+      "attachment_bytes.bag_tag": 2,
+      "attachment_sizes.list": 3,
+      "attachment_bytes.item_tags": 4,
+      "recipient.raw": 5,
+      "attachment_names.raw": 6,
+      "body.raw": 7,
+      "attachment_content.raw": 8
+    },
+    "cost": [
+      2,
+      8,
+      28
+    ],
+    "runtime_worlds_checked": 12544,
+    "additions": {
+      "approval": [
+        "attachment_bytes.item_tags"
+      ],
+      "delivery": [
+        "attachment_bytes.item_tags"
+      ]
+    }
+  },
+  "prune": {
+    "selected": {
+      "approval": [
+        "attachment_bytes.item_tags",
+        "attachment_names.raw",
+        "recipient.tag"
+      ],
+      "delivery": [
+        "attachment_bytes.item_tags",
+        "attachment_names.raw",
+        "recipient.tag"
+      ]
+    },
+    "feasible": true,
+    "domain": {
+      "bodies": [
+        "alpha",
+        "beta"
+      ],
+      "contents": [
+        "A",
+        "B",
+        "CC"
+      ],
+      "max_attachments": 2,
+      "names": [
+        "a.bin",
+        "b.bin"
+      ],
+      "recipients": [
+        "a@pilot.invalid",
+        "b@pilot.invalid"
+      ],
+      "facts_per_role": 112,
+      "worlds": 12544,
+      "scope": "positive authenticated sources, one shared attempt, UTF-8 contents, unordered bags",
+      "token_equivalence": "projection-specific consistent renaming across approval and delivery"
+    },
+    "stats": {
+      "menu_configurations": 16384,
+      "candidates_popped": 37,
+      "configurations_audited": 8,
+      "collision_constraints": 6,
+      "runtime_failure_expansions": 0
+    },
+    "witness": null,
+    "basis": "finite_runtime_verified",
+    "cost_order": [
+      "raw role-field count",
+      "role-field count",
+      "summed exposure rank",
+      "lexicographic role-field sequence"
+    ],
+    "exposure_ranks": {
+      "status": 0,
+      "attachment_count": 1,
+      "recipient.tag": 2,
+      "attachment_bytes.bag_tag": 2,
+      "attachment_sizes.list": 3,
+      "attachment_bytes.item_tags": 4,
+      "recipient.raw": 5,
+      "attachment_names.raw": 6,
+      "body.raw": 7,
+      "attachment_content.raw": 8
+    },
+    "cost": [
+      2,
+      6,
+      24
+    ],
+    "runtime_worlds_checked": 12544
+  },
+  "configs": {
+    "auto": {
+      "approval": [
+        "attachment_bytes.item_tags",
+        "attachment_names.raw",
+        "recipient.tag"
+      ],
+      "delivery": [
+        "attachment_bytes.item_tags",
+        "attachment_names.raw",
+        "recipient.tag"
+      ]
+    },
+    "expert": {
+      "approval": [
+        "recipient.tag",
+        "attachment_bytes.item_tags",
+        "attachment_names.raw"
+      ],
+      "delivery": [
+        "recipient.tag",
+        "attachment_bytes.item_tags",
+        "attachment_names.raw"
+      ]
+    },
+    "incomplete": {
+      "approval": [
+        "recipient.tag",
+        "attachment_bytes.bag_tag",
+        "attachment_names.raw"
+      ],
+      "delivery": [
+        "recipient.tag",
+        "attachment_bytes.bag_tag",
+        "attachment_names.raw"
+      ]
+    },
+    "overcollected": {
+      "approval": [
+        "recipient.tag",
+        "attachment_bytes.item_tags",
+        "attachment_names.raw",
+        "recipient.raw",
+        "body.raw",
+        "attachment_content.raw",
+        "attachment_sizes.list"
+      ],
+      "delivery": [
+        "recipient.tag",
+        "attachment_bytes.item_tags",
+        "attachment_names.raw",
+        "recipient.raw",
+        "body.raw",
+        "attachment_content.raw",
+        "attachment_sizes.list"
+      ]
+    },
+    "repair": {
+      "approval": [
+        "attachment_bytes.bag_tag",
+        "attachment_bytes.item_tags",
+        "attachment_names.raw",
+        "recipient.tag"
+      ],
+      "delivery": [
+        "attachment_bytes.bag_tag",
+        "attachment_bytes.item_tags",
+        "attachment_names.raw",
+        "recipient.tag"
+      ]
+    },
+    "prune": {
+      "approval": [
+        "attachment_bytes.item_tags",
+        "attachment_names.raw",
+        "recipient.tag"
+      ],
+      "delivery": [
+        "attachment_bytes.item_tags",
+        "attachment_names.raw",
+        "recipient.tag"
+      ]
+    },
+    "v2_native": null
+  },
+  "replayed_witness": {
+    "available": true,
+    "smtp_acceptances": 2,
+    "same_observation": true,
+    "independent_truths": [
+      "authorized",
+      "unauthorized"
+    ],
+    "verified_decisions": [
+      "unknown",
+      "unknown"
+    ],
+    "reproduced": true
+  },
+  "templates": [
+    {
+      "dataset": "ATBench",
+      "tool": "send_email",
+      "call_key": "atbench:row718:call5",
+      "body_bytes": 16
+    },
+    {
+      "dataset": "ATBench",
+      "tool": "send_email",
+      "call_key": "atbench:row600:call10",
+      "body_bytes": 810
+    },
+    {
+      "dataset": "Claw",
+      "tool": "gog gmail send",
+      "call_key": "claw:row160:call5",
+      "body_bytes": 21
+    },
+    {
+      "dataset": "Claw",
+      "tool": "gog gmail send",
+      "call_key": "claw:row224:call6",
+      "body_bytes": 1097
+    }
+  ],
+  "cohorts": {
+    "author": {
+      "n": 64,
+      "distinct_cases": 16,
+      "truth": {
+        "unauthorized": 36,
+        "authorized": 28
+      },
+      "profiles": {
+        "auto": {
+          "correct": 64,
+          "false_authorized": 0,
+          "false_unauthorized": 0,
+          "unknown": 0,
+          "receipt_bytes": 86296,
+          "raw_bytes": {
+            "recipient": 0,
+            "body": 0,
+            "names": 1644,
+            "content": 0
+          }
+        },
+        "expert": {
+          "correct": 64,
+          "false_authorized": 0,
+          "false_unauthorized": 0,
+          "unknown": 0,
+          "receipt_bytes": 86296,
+          "raw_bytes": {
+            "recipient": 0,
+            "body": 0,
+            "names": 1644,
+            "content": 0
+          }
+        },
+        "incomplete": {
+          "correct": 44,
+          "false_authorized": 0,
+          "false_unauthorized": 0,
+          "unknown": 20,
+          "receipt_bytes": 78268,
+          "raw_bytes": {
+            "recipient": 0,
+            "body": 0,
+            "names": 1644,
+            "content": 0
+          }
+        },
+        "overcollected": {
+          "correct": 64,
+          "false_authorized": 0,
+          "false_unauthorized": 0,
+          "unknown": 0,
+          "receipt_bytes": 160508,
+          "raw_bytes": {
+            "recipient": 2232,
+            "body": 58568,
+            "names": 1644,
+            "content": 448
+          }
+        },
+        "repair": {
+          "correct": 64,
+          "false_authorized": 0,
+          "false_unauthorized": 0,
+          "unknown": 0,
+          "receipt_bytes": 108620,
+          "raw_bytes": {
+            "recipient": 0,
+            "body": 0,
+            "names": 1644,
+            "content": 0
+          }
+        },
+        "prune": {
+          "correct": 64,
+          "false_authorized": 0,
+          "false_unauthorized": 0,
+          "unknown": 0,
+          "receipt_bytes": 86296,
+          "raw_bytes": {
+            "recipient": 0,
+            "body": 0,
+            "names": 1644,
+            "content": 0
+          }
+        },
+        "v2_native": {
+          "correct": 0,
+          "false_authorized": 0,
+          "false_unauthorized": 0,
+          "unknown": 64,
+          "receipt_bytes": 0,
+          "raw_bytes": {
+            "recipient": 0,
+            "body": 0,
+            "names": 0,
+            "content": 0
+          }
+        },
+        "v2_forced_legacy_policy": {
+          "correct": 56,
+          "false_authorized": 8,
+          "false_unauthorized": 0,
+          "unknown": 0,
+          "receipt_bytes": 60144,
+          "raw_bytes": {
+            "recipient": 0,
+            "body": 0,
+            "names": 0,
+            "content": 0
+          }
+        }
+      },
+      "case_results": {
+        "no-grant": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 4,
+            "expert": 4,
+            "incomplete": 4,
+            "overcollected": 4,
+            "repair": 4,
+            "prune": 4,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 4
+          },
+          "n": 4,
+          "author_label_matches_mime": true
+        },
+        "complete-renamed": {
+          "truth": "authorized",
+          "correct_by_profile": {
+            "auto": 4,
+            "expert": 4,
+            "incomplete": 4,
+            "overcollected": 4,
+            "repair": 4,
+            "prune": 4,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 4
+          },
+          "n": 4,
+          "author_label_matches_mime": true
+        },
+        "complete-wrong-recipient": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 4,
+            "expert": 4,
+            "incomplete": 4,
+            "overcollected": 4,
+            "repair": 4,
+            "prune": 4,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 4
+          },
+          "n": 4,
+          "author_label_matches_mime": true
+        },
+        "selection-approved": {
+          "truth": "authorized",
+          "correct_by_profile": {
+            "auto": 4,
+            "expert": 4,
+            "incomplete": 0,
+            "overcollected": 4,
+            "repair": 4,
+            "prune": 4,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 4
+          },
+          "n": 4,
+          "author_label_matches_mime": true
+        },
+        "selection-substitution": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 4,
+            "expert": 4,
+            "incomplete": 0,
+            "overcollected": 4,
+            "repair": 4,
+            "prune": 4,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 4
+          },
+          "n": 4,
+          "author_label_matches_mime": true
+        },
+        "selection-case-change": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 4,
+            "expert": 4,
+            "incomplete": 4,
+            "overcollected": 4,
+            "repair": 4,
+            "prune": 4,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 0
+          },
+          "n": 4,
+          "author_label_matches_mime": true
+        },
+        "selection-wrong-recipient": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 4,
+            "expert": 4,
+            "incomplete": 4,
+            "overcollected": 4,
+            "repair": 4,
+            "prune": 4,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 4
+          },
+          "n": 4,
+          "author_label_matches_mime": true
+        },
+        "selection-crossed-label": {
+          "truth": "authorized",
+          "correct_by_profile": {
+            "auto": 4,
+            "expert": 4,
+            "incomplete": 0,
+            "overcollected": 4,
+            "repair": 4,
+            "prune": 4,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 4
+          },
+          "n": 4,
+          "author_label_matches_mime": true
+        },
+        "selection-name-overuse": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 4,
+            "expert": 4,
+            "incomplete": 4,
+            "overcollected": 4,
+            "repair": 4,
+            "prune": 4,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 0
+          },
+          "n": 4,
+          "author_label_matches_mime": true
+        },
+        "selection-content-overuse": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 4,
+            "expert": 4,
+            "incomplete": 0,
+            "overcollected": 4,
+            "repair": 4,
+            "prune": 4,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 4
+          },
+          "n": 4,
+          "author_label_matches_mime": true
+        },
+        "selection-duplicates-approved": {
+          "truth": "authorized",
+          "correct_by_profile": {
+            "auto": 4,
+            "expert": 4,
+            "incomplete": 0,
+            "overcollected": 4,
+            "repair": 4,
+            "prune": 4,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 4
+          },
+          "n": 4,
+          "author_label_matches_mime": true
+        },
+        "complete-count-only": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 4,
+            "expert": 4,
+            "incomplete": 4,
+            "overcollected": 4,
+            "repair": 4,
+            "prune": 4,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 4
+          },
+          "n": 4,
+          "author_label_matches_mime": true
+        },
+        "selection-empty": {
+          "truth": "authorized",
+          "correct_by_profile": {
+            "auto": 4,
+            "expert": 4,
+            "incomplete": 4,
+            "overcollected": 4,
+            "repair": 4,
+            "prune": 4,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 4
+          },
+          "n": 4,
+          "author_label_matches_mime": true
+        },
+        "both-empty": {
+          "truth": "authorized",
+          "correct_by_profile": {
+            "auto": 4,
+            "expert": 4,
+            "incomplete": 4,
+            "overcollected": 4,
+            "repair": 4,
+            "prune": 4,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 4
+          },
+          "n": 4,
+          "author_label_matches_mime": true
+        },
+        "extra-empty-file": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 4,
+            "expert": 4,
+            "incomplete": 4,
+            "overcollected": 4,
+            "repair": 4,
+            "prune": 4,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 4
+          },
+          "n": 4,
+          "author_label_matches_mime": true
+        },
+        "complete-empty-file-renamed": {
+          "truth": "authorized",
+          "correct_by_profile": {
+            "auto": 4,
+            "expert": 4,
+            "incomplete": 4,
+            "overcollected": 4,
+            "repair": 4,
+            "prune": 4,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 4
+          },
+          "n": 4,
+          "author_label_matches_mime": true
+        }
+      }
+    },
+    "factorial": {
+      "n": 32,
+      "distinct_cases": 32,
+      "truth": {
+        "authorized": 6,
+        "unauthorized": 26
+      },
+      "profiles": {
+        "auto": {
+          "correct": 32,
+          "false_authorized": 0,
+          "false_unauthorized": 0,
+          "unknown": 0,
+          "receipt_bytes": 53040,
+          "raw_bytes": {
+            "recipient": 0,
+            "body": 0,
+            "names": 1552,
+            "content": 0
+          }
+        },
+        "expert": {
+          "correct": 32,
+          "false_authorized": 0,
+          "false_unauthorized": 0,
+          "unknown": 0,
+          "receipt_bytes": 53040,
+          "raw_bytes": {
+            "recipient": 0,
+            "body": 0,
+            "names": 1552,
+            "content": 0
+          }
+        },
+        "incomplete": {
+          "correct": 28,
+          "false_authorized": 0,
+          "false_unauthorized": 0,
+          "unknown": 4,
+          "receipt_bytes": 40992,
+          "raw_bytes": {
+            "recipient": 0,
+            "body": 0,
+            "names": 1552,
+            "content": 0
+          }
+        },
+        "overcollected": {
+          "correct": 32,
+          "false_authorized": 0,
+          "false_unauthorized": 0,
+          "unknown": 0,
+          "receipt_bytes": 61984,
+          "raw_bytes": {
+            "recipient": 1152,
+            "body": 256,
+            "names": 1552,
+            "content": 304
+          }
+        },
+        "repair": {
+          "correct": 32,
+          "false_authorized": 0,
+          "false_unauthorized": 0,
+          "unknown": 0,
+          "receipt_bytes": 64496,
+          "raw_bytes": {
+            "recipient": 0,
+            "body": 0,
+            "names": 1552,
+            "content": 0
+          }
+        },
+        "prune": {
+          "correct": 32,
+          "false_authorized": 0,
+          "false_unauthorized": 0,
+          "unknown": 0,
+          "receipt_bytes": 53040,
+          "raw_bytes": {
+            "recipient": 0,
+            "body": 0,
+            "names": 1552,
+            "content": 0
+          }
+        },
+        "v2_native": {
+          "correct": 0,
+          "false_authorized": 0,
+          "false_unauthorized": 0,
+          "unknown": 32,
+          "receipt_bytes": 0,
+          "raw_bytes": {
+            "recipient": 0,
+            "body": 0,
+            "names": 0,
+            "content": 0
+          }
+        },
+        "v2_forced_legacy_policy": {
+          "correct": 30,
+          "false_authorized": 2,
+          "false_unauthorized": 0,
+          "unknown": 0,
+          "receipt_bytes": 38544,
+          "raw_bytes": {
+            "recipient": 0,
+            "body": 0,
+            "names": 0,
+            "content": 0
+          }
+        }
+      },
+      "case_results": {
+        "factor-00": {
+          "truth": "authorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-01": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-02": {
+          "truth": "authorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-03": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-04": {
+          "truth": "authorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 0,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-05": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-06": {
+          "truth": "authorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 0,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-07": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-08": {
+          "truth": "authorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-09": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-10": {
+          "truth": "authorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-11": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-12": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 0
+          },
+          "n": 1
+        },
+        "factor-13": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-14": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 0
+          },
+          "n": 1
+        },
+        "factor-15": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-16": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-17": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-18": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-19": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-20": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 0,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-21": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-22": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 0,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-23": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-24": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-25": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-26": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-27": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-28": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-29": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-30": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        },
+        "factor-31": {
+          "truth": "unauthorized",
+          "correct_by_profile": {
+            "auto": 1,
+            "expert": 1,
+            "incomplete": 1,
+            "overcollected": 1,
+            "repair": 1,
+            "prune": 1,
+            "v2_native": 0,
+            "v2_forced_legacy_policy": 1
+          },
+          "n": 1
+        }
+      }
+    }
+  }
+}
