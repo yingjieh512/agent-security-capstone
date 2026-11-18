@@ -1,0 +1,2388 @@
+{
+  "freeze": {
+    "commit": "1c5006f87490a1a9daf9b673762edd218859ae41",
+    "compiler_sha256": "8bb4aebe8d2ebb3657e0e7d9e4e505c0ee8994bbf2a96da0bd881f963a07a7a5",
+    "hand_sha256": "5ffecffab84f89548d605ce8904fd7d72f966c8bfb620a1bfd4b39f9b7c2c3c6",
+    "native_supported": false,
+    "native_cli_exit": 2,
+    "supported_policies": [
+      "explain",
+      "recipient",
+      "recipient_body"
+    ]
+  },
+  "mailpit": "v1.34.0",
+  "templates": [
+    {
+      "dataset": "ATBench",
+      "tool": "send_email",
+      "call_key": "atbench:row718:call5",
+      "body_bytes": 16
+    },
+    {
+      "dataset": "ATBench",
+      "tool": "send_email",
+      "call_key": "atbench:row600:call10",
+      "body_bytes": 810
+    },
+    {
+      "dataset": "Claw",
+      "tool": "gog gmail send",
+      "call_key": "claw:row160:call5",
+      "body_bytes": 21
+    },
+    {
+      "dataset": "Claw",
+      "tool": "gog gmail send",
+      "call_key": "claw:row224:call6",
+      "body_bytes": 1097
+    }
+  ],
+  "scenario_families": 18,
+  "main_smtp_acceptances": 72,
+  "truth": {
+    "authorized": 44,
+    "unauthorized": 28
+  },
+  "fixture_attachment_sizes_by_template": [
+    32,
+    128,
+    512,
+    2048
+  ],
+  "profiles": {
+    "expert_minimal": {
+      "correct": 72,
+      "false_authorized": 0,
+      "false_unauthorized": 0,
+      "unknown": 0,
+      "correct_authorized": 44,
+      "correct_unauthorized": 28,
+      "receipt_bytes": 64496,
+      "raw_logical_bytes": {
+        "recipient": 0,
+        "body": 0,
+        "filename": 0,
+        "attachment": 0
+      }
+    },
+    "full_operational": {
+      "correct": 72,
+      "false_authorized": 0,
+      "false_unauthorized": 0,
+      "unknown": 0,
+      "correct_authorized": 44,
+      "correct_unauthorized": 28,
+      "receipt_bytes": 323404,
+      "raw_logical_bytes": {
+        "recipient": 3196,
+        "body": 68184,
+        "filename": 1772,
+        "attachment": 144160
+      }
+    },
+    "metadata_only": {
+      "correct": 20,
+      "false_authorized": 0,
+      "false_unauthorized": 0,
+      "unknown": 52,
+      "correct_authorized": 8,
+      "correct_unauthorized": 12,
+      "receipt_bytes": 59000,
+      "raw_logical_bytes": {
+        "recipient": 0,
+        "body": 0,
+        "filename": 1772,
+        "attachment": 0
+      }
+    },
+    "whole_bag": {
+      "correct": 56,
+      "false_authorized": 0,
+      "false_unauthorized": 0,
+      "unknown": 16,
+      "correct_authorized": 36,
+      "correct_unauthorized": 20,
+      "receipt_bytes": 61584,
+      "raw_logical_bytes": {
+        "recipient": 0,
+        "body": 0,
+        "filename": 0,
+        "attachment": 0
+      }
+    },
+    "missing_delivery_attachment": {
+      "correct": 12,
+      "false_authorized": 0,
+      "false_unauthorized": 0,
+      "unknown": 60,
+      "correct_authorized": 0,
+      "correct_unauthorized": 12,
+      "receipt_bytes": 55820,
+      "raw_logical_bytes": {
+        "recipient": 0,
+        "body": 0,
+        "filename": 0,
+        "attachment": 0
+      }
+    },
+    "missing_delivery_recipient": {
+      "correct": 20,
+      "false_authorized": 0,
+      "false_unauthorized": 0,
+      "unknown": 52,
+      "correct_authorized": 0,
+      "correct_unauthorized": 20,
+      "receipt_bytes": 58520,
+      "raw_logical_bytes": {
+        "recipient": 0,
+        "body": 0,
+        "filename": 0,
+        "attachment": 0
+      }
+    },
+    "synthesized": {
+      "correct": 72,
+      "false_authorized": 0,
+      "false_unauthorized": 0,
+      "unknown": 0,
+      "correct_authorized": 44,
+      "correct_unauthorized": 28,
+      "receipt_bytes": 64496,
+      "raw_logical_bytes": {
+        "recipient": 0,
+        "body": 0,
+        "filename": 0,
+        "attachment": 0
+      }
+    },
+    "recipient_and_count": {
+      "correct": 20,
+      "false_authorized": 0,
+      "false_unauthorized": 0,
+      "unknown": 52,
+      "correct_authorized": 8,
+      "correct_unauthorized": 12,
+      "receipt_bytes": 48296,
+      "raw_logical_bytes": {
+        "recipient": 0,
+        "body": 0,
+        "filename": 0,
+        "attachment": 0
+      }
+    },
+    "policy_inputs_raw": {
+      "correct": 72,
+      "false_authorized": 0,
+      "false_unauthorized": 0,
+      "unknown": 0,
+      "correct_authorized": 44,
+      "correct_unauthorized": 28,
+      "receipt_bytes": 236572,
+      "raw_logical_bytes": {
+        "recipient": 3196,
+        "body": 0,
+        "filename": 0,
+        "attachment": 144160
+      }
+    },
+    "expert_with_body_names": {
+      "correct": 72,
+      "false_authorized": 0,
+      "false_unauthorized": 0,
+      "unknown": 0,
+      "correct_authorized": 44,
+      "correct_unauthorized": 28,
+      "receipt_bytes": 140912,
+      "raw_logical_bytes": {
+        "recipient": 0,
+        "body": 68184,
+        "filename": 1772,
+        "attachment": 0
+      }
+    },
+    "pruned_full_operational": {
+      "correct": 72,
+      "false_authorized": 0,
+      "false_unauthorized": 0,
+      "unknown": 0,
+      "correct_authorized": 44,
+      "correct_unauthorized": 28,
+      "receipt_bytes": 236572,
+      "raw_logical_bytes": {
+        "recipient": 3196,
+        "body": 0,
+        "filename": 0,
+        "attachment": 144160
+      }
+    },
+    "pruned_expert_minimal": {
+      "correct": 72,
+      "false_authorized": 0,
+      "false_unauthorized": 0,
+      "unknown": 0,
+      "correct_authorized": 44,
+      "correct_unauthorized": 28,
+      "receipt_bytes": 64496,
+      "raw_logical_bytes": {
+        "recipient": 0,
+        "body": 0,
+        "filename": 0,
+        "attachment": 0
+      }
+    },
+    "pruned_expert_with_body_names": {
+      "correct": 72,
+      "false_authorized": 0,
+      "false_unauthorized": 0,
+      "unknown": 0,
+      "correct_authorized": 44,
+      "correct_unauthorized": 28,
+      "receipt_bytes": 64496,
+      "raw_logical_bytes": {
+        "recipient": 0,
+        "body": 0,
+        "filename": 0,
+        "attachment": 0
+      }
+    },
+    "repaired_metadata_only": {
+      "correct": 72,
+      "false_authorized": 0,
+      "false_unauthorized": 0,
+      "unknown": 0,
+      "correct_authorized": 44,
+      "correct_unauthorized": 28,
+      "receipt_bytes": 78236,
+      "raw_logical_bytes": {
+        "recipient": 0,
+        "body": 0,
+        "filename": 1772,
+        "attachment": 0
+      }
+    },
+    "repaired_whole_bag": {
+      "correct": 72,
+      "false_authorized": 0,
+      "false_unauthorized": 0,
+      "unknown": 0,
+      "correct_authorized": 44,
+      "correct_unauthorized": 28,
+      "receipt_bytes": 80820,
+      "raw_logical_bytes": {
+        "recipient": 0,
+        "body": 0,
+        "filename": 0,
+        "attachment": 0
+      }
+    },
+    "repaired_missing_delivery_attachment": {
+      "correct": 72,
+      "false_authorized": 0,
+      "false_unauthorized": 0,
+      "unknown": 0,
+      "correct_authorized": 44,
+      "correct_unauthorized": 28,
+      "receipt_bytes": 64496,
+      "raw_logical_bytes": {
+        "recipient": 0,
+        "body": 0,
+        "filename": 0,
+        "attachment": 0
+      }
+    },
+    "repaired_missing_delivery_recipient": {
+      "correct": 72,
+      "false_authorized": 0,
+      "false_unauthorized": 0,
+      "unknown": 0,
+      "correct_authorized": 44,
+      "correct_unauthorized": 28,
+      "receipt_bytes": 64496,
+      "raw_logical_bytes": {
+        "recipient": 0,
+        "body": 0,
+        "filename": 0,
+        "attachment": 0
+      }
+    }
+  },
+  "receipt_bytes_by_template": [
+    {
+      "expert_minimal": 16124,
+      "full_operational": 18556,
+      "metadata_only": 14697,
+      "whole_bag": 15396,
+      "missing_delivery_attachment": 13955,
+      "missing_delivery_recipient": 14630,
+      "synthesized": 16124,
+      "recipient_and_count": 12074,
+      "policy_inputs_raw": 13351,
+      "expert_with_body_names": 18778,
+      "pruned_full_operational": 13351,
+      "pruned_expert_minimal": 16124,
+      "pruned_expert_with_body_names": 16124,
+      "repaired_metadata_only": 19506,
+      "repaired_whole_bag": 20205,
+      "repaired_missing_delivery_attachment": 16124,
+      "repaired_missing_delivery_recipient": 16124
+    },
+    {
+      "expert_minimal": 16124,
+      "full_operational": 53183,
+      "metadata_only": 14750,
+      "whole_bag": 15396,
+      "missing_delivery_attachment": 13955,
+      "missing_delivery_recipient": 14630,
+      "synthesized": 16124,
+      "recipient_and_count": 12074,
+      "policy_inputs_raw": 20135,
+      "expert_with_body_names": 46568,
+      "pruned_full_operational": 20135,
+      "pruned_expert_minimal": 16124,
+      "pruned_expert_with_body_names": 16124,
+      "repaired_metadata_only": 19559,
+      "repaired_whole_bag": 20205,
+      "repaired_missing_delivery_attachment": 16124,
+      "repaired_missing_delivery_recipient": 16124
+    },
+    {
+      "expert_minimal": 16124,
+      "full_operational": 52704,
+      "metadata_only": 14750,
+      "whole_bag": 15396,
+      "missing_delivery_attachment": 13955,
+      "missing_delivery_recipient": 14630,
+      "synthesized": 16124,
+      "recipient_and_count": 12074,
+      "policy_inputs_raw": 47271,
+      "expert_with_body_names": 18953,
+      "pruned_full_operational": 47271,
+      "pruned_expert_minimal": 16124,
+      "pruned_expert_with_body_names": 16124,
+      "repaired_metadata_only": 19559,
+      "repaired_whole_bag": 20205,
+      "repaired_missing_delivery_attachment": 16124,
+      "repaired_missing_delivery_recipient": 16124
+    },
+    {
+      "expert_minimal": 16124,
+      "full_operational": 198961,
+      "metadata_only": 14803,
+      "whole_bag": 15396,
+      "missing_delivery_attachment": 13955,
+      "missing_delivery_recipient": 14630,
+      "synthesized": 16124,
+      "recipient_and_count": 12074,
+      "policy_inputs_raw": 155815,
+      "expert_with_body_names": 56613,
+      "pruned_full_operational": 155815,
+      "pruned_expert_minimal": 16124,
+      "pruned_expert_with_body_names": 16124,
+      "repaired_metadata_only": 19612,
+      "repaired_whole_bag": 20205,
+      "repaired_missing_delivery_attachment": 16124,
+      "repaired_missing_delivery_recipient": 16124
+    }
+  ],
+  "legacy_equality_proxy": {
+    "correct": 60,
+    "correct_authorized": 32,
+    "correct_unauthorized": 28,
+    "false_authorized": 0,
+    "false_unauthorized": 12,
+    "unknown": 0
+  },
+  "by_case": {
+    "exact": {
+      "truth": "authorized",
+      "runs": 4,
+      "predictions": {
+        "expert_minimal": {
+          "authorized": 4
+        },
+        "full_operational": {
+          "authorized": 4
+        },
+        "metadata_only": {
+          "unknown": 4
+        },
+        "whole_bag": {
+          "authorized": 4
+        },
+        "missing_delivery_attachment": {
+          "unknown": 4
+        },
+        "missing_delivery_recipient": {
+          "unknown": 4
+        },
+        "synthesized": {
+          "authorized": 4
+        },
+        "recipient_and_count": {
+          "unknown": 4
+        },
+        "policy_inputs_raw": {
+          "authorized": 4
+        },
+        "expert_with_body_names": {
+          "authorized": 4
+        },
+        "pruned_full_operational": {
+          "authorized": 4
+        },
+        "pruned_expert_minimal": {
+          "authorized": 4
+        },
+        "pruned_expert_with_body_names": {
+          "authorized": 4
+        },
+        "repaired_metadata_only": {
+          "authorized": 4
+        },
+        "repaired_whole_bag": {
+          "authorized": 4
+        },
+        "repaired_missing_delivery_attachment": {
+          "authorized": 4
+        },
+        "repaired_missing_delivery_recipient": {
+          "authorized": 4
+        },
+        "v1_equality_proxy": {
+          "authorized": 4
+        }
+      }
+    },
+    "proper_subset": {
+      "truth": "authorized",
+      "runs": 4,
+      "predictions": {
+        "expert_minimal": {
+          "authorized": 4
+        },
+        "full_operational": {
+          "authorized": 4
+        },
+        "metadata_only": {
+          "unknown": 4
+        },
+        "whole_bag": {
+          "unknown": 4
+        },
+        "missing_delivery_attachment": {
+          "unknown": 4
+        },
+        "missing_delivery_recipient": {
+          "unknown": 4
+        },
+        "synthesized": {
+          "authorized": 4
+        },
+        "recipient_and_count": {
+          "unknown": 4
+        },
+        "policy_inputs_raw": {
+          "authorized": 4
+        },
+        "expert_with_body_names": {
+          "authorized": 4
+        },
+        "pruned_full_operational": {
+          "authorized": 4
+        },
+        "pruned_expert_minimal": {
+          "authorized": 4
+        },
+        "pruned_expert_with_body_names": {
+          "authorized": 4
+        },
+        "repaired_metadata_only": {
+          "authorized": 4
+        },
+        "repaired_whole_bag": {
+          "authorized": 4
+        },
+        "repaired_missing_delivery_attachment": {
+          "authorized": 4
+        },
+        "repaired_missing_delivery_recipient": {
+          "authorized": 4
+        },
+        "v1_equality_proxy": {
+          "unauthorized": 4
+        }
+      }
+    },
+    "same_metadata_substitution": {
+      "truth": "unauthorized",
+      "runs": 4,
+      "predictions": {
+        "expert_minimal": {
+          "unauthorized": 4
+        },
+        "full_operational": {
+          "unauthorized": 4
+        },
+        "metadata_only": {
+          "unknown": 4
+        },
+        "whole_bag": {
+          "unknown": 4
+        },
+        "missing_delivery_attachment": {
+          "unknown": 4
+        },
+        "missing_delivery_recipient": {
+          "unauthorized": 4
+        },
+        "synthesized": {
+          "unauthorized": 4
+        },
+        "recipient_and_count": {
+          "unknown": 4
+        },
+        "policy_inputs_raw": {
+          "unauthorized": 4
+        },
+        "expert_with_body_names": {
+          "unauthorized": 4
+        },
+        "pruned_full_operational": {
+          "unauthorized": 4
+        },
+        "pruned_expert_minimal": {
+          "unauthorized": 4
+        },
+        "pruned_expert_with_body_names": {
+          "unauthorized": 4
+        },
+        "repaired_metadata_only": {
+          "unauthorized": 4
+        },
+        "repaired_whole_bag": {
+          "unauthorized": 4
+        },
+        "repaired_missing_delivery_attachment": {
+          "unauthorized": 4
+        },
+        "repaired_missing_delivery_recipient": {
+          "unauthorized": 4
+        },
+        "v1_equality_proxy": {
+          "unauthorized": 4
+        }
+      }
+    },
+    "rename": {
+      "truth": "authorized",
+      "runs": 4,
+      "predictions": {
+        "expert_minimal": {
+          "authorized": 4
+        },
+        "full_operational": {
+          "authorized": 4
+        },
+        "metadata_only": {
+          "unknown": 4
+        },
+        "whole_bag": {
+          "authorized": 4
+        },
+        "missing_delivery_attachment": {
+          "unknown": 4
+        },
+        "missing_delivery_recipient": {
+          "unknown": 4
+        },
+        "synthesized": {
+          "authorized": 4
+        },
+        "recipient_and_count": {
+          "unknown": 4
+        },
+        "policy_inputs_raw": {
+          "authorized": 4
+        },
+        "expert_with_body_names": {
+          "authorized": 4
+        },
+        "pruned_full_operational": {
+          "authorized": 4
+        },
+        "pruned_expert_minimal": {
+          "authorized": 4
+        },
+        "pruned_expert_with_body_names": {
+          "authorized": 4
+        },
+        "repaired_metadata_only": {
+          "authorized": 4
+        },
+        "repaired_whole_bag": {
+          "authorized": 4
+        },
+        "repaired_missing_delivery_attachment": {
+          "authorized": 4
+        },
+        "repaired_missing_delivery_recipient": {
+          "authorized": 4
+        },
+        "v1_equality_proxy": {
+          "authorized": 4
+        }
+      }
+    },
+    "reorder": {
+      "truth": "authorized",
+      "runs": 4,
+      "predictions": {
+        "expert_minimal": {
+          "authorized": 4
+        },
+        "full_operational": {
+          "authorized": 4
+        },
+        "metadata_only": {
+          "unknown": 4
+        },
+        "whole_bag": {
+          "authorized": 4
+        },
+        "missing_delivery_attachment": {
+          "unknown": 4
+        },
+        "missing_delivery_recipient": {
+          "unknown": 4
+        },
+        "synthesized": {
+          "authorized": 4
+        },
+        "recipient_and_count": {
+          "unknown": 4
+        },
+        "policy_inputs_raw": {
+          "authorized": 4
+        },
+        "expert_with_body_names": {
+          "authorized": 4
+        },
+        "pruned_full_operational": {
+          "authorized": 4
+        },
+        "pruned_expert_minimal": {
+          "authorized": 4
+        },
+        "pruned_expert_with_body_names": {
+          "authorized": 4
+        },
+        "repaired_metadata_only": {
+          "authorized": 4
+        },
+        "repaired_whole_bag": {
+          "authorized": 4
+        },
+        "repaired_missing_delivery_attachment": {
+          "authorized": 4
+        },
+        "repaired_missing_delivery_recipient": {
+          "authorized": 4
+        },
+        "v1_equality_proxy": {
+          "authorized": 4
+        }
+      }
+    },
+    "duplicate_granted": {
+      "truth": "authorized",
+      "runs": 4,
+      "predictions": {
+        "expert_minimal": {
+          "authorized": 4
+        },
+        "full_operational": {
+          "authorized": 4
+        },
+        "metadata_only": {
+          "unknown": 4
+        },
+        "whole_bag": {
+          "authorized": 4
+        },
+        "missing_delivery_attachment": {
+          "unknown": 4
+        },
+        "missing_delivery_recipient": {
+          "unknown": 4
+        },
+        "synthesized": {
+          "authorized": 4
+        },
+        "recipient_and_count": {
+          "unknown": 4
+        },
+        "policy_inputs_raw": {
+          "authorized": 4
+        },
+        "expert_with_body_names": {
+          "authorized": 4
+        },
+        "pruned_full_operational": {
+          "authorized": 4
+        },
+        "pruned_expert_minimal": {
+          "authorized": 4
+        },
+        "pruned_expert_with_body_names": {
+          "authorized": 4
+        },
+        "repaired_metadata_only": {
+          "authorized": 4
+        },
+        "repaired_whole_bag": {
+          "authorized": 4
+        },
+        "repaired_missing_delivery_attachment": {
+          "authorized": 4
+        },
+        "repaired_missing_delivery_recipient": {
+          "authorized": 4
+        },
+        "v1_equality_proxy": {
+          "authorized": 4
+        }
+      }
+    },
+    "duplicate_excess": {
+      "truth": "unauthorized",
+      "runs": 4,
+      "predictions": {
+        "expert_minimal": {
+          "unauthorized": 4
+        },
+        "full_operational": {
+          "unauthorized": 4
+        },
+        "metadata_only": {
+          "unknown": 4
+        },
+        "whole_bag": {
+          "unauthorized": 4
+        },
+        "missing_delivery_attachment": {
+          "unknown": 4
+        },
+        "missing_delivery_recipient": {
+          "unauthorized": 4
+        },
+        "synthesized": {
+          "unauthorized": 4
+        },
+        "recipient_and_count": {
+          "unknown": 4
+        },
+        "policy_inputs_raw": {
+          "unauthorized": 4
+        },
+        "expert_with_body_names": {
+          "unauthorized": 4
+        },
+        "pruned_full_operational": {
+          "unauthorized": 4
+        },
+        "pruned_expert_minimal": {
+          "unauthorized": 4
+        },
+        "pruned_expert_with_body_names": {
+          "unauthorized": 4
+        },
+        "repaired_metadata_only": {
+          "unauthorized": 4
+        },
+        "repaired_whole_bag": {
+          "unauthorized": 4
+        },
+        "repaired_missing_delivery_attachment": {
+          "unauthorized": 4
+        },
+        "repaired_missing_delivery_recipient": {
+          "unauthorized": 4
+        },
+        "v1_equality_proxy": {
+          "unauthorized": 4
+        }
+      }
+    },
+    "wrong_multiplicity_same_total": {
+      "truth": "unauthorized",
+      "runs": 4,
+      "predictions": {
+        "expert_minimal": {
+          "unauthorized": 4
+        },
+        "full_operational": {
+          "unauthorized": 4
+        },
+        "metadata_only": {
+          "unknown": 4
+        },
+        "whole_bag": {
+          "unauthorized": 4
+        },
+        "missing_delivery_attachment": {
+          "unknown": 4
+        },
+        "missing_delivery_recipient": {
+          "unauthorized": 4
+        },
+        "synthesized": {
+          "unauthorized": 4
+        },
+        "recipient_and_count": {
+          "unknown": 4
+        },
+        "policy_inputs_raw": {
+          "unauthorized": 4
+        },
+        "expert_with_body_names": {
+          "unauthorized": 4
+        },
+        "pruned_full_operational": {
+          "unauthorized": 4
+        },
+        "pruned_expert_minimal": {
+          "unauthorized": 4
+        },
+        "pruned_expert_with_body_names": {
+          "unauthorized": 4
+        },
+        "repaired_metadata_only": {
+          "unauthorized": 4
+        },
+        "repaired_whole_bag": {
+          "unauthorized": 4
+        },
+        "repaired_missing_delivery_attachment": {
+          "unauthorized": 4
+        },
+        "repaired_missing_delivery_recipient": {
+          "unauthorized": 4
+        },
+        "v1_equality_proxy": {
+          "unauthorized": 4
+        }
+      }
+    },
+    "both_empty": {
+      "truth": "authorized",
+      "runs": 4,
+      "predictions": {
+        "expert_minimal": {
+          "authorized": 4
+        },
+        "full_operational": {
+          "authorized": 4
+        },
+        "metadata_only": {
+          "authorized": 4
+        },
+        "whole_bag": {
+          "authorized": 4
+        },
+        "missing_delivery_attachment": {
+          "unknown": 4
+        },
+        "missing_delivery_recipient": {
+          "unknown": 4
+        },
+        "synthesized": {
+          "authorized": 4
+        },
+        "recipient_and_count": {
+          "authorized": 4
+        },
+        "policy_inputs_raw": {
+          "authorized": 4
+        },
+        "expert_with_body_names": {
+          "authorized": 4
+        },
+        "pruned_full_operational": {
+          "authorized": 4
+        },
+        "pruned_expert_minimal": {
+          "authorized": 4
+        },
+        "pruned_expert_with_body_names": {
+          "authorized": 4
+        },
+        "repaired_metadata_only": {
+          "authorized": 4
+        },
+        "repaired_whole_bag": {
+          "authorized": 4
+        },
+        "repaired_missing_delivery_attachment": {
+          "authorized": 4
+        },
+        "repaired_missing_delivery_recipient": {
+          "authorized": 4
+        },
+        "v1_equality_proxy": {
+          "authorized": 4
+        }
+      }
+    },
+    "unused_grant": {
+      "truth": "authorized",
+      "runs": 4,
+      "predictions": {
+        "expert_minimal": {
+          "authorized": 4
+        },
+        "full_operational": {
+          "authorized": 4
+        },
+        "metadata_only": {
+          "authorized": 4
+        },
+        "whole_bag": {
+          "authorized": 4
+        },
+        "missing_delivery_attachment": {
+          "unknown": 4
+        },
+        "missing_delivery_recipient": {
+          "unknown": 4
+        },
+        "synthesized": {
+          "authorized": 4
+        },
+        "recipient_and_count": {
+          "authorized": 4
+        },
+        "policy_inputs_raw": {
+          "authorized": 4
+        },
+        "expert_with_body_names": {
+          "authorized": 4
+        },
+        "pruned_full_operational": {
+          "authorized": 4
+        },
+        "pruned_expert_minimal": {
+          "authorized": 4
+        },
+        "pruned_expert_with_body_names": {
+          "authorized": 4
+        },
+        "repaired_metadata_only": {
+          "authorized": 4
+        },
+        "repaired_whole_bag": {
+          "authorized": 4
+        },
+        "repaired_missing_delivery_attachment": {
+          "authorized": 4
+        },
+        "repaired_missing_delivery_recipient": {
+          "authorized": 4
+        },
+        "v1_equality_proxy": {
+          "unauthorized": 4
+        }
+      }
+    },
+    "wrong_recipient_empty": {
+      "truth": "unauthorized",
+      "runs": 4,
+      "predictions": {
+        "expert_minimal": {
+          "unauthorized": 4
+        },
+        "full_operational": {
+          "unauthorized": 4
+        },
+        "metadata_only": {
+          "unauthorized": 4
+        },
+        "whole_bag": {
+          "unauthorized": 4
+        },
+        "missing_delivery_attachment": {
+          "unauthorized": 4
+        },
+        "missing_delivery_recipient": {
+          "unknown": 4
+        },
+        "synthesized": {
+          "unauthorized": 4
+        },
+        "recipient_and_count": {
+          "unauthorized": 4
+        },
+        "policy_inputs_raw": {
+          "unauthorized": 4
+        },
+        "expert_with_body_names": {
+          "unauthorized": 4
+        },
+        "pruned_full_operational": {
+          "unauthorized": 4
+        },
+        "pruned_expert_minimal": {
+          "unauthorized": 4
+        },
+        "pruned_expert_with_body_names": {
+          "unauthorized": 4
+        },
+        "repaired_metadata_only": {
+          "unauthorized": 4
+        },
+        "repaired_whole_bag": {
+          "unauthorized": 4
+        },
+        "repaired_missing_delivery_attachment": {
+          "unauthorized": 4
+        },
+        "repaired_missing_delivery_recipient": {
+          "unauthorized": 4
+        },
+        "v1_equality_proxy": {
+          "unauthorized": 4
+        }
+      }
+    },
+    "explicit_no_grant": {
+      "truth": "unauthorized",
+      "runs": 4,
+      "predictions": {
+        "expert_minimal": {
+          "unauthorized": 4
+        },
+        "full_operational": {
+          "unauthorized": 4
+        },
+        "metadata_only": {
+          "unauthorized": 4
+        },
+        "whole_bag": {
+          "unauthorized": 4
+        },
+        "missing_delivery_attachment": {
+          "unauthorized": 4
+        },
+        "missing_delivery_recipient": {
+          "unauthorized": 4
+        },
+        "synthesized": {
+          "unauthorized": 4
+        },
+        "recipient_and_count": {
+          "unauthorized": 4
+        },
+        "policy_inputs_raw": {
+          "unauthorized": 4
+        },
+        "expert_with_body_names": {
+          "unauthorized": 4
+        },
+        "pruned_full_operational": {
+          "unauthorized": 4
+        },
+        "pruned_expert_minimal": {
+          "unauthorized": 4
+        },
+        "pruned_expert_with_body_names": {
+          "unauthorized": 4
+        },
+        "repaired_metadata_only": {
+          "unauthorized": 4
+        },
+        "repaired_whole_bag": {
+          "unauthorized": 4
+        },
+        "repaired_missing_delivery_attachment": {
+          "unauthorized": 4
+        },
+        "repaired_missing_delivery_recipient": {
+          "unauthorized": 4
+        },
+        "v1_equality_proxy": {
+          "unauthorized": 4
+        }
+      }
+    },
+    "header_other_envelope_right": {
+      "truth": "authorized",
+      "runs": 4,
+      "predictions": {
+        "expert_minimal": {
+          "authorized": 4
+        },
+        "full_operational": {
+          "authorized": 4
+        },
+        "metadata_only": {
+          "unknown": 4
+        },
+        "whole_bag": {
+          "authorized": 4
+        },
+        "missing_delivery_attachment": {
+          "unknown": 4
+        },
+        "missing_delivery_recipient": {
+          "unknown": 4
+        },
+        "synthesized": {
+          "authorized": 4
+        },
+        "recipient_and_count": {
+          "unknown": 4
+        },
+        "policy_inputs_raw": {
+          "authorized": 4
+        },
+        "expert_with_body_names": {
+          "authorized": 4
+        },
+        "pruned_full_operational": {
+          "authorized": 4
+        },
+        "pruned_expert_minimal": {
+          "authorized": 4
+        },
+        "pruned_expert_with_body_names": {
+          "authorized": 4
+        },
+        "repaired_metadata_only": {
+          "authorized": 4
+        },
+        "repaired_whole_bag": {
+          "authorized": 4
+        },
+        "repaired_missing_delivery_attachment": {
+          "authorized": 4
+        },
+        "repaired_missing_delivery_recipient": {
+          "authorized": 4
+        },
+        "v1_equality_proxy": {
+          "authorized": 4
+        }
+      }
+    },
+    "header_right_envelope_other": {
+      "truth": "unauthorized",
+      "runs": 4,
+      "predictions": {
+        "expert_minimal": {
+          "unauthorized": 4
+        },
+        "full_operational": {
+          "unauthorized": 4
+        },
+        "metadata_only": {
+          "unauthorized": 4
+        },
+        "whole_bag": {
+          "unauthorized": 4
+        },
+        "missing_delivery_attachment": {
+          "unauthorized": 4
+        },
+        "missing_delivery_recipient": {
+          "unknown": 4
+        },
+        "synthesized": {
+          "unauthorized": 4
+        },
+        "recipient_and_count": {
+          "unauthorized": 4
+        },
+        "policy_inputs_raw": {
+          "unauthorized": 4
+        },
+        "expert_with_body_names": {
+          "unauthorized": 4
+        },
+        "pruned_full_operational": {
+          "unauthorized": 4
+        },
+        "pruned_expert_minimal": {
+          "unauthorized": 4
+        },
+        "pruned_expert_with_body_names": {
+          "unauthorized": 4
+        },
+        "repaired_metadata_only": {
+          "unauthorized": 4
+        },
+        "repaired_whole_bag": {
+          "unauthorized": 4
+        },
+        "repaired_missing_delivery_attachment": {
+          "unauthorized": 4
+        },
+        "repaired_missing_delivery_recipient": {
+          "unauthorized": 4
+        },
+        "v1_equality_proxy": {
+          "unauthorized": 4
+        }
+      }
+    },
+    "body_change": {
+      "truth": "authorized",
+      "runs": 4,
+      "predictions": {
+        "expert_minimal": {
+          "authorized": 4
+        },
+        "full_operational": {
+          "authorized": 4
+        },
+        "metadata_only": {
+          "unknown": 4
+        },
+        "whole_bag": {
+          "authorized": 4
+        },
+        "missing_delivery_attachment": {
+          "unknown": 4
+        },
+        "missing_delivery_recipient": {
+          "unknown": 4
+        },
+        "synthesized": {
+          "authorized": 4
+        },
+        "recipient_and_count": {
+          "unknown": 4
+        },
+        "policy_inputs_raw": {
+          "authorized": 4
+        },
+        "expert_with_body_names": {
+          "authorized": 4
+        },
+        "pruned_full_operational": {
+          "authorized": 4
+        },
+        "pruned_expert_minimal": {
+          "authorized": 4
+        },
+        "pruned_expert_with_body_names": {
+          "authorized": 4
+        },
+        "repaired_metadata_only": {
+          "authorized": 4
+        },
+        "repaired_whole_bag": {
+          "authorized": 4
+        },
+        "repaired_missing_delivery_attachment": {
+          "authorized": 4
+        },
+        "repaired_missing_delivery_recipient": {
+          "authorized": 4
+        },
+        "v1_equality_proxy": {
+          "authorized": 4
+        }
+      }
+    },
+    "zero_byte_attachment": {
+      "truth": "authorized",
+      "runs": 4,
+      "predictions": {
+        "expert_minimal": {
+          "authorized": 4
+        },
+        "full_operational": {
+          "authorized": 4
+        },
+        "metadata_only": {
+          "unknown": 4
+        },
+        "whole_bag": {
+          "authorized": 4
+        },
+        "missing_delivery_attachment": {
+          "unknown": 4
+        },
+        "missing_delivery_recipient": {
+          "unknown": 4
+        },
+        "synthesized": {
+          "authorized": 4
+        },
+        "recipient_and_count": {
+          "unknown": 4
+        },
+        "policy_inputs_raw": {
+          "authorized": 4
+        },
+        "expert_with_body_names": {
+          "authorized": 4
+        },
+        "pruned_full_operational": {
+          "authorized": 4
+        },
+        "pruned_expert_minimal": {
+          "authorized": 4
+        },
+        "pruned_expert_with_body_names": {
+          "authorized": 4
+        },
+        "repaired_metadata_only": {
+          "authorized": 4
+        },
+        "repaired_whole_bag": {
+          "authorized": 4
+        },
+        "repaired_missing_delivery_attachment": {
+          "authorized": 4
+        },
+        "repaired_missing_delivery_recipient": {
+          "authorized": 4
+        },
+        "v1_equality_proxy": {
+          "authorized": 4
+        }
+      }
+    },
+    "larger_subset": {
+      "truth": "authorized",
+      "runs": 4,
+      "predictions": {
+        "expert_minimal": {
+          "authorized": 4
+        },
+        "full_operational": {
+          "authorized": 4
+        },
+        "metadata_only": {
+          "unknown": 4
+        },
+        "whole_bag": {
+          "unknown": 4
+        },
+        "missing_delivery_attachment": {
+          "unknown": 4
+        },
+        "missing_delivery_recipient": {
+          "unknown": 4
+        },
+        "synthesized": {
+          "authorized": 4
+        },
+        "recipient_and_count": {
+          "unknown": 4
+        },
+        "policy_inputs_raw": {
+          "authorized": 4
+        },
+        "expert_with_body_names": {
+          "authorized": 4
+        },
+        "pruned_full_operational": {
+          "authorized": 4
+        },
+        "pruned_expert_minimal": {
+          "authorized": 4
+        },
+        "pruned_expert_with_body_names": {
+          "authorized": 4
+        },
+        "repaired_metadata_only": {
+          "authorized": 4
+        },
+        "repaired_whole_bag": {
+          "authorized": 4
+        },
+        "repaired_missing_delivery_attachment": {
+          "authorized": 4
+        },
+        "repaired_missing_delivery_recipient": {
+          "authorized": 4
+        },
+        "v1_equality_proxy": {
+          "unauthorized": 4
+        }
+      }
+    },
+    "larger_wrong_subset": {
+      "truth": "unauthorized",
+      "runs": 4,
+      "predictions": {
+        "expert_minimal": {
+          "unauthorized": 4
+        },
+        "full_operational": {
+          "unauthorized": 4
+        },
+        "metadata_only": {
+          "unknown": 4
+        },
+        "whole_bag": {
+          "unknown": 4
+        },
+        "missing_delivery_attachment": {
+          "unknown": 4
+        },
+        "missing_delivery_recipient": {
+          "unauthorized": 4
+        },
+        "synthesized": {
+          "unauthorized": 4
+        },
+        "recipient_and_count": {
+          "unknown": 4
+        },
+        "policy_inputs_raw": {
+          "unauthorized": 4
+        },
+        "expert_with_body_names": {
+          "unauthorized": 4
+        },
+        "pruned_full_operational": {
+          "unauthorized": 4
+        },
+        "pruned_expert_minimal": {
+          "unauthorized": 4
+        },
+        "pruned_expert_with_body_names": {
+          "unauthorized": 4
+        },
+        "repaired_metadata_only": {
+          "unauthorized": 4
+        },
+        "repaired_whole_bag": {
+          "unauthorized": 4
+        },
+        "repaired_missing_delivery_attachment": {
+          "unauthorized": 4
+        },
+        "repaired_missing_delivery_recipient": {
+          "unauthorized": 4
+        },
+        "v1_equality_proxy": {
+          "unauthorized": 4
+        }
+      }
+    }
+  },
+  "faults": {
+    "no_approval": {
+      "unknown": 72
+    },
+    "no_delivery": {
+      "unknown": 72
+    },
+    "edited_projection": {
+      "unknown": 72
+    },
+    "swapped_source_keys": {
+      "unknown": 72
+    },
+    "cross_attempt_delivery": {
+      "unknown": 71
+    }
+  },
+  "search": {
+    "checker": "external finite observational-equivalence search; frozen compiler unchanged",
+    "worlds": 400,
+    "within_worlds": 56,
+    "model": {
+      "recipients": [
+        "R0",
+        "R1"
+      ],
+      "attachment_values": [
+        "A",
+        "B",
+        "C"
+      ],
+      "max_items_per_role": 2,
+      "metadata": "All byte symbols have the same length and filename. Bodies are constant.",
+      "source_condition": "Grant present and single-recipient mail accepted; envelope status is common infrastructure.",
+      "observations": "Fresh opaque tags support within-attempt equality in their own domain. Item tags are unordered multisets. Raw symbols are visible when selected."
+    },
+    "candidate_fields_per_role": [
+      "recipient.tag",
+      "attachment_bytes.item_tags",
+      "attachment_bytes.bag_tag",
+      "attachment_count",
+      "recipient.raw",
+      "attachment_content.raw"
+    ],
+    "configs_examined": 4096,
+    "sufficient_configs": 784,
+    "sufficient_configs_by_total_field_count": {
+      "4": 4,
+      "5": 32,
+      "6": 108,
+      "7": 200,
+      "8": 221,
+      "9": 148,
+      "10": 58,
+      "11": 12,
+      "12": 1
+    },
+    "minimum_field_count": 4,
+    "cost_order": [
+      "raw attachment field count",
+      "raw recipient field count",
+      "total role-field count"
+    ],
+    "selected_cost": [
+      0,
+      0,
+      4
+    ],
+    "optimal_config_count": 1,
+    "selected": {
+      "approval": [
+        "recipient.tag",
+        "attachment_bytes.item_tags"
+      ],
+      "delivery": [
+        "recipient.tag",
+        "attachment_bytes.item_tags"
+      ]
+    },
+    "deletion_witnesses": {
+      "approval.recipient.tag": {
+        "within": {
+          "approval": {
+            "recipient": "R0",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          },
+          "delivery": {
+            "recipient": "R0",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          }
+        },
+        "violation": {
+          "approval": {
+            "recipient": "R0",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          },
+          "delivery": {
+            "recipient": "R1",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          }
+        },
+        "common_observation": [
+          {
+            "field": "recipient.tag",
+            "roles": [
+              "delivery"
+            ],
+            "value": null
+          },
+          {
+            "field": "attachment_bytes.item_tags",
+            "roles": [
+              "approval",
+              "delivery"
+            ],
+            "value": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          }
+        ]
+      },
+      "approval.attachment_bytes.item_tags": {
+        "within": {
+          "approval": {
+            "recipient": "R0",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          },
+          "delivery": {
+            "recipient": "R0",
+            "attachments": [
+              "A"
+            ]
+          }
+        },
+        "violation": {
+          "approval": {
+            "recipient": "R0",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          },
+          "delivery": {
+            "recipient": "R0",
+            "attachments": [
+              "C"
+            ]
+          }
+        },
+        "common_observation": [
+          {
+            "field": "recipient.tag",
+            "roles": [
+              "approval",
+              "delivery"
+            ],
+            "value": true
+          },
+          {
+            "field": "attachment_bytes.item_tags",
+            "roles": [
+              "delivery"
+            ],
+            "value": [
+              [
+                0,
+                1
+              ]
+            ]
+          }
+        ]
+      },
+      "delivery.recipient.tag": {
+        "within": {
+          "approval": {
+            "recipient": "R0",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          },
+          "delivery": {
+            "recipient": "R0",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          }
+        },
+        "violation": {
+          "approval": {
+            "recipient": "R0",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          },
+          "delivery": {
+            "recipient": "R1",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          }
+        },
+        "common_observation": [
+          {
+            "field": "recipient.tag",
+            "roles": [
+              "approval"
+            ],
+            "value": null
+          },
+          {
+            "field": "attachment_bytes.item_tags",
+            "roles": [
+              "approval",
+              "delivery"
+            ],
+            "value": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          }
+        ]
+      },
+      "delivery.attachment_bytes.item_tags": {
+        "within": {
+          "approval": {
+            "recipient": "R0",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          },
+          "delivery": {
+            "recipient": "R0",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          }
+        },
+        "violation": {
+          "approval": {
+            "recipient": "R0",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          },
+          "delivery": {
+            "recipient": "R0",
+            "attachments": [
+              "C"
+            ]
+          }
+        },
+        "common_observation": [
+          {
+            "field": "recipient.tag",
+            "roles": [
+              "approval",
+              "delivery"
+            ],
+            "value": true
+          },
+          {
+            "field": "attachment_bytes.item_tags",
+            "roles": [
+              "approval"
+            ],
+            "value": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "manual_collision_witnesses": {
+      "expert_minimal": null,
+      "full_operational": null,
+      "metadata_only": {
+        "within": {
+          "approval": {
+            "recipient": "R0",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          },
+          "delivery": {
+            "recipient": "R0",
+            "attachments": [
+              "A"
+            ]
+          }
+        },
+        "violation": {
+          "approval": {
+            "recipient": "R0",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          },
+          "delivery": {
+            "recipient": "R0",
+            "attachments": [
+              "C"
+            ]
+          }
+        },
+        "common_observation": [
+          {
+            "field": "recipient.tag",
+            "roles": [
+              "approval",
+              "delivery"
+            ],
+            "value": true
+          },
+          {
+            "field": "attachment_count",
+            "roles": [
+              "approval",
+              "delivery"
+            ],
+            "value": [
+              2,
+              1
+            ]
+          }
+        ]
+      },
+      "whole_bag": {
+        "within": {
+          "approval": {
+            "recipient": "R0",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          },
+          "delivery": {
+            "recipient": "R0",
+            "attachments": [
+              "A"
+            ]
+          }
+        },
+        "violation": {
+          "approval": {
+            "recipient": "R0",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          },
+          "delivery": {
+            "recipient": "R0",
+            "attachments": [
+              "C"
+            ]
+          }
+        },
+        "common_observation": [
+          {
+            "field": "recipient.tag",
+            "roles": [
+              "approval",
+              "delivery"
+            ],
+            "value": true
+          },
+          {
+            "field": "attachment_bytes.bag_tag",
+            "roles": [
+              "approval",
+              "delivery"
+            ],
+            "value": false
+          },
+          {
+            "field": "attachment_count",
+            "roles": [
+              "approval",
+              "delivery"
+            ],
+            "value": [
+              2,
+              1
+            ]
+          }
+        ]
+      },
+      "missing_delivery_attachment": {
+        "within": {
+          "approval": {
+            "recipient": "R0",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          },
+          "delivery": {
+            "recipient": "R0",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          }
+        },
+        "violation": {
+          "approval": {
+            "recipient": "R0",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          },
+          "delivery": {
+            "recipient": "R0",
+            "attachments": [
+              "C"
+            ]
+          }
+        },
+        "common_observation": [
+          {
+            "field": "recipient.tag",
+            "roles": [
+              "approval",
+              "delivery"
+            ],
+            "value": true
+          },
+          {
+            "field": "attachment_bytes.item_tags",
+            "roles": [
+              "approval"
+            ],
+            "value": [
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ]
+          }
+        ]
+      },
+      "missing_delivery_recipient": {
+        "within": {
+          "approval": {
+            "recipient": "R0",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          },
+          "delivery": {
+            "recipient": "R0",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          }
+        },
+        "violation": {
+          "approval": {
+            "recipient": "R0",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          },
+          "delivery": {
+            "recipient": "R1",
+            "attachments": [
+              "A",
+              "B"
+            ]
+          }
+        },
+        "common_observation": [
+          {
+            "field": "recipient.tag",
+            "roles": [
+              "approval"
+            ],
+            "value": null
+          },
+          {
+            "field": "attachment_bytes.item_tags",
+            "roles": [
+              "approval",
+              "delivery"
+            ],
+            "value": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "manual_minimum_additions": {
+      "expert_minimal": {
+        "cost": [
+          0,
+          0,
+          0
+        ],
+        "optimal_additions": [
+          {
+            "approval": [],
+            "delivery": []
+          }
+        ]
+      },
+      "full_operational": {
+        "cost": [
+          0,
+          0,
+          0
+        ],
+        "optimal_additions": [
+          {
+            "approval": [],
+            "delivery": []
+          }
+        ]
+      },
+      "metadata_only": {
+        "cost": [
+          0,
+          0,
+          2
+        ],
+        "optimal_additions": [
+          {
+            "approval": [
+              "attachment_bytes.item_tags"
+            ],
+            "delivery": [
+              "attachment_bytes.item_tags"
+            ]
+          }
+        ]
+      },
+      "whole_bag": {
+        "cost": [
+          0,
+          0,
+          2
+        ],
+        "optimal_additions": [
+          {
+            "approval": [
+              "attachment_bytes.item_tags"
+            ],
+            "delivery": [
+              "attachment_bytes.item_tags"
+            ]
+          }
+        ]
+      },
+      "missing_delivery_attachment": {
+        "cost": [
+          0,
+          0,
+          1
+        ],
+        "optimal_additions": [
+          {
+            "approval": [],
+            "delivery": [
+              "attachment_bytes.item_tags"
+            ]
+          }
+        ]
+      },
+      "missing_delivery_recipient": {
+        "cost": [
+          0,
+          0,
+          1
+        ],
+        "optimal_additions": [
+          {
+            "approval": [],
+            "delivery": [
+              "recipient.tag"
+            ]
+          }
+        ]
+      }
+    },
+    "pruned_existing": {
+      "full_operational": {
+        "selected": {
+          "approval": [
+            "recipient.raw",
+            "attachment_content.raw"
+          ],
+          "delivery": [
+            "recipient.raw",
+            "attachment_content.raw"
+          ]
+        },
+        "removed": {
+          "approval": [
+            "status",
+            "body.raw",
+            "attachment_names.raw",
+            "attachment_sizes.list",
+            "attachment_count"
+          ],
+          "delivery": [
+            "status",
+            "body.raw",
+            "attachment_names.raw",
+            "attachment_sizes.list",
+            "attachment_count"
+          ]
+        },
+        "subsets": 16384,
+        "optimal_config_count": 1,
+        "cost": [
+          2,
+          2,
+          4
+        ]
+      },
+      "expert_minimal": {
+        "selected": {
+          "approval": [
+            "recipient.tag",
+            "attachment_bytes.item_tags"
+          ],
+          "delivery": [
+            "recipient.tag",
+            "attachment_bytes.item_tags"
+          ]
+        },
+        "removed": {
+          "approval": [],
+          "delivery": []
+        },
+        "subsets": 16,
+        "optimal_config_count": 1,
+        "cost": [
+          0,
+          0,
+          4
+        ]
+      },
+      "expert_with_body_names": {
+        "selected": {
+          "approval": [
+            "recipient.tag",
+            "attachment_bytes.item_tags"
+          ],
+          "delivery": [
+            "recipient.tag",
+            "attachment_bytes.item_tags"
+          ]
+        },
+        "removed": {
+          "approval": [
+            "body.raw",
+            "attachment_names.raw"
+          ],
+          "delivery": [
+            "body.raw",
+            "attachment_names.raw"
+          ]
+        },
+        "subsets": 256,
+        "optimal_config_count": 1,
+        "cost": [
+          0,
+          0,
+          4
+        ]
+      }
+    },
+    "pruning_cost_order": [
+      "recoverable content role-fields (body or attachment bytes)",
+      "raw identifier role-fields (recipient or filename)",
+      "total role-field count"
+    ],
+    "pruning_sensitivity_control": "expert_with_body_names adds body.raw and attachment_names.raw at each source to expert_minimal; constructed after the pilot as a sensitivity control.",
+    "recipient_and_count_witness": {
+      "within": {
+        "approval": {
+          "recipient": "R0",
+          "attachments": [
+            "A",
+            "B"
+          ]
+        },
+        "delivery": {
+          "recipient": "R0",
+          "attachments": [
+            "A"
+          ]
+        }
+      },
+      "violation": {
+        "approval": {
+          "recipient": "R0",
+          "attachments": [
+            "A",
+            "B"
+          ]
+        },
+        "delivery": {
+          "recipient": "R0",
+          "attachments": [
+            "C"
+          ]
+        }
+      },
+      "common_observation": [
+        {
+          "field": "recipient.tag",
+          "roles": [
+            "approval",
+            "delivery"
+          ],
+          "value": true
+        },
+        {
+          "field": "attachment_count",
+          "roles": [
+            "approval",
+            "delivery"
+          ],
+          "value": [
+            2,
+            1
+          ]
+        }
+      ]
+    },
+    "scope": "Minimal only for these fields, roles, worlds, protocol assumptions and cost. The search does not generate projection operators or measure wire bytes."
+  },
+  "witness_replay": {
+    "paths": 9,
+    "distinct_abstract_world_pairs": 3,
+    "distinct_abstract_worlds": 4,
+    "separate_smtp_acceptances": 18,
+    "equality_model": "Unmasked fields exact; one-sided opaque atoms alpha-renamed, paired opaque domains preserve equality, item tokens preserve joint multiplicity.",
+    "cases": [
+      {
+        "schema_variant": "drop:approval.recipient.tag",
+        "certified_equal_visible_pattern": true,
+        "independent_mime_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verifier": [
+          "unknown",
+          "unknown"
+        ]
+      },
+      {
+        "schema_variant": "drop:approval.attachment_bytes.item_tags",
+        "certified_equal_visible_pattern": true,
+        "independent_mime_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verifier": [
+          "unknown",
+          "unknown"
+        ]
+      },
+      {
+        "schema_variant": "drop:delivery.recipient.tag",
+        "certified_equal_visible_pattern": true,
+        "independent_mime_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verifier": [
+          "unknown",
+          "unknown"
+        ]
+      },
+      {
+        "schema_variant": "drop:delivery.attachment_bytes.item_tags",
+        "certified_equal_visible_pattern": true,
+        "independent_mime_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verifier": [
+          "unknown",
+          "unknown"
+        ]
+      },
+      {
+        "schema_variant": "manual:metadata_only",
+        "certified_equal_visible_pattern": true,
+        "independent_mime_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verifier": [
+          "unknown",
+          "unknown"
+        ]
+      },
+      {
+        "schema_variant": "manual:whole_bag",
+        "certified_equal_visible_pattern": true,
+        "independent_mime_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verifier": [
+          "unknown",
+          "unknown"
+        ]
+      },
+      {
+        "schema_variant": "manual:missing_delivery_attachment",
+        "certified_equal_visible_pattern": true,
+        "independent_mime_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verifier": [
+          "unknown",
+          "unknown"
+        ]
+      },
+      {
+        "schema_variant": "manual:missing_delivery_recipient",
+        "certified_equal_visible_pattern": true,
+        "independent_mime_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verifier": [
+          "unknown",
+          "unknown"
+        ]
+      },
+      {
+        "schema_variant": "recipient_and_count",
+        "certified_equal_visible_pattern": true,
+        "independent_mime_truths": [
+          "authorized",
+          "unauthorized"
+        ],
+        "verifier": [
+          "unknown",
+          "unknown"
+        ]
+      }
+    ]
+  }
+}
