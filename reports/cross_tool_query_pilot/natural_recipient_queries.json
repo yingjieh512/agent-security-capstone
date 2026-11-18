@@ -1,0 +1,153 @@
+{
+  "sources": {
+    "ATBench": {
+      "revision": "de862a3d5363aa3928f70e2228b275135597226c",
+      "sha256": "80c534b5f3517c872b528a2e6b64e34495206968edd184f4aed563d39f0cca09",
+      "rows": 1000
+    },
+    "Claw": {
+      "revision": "75f70f4bfd8305e33e22006e1e6eeb668684d3f2",
+      "sha256": "bc04db0db900fd63ac4c59ba651584be2dc8dbd51861c98ffeb21f13c9495c8b",
+      "rows": 500
+    }
+  },
+  "overall": {
+    "calls": 91,
+    "trajectories": 90,
+    "corroborated": 35,
+    "full_reads": 273,
+    "fixed_reads": 176,
+    "adaptive_reads": 177,
+    "oracle_fixed_reads": 174,
+    "clairvoyant_reads": 172,
+    "paired_call_savings": {
+      "-1": 1,
+      "0": 90
+    },
+    "paired_mean_reads_saved_ci": [
+      -0.03333333333333333,
+      0.0
+    ]
+  },
+  "per_tool": {
+    "gog gmail send": {
+      "calls": 16,
+      "trajectories": 16,
+      "corroborated": 7,
+      "full_reads": 48,
+      "fixed_reads": 37,
+      "adaptive_reads": 38,
+      "oracle_fixed_reads": 37,
+      "clairvoyant_reads": 37,
+      "paired_call_savings": {
+        "-1": 1,
+        "0": 15
+      },
+      "paired_mean_reads_saved_ci": [
+        -0.1875,
+        0.0
+      ],
+      "hindsight_order": [
+        "result",
+        "user",
+        "args"
+      ],
+      "recognized_any_by_source": {
+        "args": 16,
+        "user": 16,
+        "result": 14
+      }
+    },
+    "sendMessage": {
+      "calls": 28,
+      "trajectories": 28,
+      "corroborated": 2,
+      "full_reads": 84,
+      "fixed_reads": 32,
+      "adaptive_reads": 32,
+      "oracle_fixed_reads": 32,
+      "clairvoyant_reads": 32,
+      "paired_call_savings": {
+        "0": 28
+      },
+      "paired_mean_reads_saved_ci": [
+        0.0,
+        0.0
+      ],
+      "hindsight_order": [
+        "args",
+        "user",
+        "result"
+      ],
+      "recognized_any_by_source": {
+        "args": 2,
+        "user": 13,
+        "result": 3
+      }
+    },
+    "send_email": {
+      "calls": 22,
+      "trajectories": 22,
+      "corroborated": 15,
+      "full_reads": 66,
+      "fixed_reads": 58,
+      "adaptive_reads": 58,
+      "oracle_fixed_reads": 56,
+      "clairvoyant_reads": 55,
+      "paired_call_savings": {
+        "0": 22
+      },
+      "paired_mean_reads_saved_ci": [
+        0.0,
+        0.0
+      ],
+      "hindsight_order": [
+        "user",
+        "args",
+        "result"
+      ],
+      "recognized_any_by_source": {
+        "args": 20,
+        "user": 19,
+        "result": 21
+      }
+    },
+    "send_sms": {
+      "calls": 25,
+      "trajectories": 24,
+      "corroborated": 11,
+      "full_reads": 75,
+      "fixed_reads": 49,
+      "adaptive_reads": 49,
+      "oracle_fixed_reads": 49,
+      "clairvoyant_reads": 48,
+      "paired_call_savings": {
+        "0": 25
+      },
+      "paired_mean_reads_saved_ci": [
+        0.0,
+        0.0
+      ],
+      "hindsight_order": [
+        "user",
+        "args",
+        "result"
+      ],
+      "recognized_any_by_source": {
+        "args": 16,
+        "user": 13,
+        "result": 17
+      }
+    }
+  },
+  "grammar": "contacts",
+  "predicate": "Nonempty intersection of recognized literals in primary target args, prior user messages and linked tool result text",
+  "grammar_definition": "Primary ASCII email and 10-15 digit strings with optional plus",
+  "cost": "One logical field open per source, irrespective of bytes. Stop immediately when intersection empty.",
+  "reference": "Full inspection of three fields with same token grammar. Public log evidence only.",
+  "split": "Leave all calls in held-out original trajectory out; policies fitted within tool",
+  "oracles": "oracle_fixed_reads chooses one order per tool using the entire cohort; clairvoyant_reads chooses an order knowing every field of each call. Neither is deployable. The latter is a lower bound under the exact early-stop and three-field protocol.",
+  "adaptive": "Exhaustive first field, then type-set and cardinality (1 or 2+) routing; train-only, at least 4 training calls per branch, fallback fixed suffix otherwise.",
+  "ci": "Paired trajectory-block bootstrap, 5000 draws, seed 409, fixed OOF predictions; inference conditional on chosen tools.",
+  "limitations": "Email ASCII case-sensitive, phone-like contiguous digits 10-15 with optional plus (can match numeric IDs); no aliases, formatting normalization, cc/bcc, claims of consent, or authoritative receipt."
+}

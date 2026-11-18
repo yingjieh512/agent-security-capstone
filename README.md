@@ -187,3 +187,7 @@ outputs](outputs/) are also available in the repository.
 - `baseline.py`: TF-IDF models, metrics, predictions, and bootstrap intervals;
 - `diagnostics.py`, `reporting.py`: interpretation and artifacts;
 - `cli.py`: reproducible `download`, `inspect`, and `run` commands.
+
+## Cross-tool evidence acquisition pilot
+
+The [ATBench and Claw pilot](reports/atbench_claw_cross_tool_query_pilot_2026-11-18.md) compares adaptive queries with the best fixed order per tool at equal correct coverage. It includes results for 91 logged calls, a separate controlled replay with independent scoring tables, and reproduction commands.
