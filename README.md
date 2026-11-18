@@ -191,3 +191,7 @@ outputs](outputs/) are also available in the repository.
 ## Cross-tool evidence acquisition pilot
 
 The [ATBench and Claw pilot](reports/atbench_claw_cross_tool_query_pilot_2026-11-18.md) compares adaptive queries with the best fixed order per tool at equal correct coverage. It includes results for 91 logged calls, a separate controlled replay with independent scoring tables, and reproduction commands.
+
+## Policy-specific send audit records
+
+The [minimum send-log pilot](reports/atbench_claw_minimum_send_log_2026-11-18.md) compiles a policy and source capabilities into authenticated, attempt-bound records. It compares the privacy footprint of two-source receipts across ATBench and Claw send arguments, gives counterexamples when a field is missing, and checks decisions against a local backend.

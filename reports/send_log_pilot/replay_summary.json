@@ -1,0 +1,495 @@
+{
+  "dataset": {
+    "calls_eligible": 80,
+    "calls_scanned": 91,
+    "eligible_trajectories": 79,
+    "calls_by_tool": {
+      "send_email": 19,
+      "send_sms": 20,
+      "sendMessage": 28,
+      "gog gmail send": 13
+    }
+  },
+  "design": {
+    "worlds_per_call": 25,
+    "oracle": "Separate SQL equality checks over finalized dispatch snapshots and delivery states",
+    "footprint": "80 identity-matched scenarios only, both signed records as one compact JSON array, no whitespace/newline, no compression or key-store bytes",
+    "privacy": "Record-value plaintext bytes exclude common metadata and field names. Count cross-attempt equality pairs in delivery field on identity slice, once per original eligible call. Per-field repeat counts compare raw, stable, and separate attempt-scoped field encodings. Equal-value tags may reveal within-attempt equality; a keyholder can test guesses.",
+    "stress": "Malformed/missing source records injected after signing. Synthetic attempt-derived UUIDs and ephemeral per-run HMAC keys."
+  },
+  "schemas": {
+    "recipient": {
+      "raw_full": [
+        "approval.body.raw",
+        "approval.recipient.raw",
+        "delivery.body.raw",
+        "delivery.recipient.raw"
+      ],
+      "raw_recipient": [
+        "approval.recipient.raw",
+        "delivery.recipient.raw"
+      ],
+      "stable_tag": [
+        "approval.recipient.stable",
+        "delivery.recipient.stable"
+      ],
+      "separate_attempt_tags": [
+        "approval.recipient.tag",
+        "delivery.recipient.tag"
+      ],
+      "hand_minimum": [
+        "approval.recipient.tag",
+        "delivery.recipient.tag"
+      ],
+      "synthesized": [
+        "approval.recipient.tag",
+        "delivery.recipient.tag"
+      ]
+    },
+    "recipient_body": {
+      "raw_full": [
+        "approval.body.raw",
+        "approval.recipient.raw",
+        "delivery.body.raw",
+        "delivery.recipient.raw"
+      ],
+      "raw_recipient": [
+        "approval.recipient.raw",
+        "delivery.recipient.raw"
+      ],
+      "stable_tag": [
+        "approval.body.stable",
+        "approval.recipient.stable",
+        "delivery.body.stable",
+        "delivery.recipient.stable"
+      ],
+      "separate_attempt_tags": [
+        "approval.body.tag",
+        "approval.recipient.tag",
+        "delivery.body.tag",
+        "delivery.recipient.tag"
+      ],
+      "hand_minimum": [
+        "approval.pair.tag",
+        "delivery.pair.tag"
+      ],
+      "synthesized": [
+        "approval.pair.tag",
+        "delivery.pair.tag"
+      ],
+      "stable_pair_tag": [
+        "approval.pair.stable",
+        "delivery.pair.stable"
+      ]
+    }
+  },
+  "explanation_policy": {
+    "synthesized": {
+      "fields": [
+        "approval.pair.tag",
+        "approval.recipient.tag",
+        "delivery.pair.tag",
+        "delivery.recipient.tag"
+      ],
+      "counts": {
+        "cases": 2000,
+        "correct": 2000
+      },
+      "truth_counts": {
+        "within": 720,
+        "no_grant": 320,
+        "wrong_body": 320,
+        "wrong_recipient": 640
+      },
+      "identity_wire_bytes": 55920
+    },
+    "pair_only": {
+      "fields": [
+        "approval.pair.tag",
+        "delivery.pair.tag"
+      ],
+      "counts": {
+        "cases": 2000,
+        "correct": 1040,
+        "unknown": 960
+      },
+      "truth_counts": {
+        "within": 720,
+        "no_grant": 320,
+        "wrong_body": 320,
+        "wrong_recipient": 640
+      },
+      "identity_wire_bytes": 44560
+    }
+  },
+  "complete": {
+    "recipient": {
+      "raw_full": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 2000,
+          "unknown": 0,
+          "false_clearance": 0,
+          "false_accusation": 0
+        },
+        "identity_footprint": {
+          "recipient_plaintext_value_bytes": 2994,
+          "body_plaintext_value_bytes": 38142,
+          "identity_slice_calls": 80,
+          "serialized_record_pair_bytes": 84120
+        }
+      },
+      "raw_recipient": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 2000,
+          "unknown": 0,
+          "false_clearance": 0,
+          "false_accusation": 0
+        },
+        "identity_footprint": {
+          "recipient_plaintext_value_bytes": 2994,
+          "body_plaintext_value_bytes": 0,
+          "identity_slice_calls": 80,
+          "serialized_record_pair_bytes": 41474
+        }
+      },
+      "stable_tag": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 2000,
+          "unknown": 0,
+          "false_clearance": 0,
+          "false_accusation": 0
+        },
+        "identity_footprint": {
+          "recipient_plaintext_value_bytes": 0,
+          "body_plaintext_value_bytes": 0,
+          "identity_slice_calls": 80,
+          "serialized_record_pair_bytes": 45840
+        }
+      },
+      "separate_attempt_tags": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 2000,
+          "unknown": 0,
+          "false_clearance": 0,
+          "false_accusation": 0
+        },
+        "identity_footprint": {
+          "recipient_plaintext_value_bytes": 0,
+          "body_plaintext_value_bytes": 0,
+          "identity_slice_calls": 80,
+          "serialized_record_pair_bytes": 45360
+        }
+      },
+      "hand_minimum": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 2000,
+          "unknown": 0,
+          "false_clearance": 0,
+          "false_accusation": 0
+        },
+        "identity_footprint": {
+          "recipient_plaintext_value_bytes": 0,
+          "body_plaintext_value_bytes": 0,
+          "identity_slice_calls": 80,
+          "serialized_record_pair_bytes": 45360
+        }
+      },
+      "synthesized": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 2000,
+          "unknown": 0,
+          "false_clearance": 0,
+          "false_accusation": 0
+        },
+        "identity_footprint": {
+          "recipient_plaintext_value_bytes": 0,
+          "body_plaintext_value_bytes": 0,
+          "identity_slice_calls": 80,
+          "serialized_record_pair_bytes": 45360
+        }
+      }
+    },
+    "recipient_body": {
+      "raw_full": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 2000,
+          "unknown": 0,
+          "false_clearance": 0,
+          "false_accusation": 0
+        },
+        "identity_footprint": {
+          "recipient_plaintext_value_bytes": 2994,
+          "body_plaintext_value_bytes": 38142,
+          "identity_slice_calls": 80,
+          "serialized_record_pair_bytes": 84120
+        }
+      },
+      "raw_recipient": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 1360,
+          "unknown": 640,
+          "false_clearance": 0,
+          "false_accusation": 0
+        },
+        "identity_footprint": {
+          "recipient_plaintext_value_bytes": 2994,
+          "body_plaintext_value_bytes": 0,
+          "identity_slice_calls": 80,
+          "serialized_record_pair_bytes": 41474
+        }
+      },
+      "stable_tag": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 2000,
+          "unknown": 0,
+          "false_clearance": 0,
+          "false_accusation": 0
+        },
+        "identity_footprint": {
+          "recipient_plaintext_value_bytes": 0,
+          "body_plaintext_value_bytes": 0,
+          "identity_slice_calls": 80,
+          "serialized_record_pair_bytes": 56880
+        }
+      },
+      "separate_attempt_tags": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 2000,
+          "unknown": 0,
+          "false_clearance": 0,
+          "false_accusation": 0
+        },
+        "identity_footprint": {
+          "recipient_plaintext_value_bytes": 0,
+          "body_plaintext_value_bytes": 0,
+          "identity_slice_calls": 80,
+          "serialized_record_pair_bytes": 55920
+        }
+      },
+      "hand_minimum": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 2000,
+          "unknown": 0,
+          "false_clearance": 0,
+          "false_accusation": 0
+        },
+        "identity_footprint": {
+          "recipient_plaintext_value_bytes": 0,
+          "body_plaintext_value_bytes": 0,
+          "identity_slice_calls": 80,
+          "serialized_record_pair_bytes": 44560
+        }
+      },
+      "synthesized": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 2000,
+          "unknown": 0,
+          "false_clearance": 0,
+          "false_accusation": 0
+        },
+        "identity_footprint": {
+          "recipient_plaintext_value_bytes": 0,
+          "body_plaintext_value_bytes": 0,
+          "identity_slice_calls": 80,
+          "serialized_record_pair_bytes": 44560
+        }
+      },
+      "stable_pair_tag": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 2000,
+          "unknown": 0,
+          "false_clearance": 0,
+          "false_accusation": 0
+        },
+        "identity_footprint": {
+          "recipient_plaintext_value_bytes": 0,
+          "body_plaintext_value_bytes": 0,
+          "identity_slice_calls": 80,
+          "serialized_record_pair_bytes": 45040
+        }
+      }
+    }
+  },
+  "stress": {
+    "recipient": {
+      "changed_signed_field": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 0,
+          "unknown": 2000,
+          "false_clearance": 0,
+          "false_accusation": 0
+        }
+      },
+      "approval_missing": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 400,
+          "unknown": 1600,
+          "false_clearance": 0,
+          "false_accusation": 0
+        }
+      },
+      "delivery_missing": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 0,
+          "unknown": 2000,
+          "false_clearance": 0,
+          "false_accusation": 0
+        }
+      },
+      "both_missing": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 0,
+          "unknown": 2000,
+          "false_clearance": 0,
+          "false_accusation": 0
+        }
+      },
+      "wrong_attempt_receipt": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 0,
+          "unknown": 2000,
+          "false_clearance": 0,
+          "false_accusation": 0
+        }
+      },
+      "bad_delivery_authenticator": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 0,
+          "unknown": 2000,
+          "false_clearance": 0,
+          "false_accusation": 0
+        }
+      }
+    },
+    "recipient_body": {
+      "changed_signed_field": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 0,
+          "unknown": 2000,
+          "false_clearance": 0,
+          "false_accusation": 0
+        }
+      },
+      "approval_missing": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 400,
+          "unknown": 1600,
+          "false_clearance": 0,
+          "false_accusation": 0
+        }
+      },
+      "delivery_missing": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 0,
+          "unknown": 2000,
+          "false_clearance": 0,
+          "false_accusation": 0
+        }
+      },
+      "both_missing": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 0,
+          "unknown": 2000,
+          "false_clearance": 0,
+          "false_accusation": 0
+        }
+      },
+      "wrong_attempt_receipt": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 0,
+          "unknown": 2000,
+          "false_clearance": 0,
+          "false_accusation": 0
+        }
+      },
+      "bad_delivery_authenticator": {
+        "outcomes": {
+          "cases": 2000,
+          "correct": 0,
+          "unknown": 2000,
+          "false_clearance": 0,
+          "false_accusation": 0
+        }
+      }
+    }
+  },
+  "body_scope_mismatch": {
+    "recipient_check_would_clear_payload_violation": 320
+  },
+  "cross_attempt_equal_field_pairs": {
+    "recipient": {
+      "raw": 9,
+      "stable": 9,
+      "tag": 0
+    },
+    "body": {
+      "raw": 0,
+      "stable": 0,
+      "tag": 0
+    },
+    "pair": {
+      "raw": 0,
+      "stable": 0,
+      "tag": 0
+    }
+  },
+  "within_attempt_equality_visible_to_reader": {
+    "separate_tags": {
+      "both_equal": 320,
+      "only_recipient_equal": 320,
+      "only_body_equal": 320,
+      "neither_equal": 320
+    },
+    "pair_tags": {
+      "equal": 320,
+      "unequal": 960
+    }
+  },
+  "joint_witness_different_trust_model": {
+    "recipient": {
+      "outcomes": {
+        "cases": 2000,
+        "correct": 2000,
+        "unknown": 0,
+        "false_clearance": 0,
+        "false_accusation": 0
+      },
+      "identity_wire_bytes": 13440
+    },
+    "recipient_body": {
+      "outcomes": {
+        "cases": 2000,
+        "correct": 2000,
+        "unknown": 0,
+        "false_clearance": 0,
+        "false_accusation": 0
+      },
+      "identity_wire_bytes": 13840
+    }
+  },
+  "witness_scope": "A separately keyed joint observer is trusted to see both sources and compute the policy. Verification checks a policy- and attempt-bound 1-bit claim. This changes source independence and accountability."
+}
